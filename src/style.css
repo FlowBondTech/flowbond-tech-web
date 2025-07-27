@@ -1331,8 +1331,10 @@ h1, h2, h3, h4, h5, h6 {
   
   .hero {
     padding: 1rem;
+    padding-top: 100px; /* Account for navbar height on mobile */
     overflow: hidden;
     width: 100%;
+    min-height: 100vh;
   }
   
   /* Fix orbs causing horizontal overflow */
@@ -1365,9 +1367,15 @@ h1, h2, h3, h4, h5, h6 {
   }
   
   .hero-content {
-    padding: 0;
+    padding: 2rem 0 0 0;
     position: relative;
     z-index: 2;
+  }
+  
+  .hero-badge {
+    margin-bottom: 1.5rem;
+    font-size: 0.75rem;
+    padding: 0.4rem 1.2rem;
   }
   
   .hero-title {
