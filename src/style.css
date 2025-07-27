@@ -1587,6 +1587,26 @@ h1, h2, h3, h4, h5, h6 {
   background: var(--bg-primary);
 }
 
+/* Section title with arrow */
+.section-title.with-arrow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
+}
+
+.arrow-icon {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--primary-pink);
+  background: linear-gradient(135deg, var(--primary-pink) 0%, var(--primary-purple) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  transform: translateY(-2px);
+}
+
 .danz-hero {
   position: relative;
   padding: 8rem 0 4rem;
@@ -1736,6 +1756,12 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2rem;
 }
 
+/* Section content */
+.section-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .danz-title {
@@ -1775,5 +1801,23 @@ h1, h2, h3, h4, h5, h6 {
   .danz-cta h2 {
     font-size: 2rem;
     padding: 0 1rem;
+  }
+  
+  /* Center section titles on mobile */
+  .section-title.with-arrow {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .arrow-icon {
+    font-size: 1.5rem;
+  }
+  
+  .section-content {
+    text-align: center;
+  }
+  
+  .section-header {
+    text-align: center;
   }
 }

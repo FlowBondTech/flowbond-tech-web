@@ -56,7 +56,10 @@ function Danz() {
       <section className="section">
         <div className="container">
           <div className="section-content animate">
-            <h2 className="section-title">What is $DANZ?</h2>
+            <h2 className="section-title with-arrow">
+              <span className="arrow-icon">›</span>
+              What is $DANZ?
+            </h2>
             <div className="content-box">
               <p>
                 $DANZ is a utility and rewards token designed to power a movement-based economy. It lives at the intersection of dance culture, Web3 technology, and biometric flow states. Through the FlowBond wearable and ecosystem, every dance session, group sync, and flow activation generates real, measurable value — and $DANZ is how that value is distributed.
@@ -70,7 +73,10 @@ function Danz() {
       <section className="section danz-features-section">
         <div className="container">
           <div className="section-header animate">
-            <h2 className="section-title">Why $DANZ?</h2>
+            <h2 className="section-title with-arrow">
+              <span className="arrow-icon">›</span>
+              Why $DANZ?
+            </h2>
           </div>
           <div className="danz-features-grid">
             {features.map((feature, index) => (
@@ -88,7 +94,10 @@ function Danz() {
       <section className="section vision-section">
         <div className="container">
           <div className="section-content animate">
-            <h2 className="section-title">The Vision</h2>
+            <h2 className="section-title with-arrow">
+              <span className="arrow-icon">›</span>
+              The Vision
+            </h2>
             <div className="vision-box">
               <p>
                 $DANZ is more than a token — it's a cultural catalyst for regenerative joy and embodied connection. As the FlowBond network grows, $DANZ will become the energetic fuel for a new kind of decentralized movement economy — one where those who move the most, feel the most, and connect the most are the ones who thrive.
