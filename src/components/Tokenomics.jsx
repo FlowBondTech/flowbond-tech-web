@@ -13,7 +13,13 @@ function Tokenomics() {
         <div className="hero-bg-gradient"></div>
         <div className="container">
           <div className="section-header animate">
-            <h1 className="tokenomics-title gradient-text">💃 $DANZ Tokenomics</h1>
+            <div className="tokenomics-title-wrapper">
+              <h1 className="tokenomics-title gradient-text">
+                <span className="dance-emoji-container">
+                  <span className="dance-emoji">💃</span>
+                </span> $DANZ Tokenomics
+              </h1>
+            </div>
             <p className="tokenomics-subtitle">The Token That Moves With You — Online & On the Dancefloor</p>
             <p className="tokenomics-description">
               $DANZ is the official token of the FlowBond ecosystem — a Solana-based meme coin that rewards real-world dance, 

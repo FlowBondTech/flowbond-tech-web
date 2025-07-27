@@ -1839,10 +1839,181 @@ h1, h2, h3, h4, h5, h6 {
   background: linear-gradient(135deg, rgba(255, 110, 199, 0.05) 0%, rgba(185, 103, 255, 0.05) 100%);
 }
 
+.tokenomics-title-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: visible;
+}
+
 .tokenomics-title {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+  padding: 1rem 2rem;
+  transition: all 0.3s ease;
+  cursor: default;
+  z-index: 1;
+}
+
+/* Cloud-like white glow that moves */
+.tokenomics-title::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 40%, transparent 70%);
+  filter: blur(20px);
+  z-index: -2;
+  opacity: 0.8;
+  animation: cloudFloat 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Second cloud for layered effect */
+.tokenomics-title::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.3) 0%, rgba(255, 110, 199, 0.05) 50%, transparent 70%);
+  filter: blur(15px);
+  z-index: -2;
+  opacity: 0.7;
+  animation: cloudFloat 10s ease-in-out infinite reverse;
+  pointer-events: none;
+}
+
+@keyframes cloudFloat {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  25% {
+    transform: translate(-40%, -45%) scale(1.1);
+  }
+  50% {
+    transform: translate(-55%, -55%) scale(0.95);
+  }
+  75% {
+    transform: translate(-45%, -60%) scale(1.05);
+  }
+}
+
+/* Dance emoji container */
+.dance-emoji-container {
+  display: inline-block;
+  position: relative;
+  font-size: 1.2em;
+  z-index: 100;
+}
+
+/* Dance emoji shadow/blur layer - hidden for now */
+.dance-emoji-shadow {
+  display: none;
+}
+
+/* Main dance emoji - sharp and clear */
+.dance-emoji {
+  display: inline-block;
+  animation: 
+    danceBounce 2s ease-in-out infinite,
+    danceSpin 4s linear infinite;
+  transform-origin: center bottom;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 100;
+  text-shadow: 
+    0 0 20px rgba(255, 110, 199, 0.5),
+    0 0 40px rgba(255, 110, 199, 0.3),
+    0 0 60px rgba(185, 103, 255, 0.2);
+}
+
+@keyframes danceBounce {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  25% {
+    transform: translateY(-10px) rotate(-5deg) scale(1.1);
+  }
+  50% {
+    transform: translateY(-5px) rotate(5deg) scale(1.05);
+  }
+  75% {
+    transform: translateY(-15px) rotate(-3deg) scale(1.15);
+  }
+}
+
+@keyframes danceSpin {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+/* Removed danceGlow animation - using static text-shadow instead */
+
+/* Hover state for extra fun */
+.dance-emoji-container:hover .dance-emoji {
+  animation: 
+    danceParty 0.5s ease-in-out infinite,
+    danceSpin 1s linear infinite;
+  text-shadow: 
+    0 0 30px rgba(255, 110, 199, 0.8),
+    0 0 50px rgba(255, 110, 199, 0.5),
+    0 0 70px rgba(185, 103, 255, 0.3);
+}
+
+@keyframes danceParty {
+  0%, 100% {
+    transform: translateY(0) rotate(-10deg) scale(1.2);
+  }
+  25% {
+    transform: translateY(-20px) rotate(10deg) scale(1.3);
+  }
+  50% {
+    transform: translateY(0) rotate(-10deg) scale(1.2);
+  }
+  75% {
+    transform: translateY(-20px) rotate(10deg) scale(1.3);
+  }
+}
+
+/* Hover effect */
+.tokenomics-title:hover {
+  transform: scale(1.05);
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.8);
+}
+
+.tokenomics-title:hover::before {
+  opacity: 1;
+  animation-duration: 4s;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.4) 30%, transparent 70%);
+}
+
+.tokenomics-title:hover::after {
+  opacity: 0.9;
+  animation-duration: 5s;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.7) 0%, rgba(255, 110, 199, 0.2) 40%, transparent 60%);
+}
+
+/* Make emoji even more fun on title hover */
+.tokenomics-title:hover .dance-emoji {
+  animation-duration: 0.8s, 2s, 1.5s;
+}
+
+.tokenomics-title:hover .dance-emoji-shadow {
+  animation-duration: 0.8s, 2s;
+  filter: blur(6px) brightness(1.3);
 }
 
 .tokenomics-subtitle {
