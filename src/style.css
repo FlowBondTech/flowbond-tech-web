@@ -1593,6 +1593,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 1rem;
   position: relative;
+  justify-content: flex-start;
 }
 
 .arrow-icon {
@@ -1762,6 +1763,11 @@ h1, h2, h3, h4, h5, h6 {
   margin: 0 auto;
 }
 
+/* Section header - keep centered by default */
+.section-header {
+  text-align: center;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .danz-title {
@@ -1803,20 +1809,17 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 1rem;
   }
   
-  /* Center section titles on mobile */
+  /* Keep arrow titles left-aligned on mobile */
   .section-title.with-arrow {
-    justify-content: center;
-    text-align: center;
+    justify-content: flex-start;
+    text-align: left;
   }
   
   .arrow-icon {
     font-size: 1.5rem;
   }
   
-  .section-content {
-    text-align: center;
-  }
-  
+  /* Keep section header (Why $DANZ?) centered */
   .section-header {
     text-align: center;
   }

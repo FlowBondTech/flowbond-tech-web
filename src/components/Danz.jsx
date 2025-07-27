@@ -73,10 +73,7 @@ function Danz() {
       <section className="section danz-features-section">
         <div className="container">
           <div className="section-header animate">
-            <h2 className="section-title with-arrow">
-              <span className="arrow-icon">›</span>
-              Why $DANZ?
-            </h2>
+            <h2 className="section-title">Why $DANZ?</h2>
           </div>
           <div className="danz-features-grid">
             {features.map((feature, index) => (
