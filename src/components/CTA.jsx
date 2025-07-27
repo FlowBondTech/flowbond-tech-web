@@ -1,6 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
+import SubscriptionModal from './SubscriptionModal'
 
 function CTA() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
+  const handleJoinWaitlist = (e) => {
+    e.preventDefault()
+    setIsModalOpen(true)
+  }
+  
   return (
     <section className="section cta-section">
       <div className="container">
@@ -12,7 +20,7 @@ function CTA() {
             Join thousands of dancers earning rewards for doing what they love.
           </p>
           <div className="cta-actions">
-            <a href="#" className="btn btn-primary btn-large">Join Waitlist</a>
+            <a href="#" className="btn btn-primary btn-large" onClick={handleJoinWaitlist}>Join Waitlist</a>
             <a href="#" className="btn btn-secondary btn-large">Partner With Us</a>
           </div>
           <div className="cta-stats">
@@ -27,6 +35,7 @@ function CTA() {
           </div>
         </div>
       </div>
+      <SubscriptionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

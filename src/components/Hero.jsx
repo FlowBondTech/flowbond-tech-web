@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useCounters, useTypingEffect } from '../hooks/useNeonEffects'
+import SubscriptionModal from './SubscriptionModal'
 
 function Hero() {
   const titleRef = useRef(null)
   const counterRefs = useRef([])
   const navigate = useNavigate()
+  const [isModalOpen, setIsModalOpen] = useState(false)
 
   useTypingEffect(titleRef)
   useCounters(counterRefs)
@@ -17,6 +19,11 @@ function Hero() {
   const handleLearnMore = (e) => {
     e.preventDefault()
     navigate('/danz')
+  }
+  
+  const handleJoinMovement = (e) => {
+    e.preventDefault()
+    setIsModalOpen(true)
   }
 
   return (
@@ -39,7 +46,7 @@ function Hero() {
           Transform your movement into rewards with our revolutionary wearable technology and blockchain ecosystem.
         </p>
         <div className="hero-cta animate">
-          <a href="#" className="btn btn-primary">
+          <a href="#" className="btn btn-primary" onClick={handleJoinMovement}>
             <span>Join Movement</span>
             <svg className="btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -70,6 +77,7 @@ function Hero() {
           </div>
         </div>
       </div>
+      <SubscriptionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </section>
   )
 }

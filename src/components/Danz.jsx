@@ -1,6 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
+import SubscriptionModal from './SubscriptionModal'
 
 function Danz() {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+  
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0)
@@ -114,12 +117,13 @@ function Danz() {
           <div className="cta-content animate">
             <h2>Ready to start earning through movement?</h2>
             <div className="cta-actions">
-              <a href="#" className="btn btn-primary">Join the $DANZ Movement</a>
+              <a href="#" className="btn btn-primary" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>Join the $DANZ Movement</a>
               <a href="/tokenomics" className="btn btn-ghost">View Tokenomics</a>
             </div>
           </div>
         </div>
       </section>
+      <SubscriptionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </div>
   )
 }
