@@ -10,6 +10,7 @@ import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Danz from './components/Danz'
+import Tokenomics from './components/Tokenomics'
 import ScrollToTop from './components/ScrollToTop'
 import Layout from './components/Layout'
 
@@ -36,6 +37,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/danz" element={<Danz />} />
+          <Route path="/tokenomics" element={<Tokenomics />} />
         </Routes>
         <Footer />
       </Layout>

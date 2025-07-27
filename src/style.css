@@ -1825,10 +1825,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Tokenomics Section */
-.tokenomics-section {
-  padding: 5rem 0;
+/* Tokenomics Page */
+.tokenomics-page {
+  min-height: 100vh;
   background: var(--bg-primary);
+}
+
+.tokenomics-hero {
+  position: relative;
+  padding: 8rem 0 4rem;
+  overflow: hidden;
+  margin-top: 80px;
+  background: linear-gradient(135deg, rgba(255, 110, 199, 0.05) 0%, rgba(185, 103, 255, 0.05) 100%);
 }
 
 .tokenomics-title {

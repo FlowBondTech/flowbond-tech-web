@@ -66,7 +66,7 @@ function Token() {
             </div>
             
             <div className="token-actions">
-              <a href="/danz#tokenomics" onClick={(e) => { e.preventDefault(); navigate('/danz#tokenomics'); }} className="btn btn-primary">View Tokenomics</a>
+              <a href="/tokenomics" onClick={(e) => { e.preventDefault(); navigate('/tokenomics'); }} className="btn btn-primary">View Tokenomics</a>
               <a href="/danz" onClick={handleLearnMore} className="btn btn-ghost">Learn More</a>
             </div>
           </div>
