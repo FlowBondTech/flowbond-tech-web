@@ -173,7 +173,9 @@ h1, h2, h3, h4, h5, h6 {
   list-style: none;
 }
 
-.nav-links a {
+.nav-links a,
+.nav-links a:link,
+.nav-links a:visited {
   color: var(--text-secondary);
   text-decoration: none;
   font-weight: 500;
@@ -1252,7 +1254,9 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 2rem;
 }
 
-.mobile-nav-links a {
+.mobile-nav-links a,
+.mobile-nav-links a:link,
+.mobile-nav-links a:visited {
   color: var(--text-primary);
   text-decoration: none;
   font-size: 1.5rem;

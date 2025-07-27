@@ -10,6 +10,7 @@ import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import Danz from './components/Danz'
+import ScrollToTop from './components/ScrollToTop'
 // import Test from './Test'
 import { useParticles, useScrollIndicator, useMagneticButtons, useGlowEffects, useRevealAnimations } from './hooks/useNeonEffects'
 
@@ -54,6 +55,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <div className="particles"></div>
       <Navbar />
       <Routes>

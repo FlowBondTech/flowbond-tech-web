@@ -5,6 +5,7 @@ function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const isHomePage = location.pathname === '/'
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,6 +21,14 @@ function Navbar() {
     setMobileMenuOpen(false)
   }, [location])
 
+  const handleNavClick = (e, hash) => {
+    if (!isHomePage) {
+      // If not on home page, navigate to home with hash
+      e.preventDefault()
+      window.location.href = `/${hash}`
+    }
+  }
+
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
@@ -30,11 +39,11 @@ function Navbar() {
         
         {/* Desktop Navigation */}
         <ul className="nav-links desktop">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#token">Token</a></li>
-          <li><a href="#bracelet">Device</a></li>
-          <li><a href="#faq">FAQ</a></li>
+          <li><a href={isHomePage ? "#home" : "/"}>Home</a></li>
+          <li><a href={isHomePage ? "#about" : "/#about"} onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
+          <li><Link to="/danz">Token</Link></li>
+          <li><a href={isHomePage ? "#bracelet" : "/#bracelet"} onClick={(e) => handleNavClick(e, '#bracelet')}>Device</a></li>
+          <li><a href={isHomePage ? "#faq" : "/#faq"} onClick={(e) => handleNavClick(e, '#faq')}>FAQ</a></li>
         </ul>
         <a href="#" className="btn btn-nav desktop">Get Started</a>
         
@@ -54,11 +63,11 @@ function Navbar() {
         {/* Mobile Menu */}
         <div className={`mobile-menu ${mobileMenuOpen ? 'active' : ''}`}>
           <ul className="mobile-nav-links">
-            <li><a href="#home" onClick={() => setMobileMenuOpen(false)}>Home</a></li>
-            <li><a href="#about" onClick={() => setMobileMenuOpen(false)}>About</a></li>
-            <li><a href="#token" onClick={() => setMobileMenuOpen(false)}>Token</a></li>
-            <li><a href="#bracelet" onClick={() => setMobileMenuOpen(false)}>Device</a></li>
-            <li><a href="#faq" onClick={() => setMobileMenuOpen(false)}>FAQ</a></li>
+            <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
+            <li><a href={isHomePage ? "#about" : "/#about"} onClick={() => setMobileMenuOpen(false)}>About</a></li>
+            <li><Link to="/danz" onClick={() => setMobileMenuOpen(false)}>Token</Link></li>
+            <li><a href={isHomePage ? "#bracelet" : "/#bracelet"} onClick={() => setMobileMenuOpen(false)}>Device</a></li>
+            <li><a href={isHomePage ? "#faq" : "/#faq"} onClick={() => setMobileMenuOpen(false)}>FAQ</a></li>
             <li><a href="#" className="btn btn-nav" onClick={() => setMobileMenuOpen(false)}>Get Started</a></li>
           </ul>
         </div>
