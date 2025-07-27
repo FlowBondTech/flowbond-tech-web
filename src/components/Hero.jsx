@@ -38,7 +38,7 @@ function Hero() {
               <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
-          <a href="#token" className="btn btn-secondary">Learn More</a>
+          <a href="/danz" className="btn btn-secondary">Learn More</a>
         </div>
         <div className="hero-stats animate">
           <div className="stat">

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
@@ -8,8 +9,23 @@ import Governance from './components/Governance'
 import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
+import Danz from './components/Danz'
 // import Test from './Test'
 import { useParticles, useScrollIndicator, useMagneticButtons, useGlowEffects, useRevealAnimations } from './hooks/useNeonEffects'
+
+function HomePage() {
+  return (
+    <>
+      <Hero />
+      <About />
+      <Token />
+      <Bracelet />
+      <Governance />
+      <CTA />
+      <FAQ />
+    </>
+  )
+}
 
 function App() {
   useEffect(() => {
@@ -37,18 +53,15 @@ function App() {
   }, [])
 
   return (
-    <>
+    <Router>
       <div className="particles"></div>
       <Navbar />
-      <Hero />
-      <About />
-      <Token />
-      <Bracelet />
-      <Governance />
-      <CTA />
-      <FAQ />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/danz" element={<Danz />} />
+      </Routes>
       <Footer />
-    </>
+    </Router>
   )
 }
 

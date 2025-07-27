@@ -59,7 +59,7 @@ function Token() {
             
             <div className="token-actions">
               <a href="#" className="btn btn-primary">View Tokenomics</a>
-              <a href="#" className="btn btn-ghost">Read Whitepaper</a>
+              <a href="/danz" className="btn btn-ghost">Learn More</a>
             </div>
           </div>
           
