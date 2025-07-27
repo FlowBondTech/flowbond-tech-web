@@ -107,6 +107,19 @@ function Danz() {
         </div>
       </section>
 
+      {/* CTA Section */}
+      <section className="section danz-cta">
+        <div className="container">
+          <div className="cta-content animate">
+            <h2>Ready to start earning through movement?</h2>
+            <div className="cta-actions">
+              <a href="#" className="btn btn-primary">Join the $DANZ Movement</a>
+              <a href="#tokenomics" className="btn btn-ghost">View Tokenomics</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Tokenomics Section */}
       <section id="tokenomics" className="section tokenomics-section">
         <div className="container">
