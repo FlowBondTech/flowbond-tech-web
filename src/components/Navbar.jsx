@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
   const isHomePage = location.pathname === '/'
 
   useEffect(() => {
@@ -28,6 +29,11 @@ function Navbar() {
       window.location.href = `/${hash}`
     }
   }
+  
+  const handleTokenClick = (e) => {
+    e.preventDefault()
+    navigate('/danz')
+  }
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
@@ -41,7 +47,7 @@ function Navbar() {
         <ul className="nav-links desktop">
           <li><a href={isHomePage ? "#home" : "/"}>Home</a></li>
           <li><a href={isHomePage ? "#about" : "/#about"} onClick={(e) => handleNavClick(e, '#about')}>About</a></li>
-          <li><Link to="/danz">Token</Link></li>
+          <li><a href="/danz" onClick={handleTokenClick}>Token</a></li>
           <li><a href={isHomePage ? "#bracelet" : "/#bracelet"} onClick={(e) => handleNavClick(e, '#bracelet')}>Device</a></li>
           <li><a href={isHomePage ? "#faq" : "/#faq"} onClick={(e) => handleNavClick(e, '#faq')}>FAQ</a></li>
         </ul>
@@ -65,7 +71,7 @@ function Navbar() {
           <ul className="mobile-nav-links">
             <li><Link to="/" onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
             <li><a href={isHomePage ? "#about" : "/#about"} onClick={() => setMobileMenuOpen(false)}>About</a></li>
-            <li><Link to="/danz" onClick={() => setMobileMenuOpen(false)}>Token</Link></li>
+            <li><a href="/danz" onClick={(e) => { handleTokenClick(e); setMobileMenuOpen(false); }}>Token</a></li>
             <li><a href={isHomePage ? "#bracelet" : "/#bracelet"} onClick={() => setMobileMenuOpen(false)}>Device</a></li>
             <li><a href={isHomePage ? "#faq" : "/#faq"} onClick={() => setMobileMenuOpen(false)}>FAQ</a></li>
             <li><a href="#" className="btn btn-nav" onClick={() => setMobileMenuOpen(false)}>Get Started</a></li>

@@ -1,15 +1,22 @@
 import React, { useEffect, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useCounters, useTypingEffect } from '../hooks/useNeonEffects'
 
 function Hero() {
   const titleRef = useRef(null)
   const counterRefs = useRef([])
+  const navigate = useNavigate()
 
   useTypingEffect(titleRef)
   useCounters(counterRefs)
 
   const setCounterRef = (el, index) => {
     if (el) counterRefs.current[index] = el
+  }
+  
+  const handleLearnMore = (e) => {
+    e.preventDefault()
+    navigate('/danz')
   }
 
   return (
@@ -38,7 +45,7 @@ function Hero() {
               <path d="M7 10H13M13 10L10 7M13 10L10 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
           </a>
-          <a href="/danz" className="btn btn-secondary">Learn More</a>
+          <a href="/danz" onClick={handleLearnMore} className="btn btn-secondary">Learn More</a>
         </div>
         <div className="hero-stats animate">
           <div className="stat">

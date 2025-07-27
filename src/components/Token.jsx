@@ -1,6 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 
 function Token() {
+  const navigate = useNavigate()
+  
+  const handleLearnMore = (e) => {
+    e.preventDefault()
+    navigate('/danz')
+  }
+  
   const tokenFeatures = [
     {
       title: 'Lightning Fast',
@@ -59,7 +67,7 @@ function Token() {
             
             <div className="token-actions">
               <a href="#" className="btn btn-primary">View Tokenomics</a>
-              <a href="/danz" className="btn btn-ghost">Learn More</a>
+              <a href="/danz" onClick={handleLearnMore} className="btn btn-ghost">Learn More</a>
             </div>
           </div>
           
