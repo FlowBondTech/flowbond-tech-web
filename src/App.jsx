@@ -18,18 +18,24 @@ import Layout from './components/Layout'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
 import CreateEvent from './components/CreateEvent'
+import NewHero from './components/NewHero'
+import NewAboutFlowBond from './components/NewAboutFlowBond'
+import TokenExplainer from './components/TokenExplainer'
+import MatchingSubscription from './components/MatchingSubscription'
+import PartnersSection from './components/PartnersSection'
+import HowItWorks from './components/HowItWorks'
 import { AuthProvider } from './hooks/useAuth.jsx'
 
 function HomePage() {
   return (
     <>
-      <FlowBondHero />
-      <AboutFlowBond />
+      <NewHero />
+      <NewAboutFlowBond />
       <EventsMarketplace />
-      <WalletIntegration />
-      <TokenRewards />
-      <MatchingCommunity />
-      <SubscriptionGating />
+      <TokenExplainer />
+      <MatchingSubscription />
+      <PartnersSection />
+      <HowItWorks />
     </>
   )
 }
