@@ -18,7 +18,7 @@ import Layout from './components/Layout'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
 import CreateEvent from './components/CreateEvent'
-import { AuthProvider } from './hooks/useAuth'
+import { AuthProvider } from './hooks/useAuth.jsx'
 
 function HomePage() {
   return (
