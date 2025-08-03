@@ -39,8 +39,12 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="logo">
-          <span className="logo-text">FlowBond</span>
-          <span className="logo-accent">.</span>
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 flex items-center justify-center">
+              <span className="text-white font-bold text-sm">FB</span>
+            </div>
+            <span className="logo-text">FlowBond</span>
+          </div>
         </Link>
         
         {/* Desktop Navigation */}

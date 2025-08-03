@@ -3,24 +3,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* FlowBond Color Palette - Rich Golds, Neons, Deep Charcoal */
-  --gold-primary: #FFD700;
-  --gold-rich: #DAA520;
-  --gold-light: #FFFF99;
-  --gold-glow: rgba(255, 215, 0, 0.6);
+  /* FlowBond Color Palette - Purple, Black, Pink */
+  --primary-purple: #8A2BE2;
+  --primary-pink: #FF1493;
+  --primary-black: #000000;
+  --purple-glow: rgba(138, 43, 226, 0.6);
   
-  /* Neon Flow Gradients */
-  --neon-blue: #00BFFF;
-  --neon-purple: #8A2BE2;
-  --neon-pink: #FF1493;
-  --flow-gradient: linear-gradient(135deg, #00BFFF 0%, #8A2BE2 50%, #FF1493 100%);
-  --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+  /* Main Flow Gradients */
+  --flow-gradient: linear-gradient(135deg, #8A2BE2 0%, #FF1493 50%, #000000 100%);
+  --purple-gradient: linear-gradient(135deg, #8A2BE2 0%, #9932CC 100%);
+  --pink-gradient: linear-gradient(135deg, #FF1493 0%, #FF69B4 100%);
   
-  /* Deep Matte Charcoal Backgrounds */
-  --charcoal-deep: #1A1A1A;
-  --charcoal-medium: #2D2D2D;
-  --charcoal-light: #404040;
-  --charcoal-overlay: rgba(26, 26, 26, 0.95);
+  /* Deep Black Backgrounds */
+  --black-deep: #000000;
+  --black-medium: #1A1A1A;
+  --black-light: #2D2D2D;
+  --black-overlay: rgba(0, 0, 0, 0.95);
   
   /* Typography */
   --font-serif: 'Playfair Display', serif;
@@ -55,7 +53,7 @@ html {
 
 body {
   font-family: var(--font-sans);
-  background: var(--charcoal-deep);
+  background: var(--black-deep);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -98,8 +96,16 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
 }
 
-.gold-text {
-  background: var(--gold-gradient);
+.purple-text {
+  background: var(--purple-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.pink-text {
+  background: var(--pink-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -131,13 +137,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .holographic-text {
-  background: linear-gradient(45deg, #FFD700, #00BFFF, #8A2BE2, #FF1493, #FFD700);
+  background: linear-gradient(45deg, #8A2BE2, #FF1493, #000000, #8A2BE2, #FF1493);
   background-size: 300% 300%;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   animation: holographic 4s ease-in-out infinite;
   font-weight: 700;
+  font-size: 0.8em;
 }
 
 /* Navigation */
