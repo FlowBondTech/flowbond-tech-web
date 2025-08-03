@@ -14,7 +14,131 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      event_attendees: {
+        Row: {
+          event_id: string
+          id: string
+          joined_at: string
+          user_id: string
+        }
+        Insert: {
+          event_id: string
+          id?: string
+          joined_at?: string
+          user_id: string
+        }
+        Update: {
+          event_id?: string
+          id?: string
+          joined_at?: string
+          user_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "event_attendees_event_id_fkey"
+            columns: ["event_id"]
+            isOneToOne: false
+            referencedRelation: "events"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      events: {
+        Row: {
+          created_at: string
+          creator_id: string
+          date: string
+          description: string | null
+          event_type: string
+          id: string
+          image_url: string | null
+          location: string
+          max_attendees: number | null
+          price: number | null
+          tags: string[] | null
+          time: string
+          title: string
+          updated_at: string
+        }
+        Insert: {
+          created_at?: string
+          creator_id: string
+          date: string
+          description?: string | null
+          event_type: string
+          id?: string
+          image_url?: string | null
+          location: string
+          max_attendees?: number | null
+          price?: number | null
+          tags?: string[] | null
+          time: string
+          title: string
+          updated_at?: string
+        }
+        Update: {
+          created_at?: string
+          creator_id?: string
+          date?: string
+          description?: string | null
+          event_type?: string
+          id?: string
+          image_url?: string | null
+          location?: string
+          max_attendees?: number | null
+          price?: number | null
+          tags?: string[] | null
+          time?: string
+          title?: string
+          updated_at?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          bio: string | null
+          birthdate: string | null
+          created_at: string
+          email: string
+          full_name: string | null
+          id: string
+          interests: string[] | null
+          location: string | null
+          updated_at: string
+          user_id: string
+          username: string | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          bio?: string | null
+          birthdate?: string | null
+          created_at?: string
+          email: string
+          full_name?: string | null
+          id?: string
+          interests?: string[] | null
+          location?: string | null
+          updated_at?: string
+          user_id: string
+          username?: string | null
+        }
+        Update: {
+          avatar_url?: string | null
+          bio?: string | null
+          birthdate?: string | null
+          created_at?: string
+          email?: string
+          full_name?: string | null
+          id?: string
+          interests?: string[] | null
+          location?: string | null
+          updated_at?: string
+          user_id?: string
+          username?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
