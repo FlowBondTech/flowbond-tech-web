@@ -15,6 +15,10 @@ import Danz from './components/Danz'
 import Tokenomics from './components/Tokenomics'
 import ScrollToTop from './components/ScrollToTop'
 import Layout from './components/Layout'
+import Auth from './components/Auth'
+import Profile from './components/Profile'
+import CreateEvent from './components/CreateEvent'
+import { AuthProvider } from './hooks/useAuth'
 
 function HomePage() {
   return (
@@ -32,18 +36,24 @@ function HomePage() {
 
 function App() {
   return (
-    <Router>
-      <ScrollToTop />
-      <Layout>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/danz" element={<Danz />} />
-          <Route path="/tokenomics" element={<Tokenomics />} />
-        </Routes>
-        <Footer />
-      </Layout>
-    </Router>
+    <AuthProvider>
+      <Router>
+        <ScrollToTop />
+        <Layout>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/danz" element={<Danz />} />
+            <Route path="/tokenomics" element={<Tokenomics />} />
+            <Route path="/auth" element={<Auth />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/events" element={<EventsMarketplace />} />
+            <Route path="/create-event" element={<CreateEvent />} />
+          </Routes>
+          <Footer />
+        </Layout>
+      </Router>
+    </AuthProvider>
   )
 }
 
