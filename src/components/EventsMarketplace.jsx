@@ -125,13 +125,15 @@ function EventsMarketplace() {
               {events.map((event) => (
                 <div key={event.id} className="card hover-scale cursor-pointer">
                   {/* Event Image */}
-                  <div className="relative mb-4 rounded-lg overflow-hidden">
-                    <div className="w-full h-48 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center">
-                      <span className="text-white text-4xl">🎭</span>
+                  <div className="relative mb-4 rounded-xl overflow-hidden group">
+                    <div className="w-full h-48 bg-gradient-flow flex items-center justify-center relative overflow-hidden">
+                      <div className="absolute inset-0 bg-holographic opacity-30"></div>
+                      <span className="text-charcoal-deep text-4xl relative z-10">🎭</span>
                     </div>
-                    <div className="absolute top-3 right-3 bg-charcoal-deep bg-opacity-80 px-2 py-1 rounded-full text-xs font-semibold text-gold-primary">
+                    <div className="absolute top-3 right-3 bg-charcoal-deep/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-semibold text-gold-primary border border-gold-primary/20">
                       +{Math.floor(Math.random() * 100) + 20} $DANZ
                     </div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-charcoal-deep/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
 
                   {/* Event Info */}

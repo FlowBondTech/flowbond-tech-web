@@ -66,58 +66,65 @@ function Profile() {
   if (!user) return <div>Loading...</div>
 
   return (
-    <div className="max-w-4xl mx-auto p-6">
-      <div className="bg-card rounded-xl shadow-lg border border-border overflow-hidden">
-        {/* Header */}
-        <div className="bg-gradient-to-r from-primary to-secondary p-6 text-white">
-          <div className="flex justify-between items-start">
-            <div>
-              <h1 className="text-3xl font-bold mb-2">
-                {profile?.full_name || 'Welcome!'}
-              </h1>
-              <p className="text-primary-foreground/80">
-                {profile?.username ? `@${profile.username}` : 'Complete your profile'}
-              </p>
+    <div className="min-h-screen bg-charcoal-deep pt-20 pb-12">
+      <div className="container mx-auto px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="bg-charcoal-mid/50 backdrop-blur-sm rounded-2xl border border-gold-primary/20 overflow-hidden shadow-glow">
+            {/* Header */}
+            <div className="bg-gradient-flow p-8 text-charcoal-deep relative overflow-hidden">
+              <div className="absolute inset-0 bg-holographic opacity-20"></div>
+              <div className="relative z-10">
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+                  <div>
+                    <h1 className="text-3xl sm:text-4xl font-serif font-bold mb-2">
+                      {profile?.full_name || 'Welcome, Dancer!'}
+                    </h1>
+                    <p className="text-charcoal-deep/80 text-lg">
+                      {profile?.username ? `@${profile.username}` : 'Complete your FlowBond profile'}
+                    </p>
+                  </div>
+                  <div className="flex gap-3">
+                    <button
+                      onClick={() => setEditing(!editing)}
+                      className="px-4 py-2 bg-charcoal-deep/20 hover:bg-charcoal-deep/30 text-charcoal-deep rounded-lg transition-all duration-300 font-medium backdrop-blur-sm"
+                    >
+                      {editing ? 'Cancel' : 'Edit Profile'}
+                    </button>
+                    <button
+                      onClick={handleSignOut}
+                      className="px-4 py-2 bg-red-500/20 hover:bg-red-500/30 text-charcoal-deep rounded-lg transition-all duration-300 font-medium backdrop-blur-sm"
+                    >
+                      Sign Out
+                    </button>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div className="flex gap-2">
-              <button
-                onClick={() => setEditing(!editing)}
-                className="bg-white/20 hover:bg-white/30 px-4 py-2 rounded-lg transition-colors"
-              >
-                {editing ? 'Cancel' : 'Edit Profile'}
-              </button>
-              <button
-                onClick={handleSignOut}
-                className="bg-red-500/20 hover:bg-red-500/30 px-4 py-2 rounded-lg transition-colors"
-              >
-                Sign Out
-              </button>
-            </div>
-          </div>
-        </div>
 
-        {/* Content */}
-        <div className="p-6">
-          {message && (
-            <div className={`mb-6 p-3 rounded-lg text-sm ${
-              message.includes('success') ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'
-            }`}>
-              {message}
-            </div>
-          )}
+            {/* Content */}
+            <div className="p-8">
+              {message && (
+                <div className={`mb-6 p-4 rounded-lg text-sm border ${
+                  message.includes('success') 
+                    ? 'bg-green-500/10 text-green-400 border-green-500/20' 
+                    : 'bg-red-500/10 text-red-400 border-red-500/20'
+                }`}>
+                  {message}
+                </div>
+              )}
 
           {editing ? (
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground mb-2">
+                  <label className="block text-sm font-medium text-text-primary mb-2">
                     Username
                   </label>
                   <input
                     type="text"
                     value={formData.username}
                     onChange={(e) => setFormData(prev => ({ ...prev, username: e.target.value }))}
-                    className="w-full px-4 py-3 border border-border rounded-lg bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gold-primary/20 rounded-lg bg-charcoal-mid/30 text-text-primary focus:ring-2 focus:ring-gold-primary focus:border-gold-primary transition-all backdrop-blur-sm"
                     placeholder="Choose a username"
                   />
                 </div>
