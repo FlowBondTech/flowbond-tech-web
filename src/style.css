@@ -56,7 +56,9 @@
 
 html {
   width: 100%;
+  height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -67,6 +69,7 @@ body {
   overflow-x: hidden;
   width: 100%;
   min-width: 100%;
+  min-height: 100%;
   margin: 0;
   padding: 0;
   transition: opacity 0.5s ease;
@@ -75,6 +78,7 @@ body {
 #root {
   width: 100%;
   min-width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -567,7 +571,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .process-card h3 {
   font-size: 1.25rem;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.pillar-subtitle {
+  font-size: 0.9rem;
+  color: var(--neon-pink);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  font-style: italic;
 }
 
 .process-card p {
@@ -937,6 +949,134 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 0.95rem;
 }
 
+/* How It Works Section */
+.how-it-works-section {
+  background: var(--bg-secondary);
+}
+
+/* Subscription Plans */
+.subscription-plans {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+}
+
+.plan-card {
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.plan-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(255, 110, 199, 0.3);
+}
+
+.plan-card.popular {
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 30px rgba(255, 110, 199, 0.2);
+}
+
+.popular-badge {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gradient-neon);
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plan-header h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.plan-price {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.price-currency {
+  font-size: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.price-amount {
+  font-size: 3rem;
+  font-weight: bold;
+  color: var(--neon-pink);
+}
+
+.price-period {
+  font-size: 1rem;
+  color: var(--text-secondary);
+}
+
+.savings-badge {
+  background: rgba(255, 110, 199, 0.1);
+  color: var(--neon-pink);
+  padding: 0.25rem 0.75rem;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.plan-features {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.plan-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.check-icon {
+  color: var(--neon-pink);
+  flex-shrink: 0;
+}
+
+.subscription-note {
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .subscription-plans {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin: 2rem auto;
+  }
+  
+  .plan-card {
+    padding: 1.5rem;
+  }
+}
+
 /* Governance Section */
 .utility-grid {
   display: grid;
@@ -944,6 +1084,17 @@ h1, h2, h3, h4, h5, h6 {
   gap: 2rem;
   max-width: 1000px;
   margin: 0 auto;
+}
+
+.partners-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.partners-cta .cta-note {
+  margin-top: 1rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
 }
 
 .utility-card {
@@ -1076,6 +1227,9 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
   padding: var(--space-xl) 0 var(--space-lg);
   margin-top: var(--space-2xl);
+  position: relative;
+  z-index: 10;
+  width: 100%;
 }
 
 .footer-top {
@@ -1088,9 +1242,49 @@ h1, h2, h3, h4, h5, h6 {
   flex: 1;
 }
 
-.footer-brand p {
+.footer-brand .brand-tagline {
+  color: var(--neon-pink);
+  font-weight: 600;
+  margin: 0.5rem 0;
+}
+
+.footer-brand .brand-description {
   color: var(--text-secondary);
-  margin-top: 0.5rem;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  color: var(--neon-pink);
+  border-color: var(--neon-pink);
+  box-shadow: 0 0 20px rgba(255, 110, 199, 0.3);
+  transform: translateY(-2px);
+}
+
+.social-link svg {
+  width: 20px;
+  height: 20px;
 }
 
 .footer-links {
@@ -1128,9 +1322,14 @@ h1, h2, h3, h4, h5, h6 {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.footer-bottom p {
+.footer-bottom-left p {
   color: var(--text-muted);
   font-size: 0.875rem;
+  margin: 0.25rem 0;
+}
+
+.footer-contact {
+  font-weight: 500;
 }
 
 .footer-legal {
@@ -1139,11 +1338,23 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
 }
 
-.footer-legal a {
+.footer-legal-link {
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.875rem;
   transition: color 0.3s ease;
+}
+
+.footer-legal-link:hover {
+  color: var(--neon-pink);
+}
+
+.footer-link {
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--neon-pink);
 }
 
 .footer-legal a:hover {

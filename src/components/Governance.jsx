@@ -1,52 +1,61 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-function Governance() {
-  const utilityCards = [
+function Partners() {
+  const [isApplyModalOpen, setIsApplyModalOpen] = useState(false)
+  
+  const partnerCards = [
     {
-      title: 'Exclusive Access',
-      description: 'Unlock VIP events, early features, and premium content',
+      title: 'Host Events',
+      description: 'Create magical movement experiences and earn $DANZ from every ticket sold',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <rect x="8" y="16" width="32" height="20" rx="2" stroke="currentColor" strokeWidth="2"/>
-          <path d="M16 16V12C16 8 19 4 24 4C29 4 32 8 32 12V16" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="24" cy="26" r="2" fill="currentColor"/>
+          <circle cx="24" cy="24" r="16" stroke="currentColor" strokeWidth="2"/>
+          <path d="M18 20L24 26L30 20" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <circle cx="24" cy="12" r="4" stroke="currentColor" strokeWidth="2"/>
         </svg>
       )
     },
     {
-      title: 'DAO Governance',
-      description: 'Vote on platform decisions and shape the future of FlowBond',
+      title: 'Build Community',
+      description: 'Connect dancers in your city and grow a thriving local movement scene',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <rect x="8" y="12" width="32" height="24" rx="2" stroke="currentColor" strokeWidth="2"/>
-          <path d="M16 20H32M16 28H24" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="36" cy="20" r="8" fill="currentColor" opacity="0.2"/>
-          <path d="M36 16V24M32 20H40" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="18" cy="20" r="6" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="30" cy="20" r="6" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="24" cy="32" r="6" stroke="currentColor" strokeWidth="2"/>
+          <path d="M22 26L26 26M20 30L28 30" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       )
     },
     {
-      title: 'Staking Rewards',
-      description: 'Stake $FLOWBOND to earn passive $DANZ rewards',
+      title: 'Earn Together',
+      description: 'Share in the success with revenue splits and community rewards',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <path d="M24 8L8 20V36C8 38 10 40 12 40H36C38 40 40 38 40 36V20L24 8Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
-          <path d="M16 24H32V32H16V24Z" stroke="currentColor" strokeWidth="2"/>
-          <path d="M24 16V20" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <path d="M12 24C12 16 18 8 24 8C30 8 36 16 36 24C36 32 24 40 24 40C24 40 12 32 12 24Z" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="24" cy="22" r="6" stroke="currentColor" strokeWidth="2"/>
+          <path d="M24 19V25M21 22H27" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
         </svg>
       )
     }
   ]
+  
+  const handleApplyClick = () => {
+    setIsApplyModalOpen(true)
+  }
 
   return (
     <section id="governance" className="section governance-section">
       <div className="container">
         <div className="section-header animate">
-          <span className="section-tag">Ecosystem</span>
-          <h2 className="section-title">$FLOWBOND Utility</h2>
+          <span className="section-tag">Community Partners</span>
+          <h2 className="section-title">Become a FlowHost</h2>
+          <p className="section-description">
+            Are you a facilitator, DJ, or venue? Join our network of movement leaders and help build the future of conscious community.
+          </p>
         </div>
         <div className="utility-grid">
-          {utilityCards.map((card, index) => (
+          {partnerCards.map((card, index) => (
             <div key={index} className="utility-card animate">
               <div className="card-gradient"></div>
               <div className="utility-icon">
@@ -57,9 +66,16 @@ function Governance() {
             </div>
           ))}
         </div>
+        
+        <div className="partners-cta animate">
+          <button onClick={handleApplyClick} className="btn btn-primary btn-large">
+            Apply to be a FlowHost
+          </button>
+          <p className="cta-note">Join hundreds of facilitators already building with FlowBond</p>
+        </div>
       </div>
     </section>
   )
 }
 
-export default Governance
+export default Partners

@@ -1,51 +1,41 @@
 import React from 'react'
 
 function About() {
-  const processSteps = [
+  const companyPillars = [
     {
-      number: '01',
-      title: 'Wear Device',
-      description: 'Connect your FlowBond bracelet to start tracking',
+      title: 'The App',
+      subtitle: 'Your Movement Companion',
+      description: 'Track your rhythm, discover events, and connect with dancers in your city. Available on iOS and Android.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
           <rect x="12" y="8" width="24" height="32" rx="4" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="24" cy="24" r="8" stroke="currentColor" strokeWidth="2"/>
-          <path d="M24 20V24L27 27" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="24" cy="20" r="3" fill="currentColor"/>
+          <rect x="16" y="26" width="16" height="2" fill="currentColor" rx="1"/>
+          <rect x="16" y="30" width="12" height="2" fill="currentColor" rx="1"/>
         </svg>
       )
     },
     {
-      number: '02',
-      title: 'Start Moving',
-      description: 'Dance, walk, or exercise to generate energy',
+      title: 'The Wearable',
+      subtitle: 'Track Every Beat',
+      description: 'Our FlowBond bracelet captures your movement data and automatically rewards your activity.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <path d="M24 8C16 8 12 16 12 24C12 32 24 40 24 40C24 40 36 32 36 24C36 16 32 8 24 8Z" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="24" cy="22" r="6" stroke="currentColor" strokeWidth="2"/>
+          <ellipse cx="24" cy="24" rx="12" ry="8" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 24C12 24 16 20 24 20C32 20 36 24 36 24" stroke="currentColor" strokeWidth="2"/>
+          <circle cx="24" cy="24" r="3" fill="currentColor"/>
         </svg>
       )
     },
     {
-      number: '03',
-      title: 'Earn Tokens',
-      description: 'Receive $DANZ rewards for your movement',
+      title: 'The Token',
+      subtitle: 'Movement Rewards',
+      description: '$DANZ is our reward token that you earn for dancing, attending events, and building community.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
           <circle cx="24" cy="24" r="16" stroke="currentColor" strokeWidth="2"/>
-          <path d="M24 16V32M20 24H28" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="24" cy="24" r="4" fill="currentColor"/>
-        </svg>
-      )
-    },
-    {
-      number: '04',
-      title: 'Connect',
-      description: 'Join the global dance community',
-      icon: (
-        <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-          <circle cx="18" cy="24" r="8" stroke="currentColor" strokeWidth="2"/>
-          <circle cx="30" cy="24" r="8" stroke="currentColor" strokeWidth="2"/>
-          <path d="M22 24H26" stroke="currentColor" strokeWidth="2"/>
+          <path d="M24 12V36M16 24H32" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="24" cy="24" r="6" stroke="currentColor" strokeWidth="2"/>
         </svg>
       )
     }
@@ -55,19 +45,23 @@ function About() {
     <section id="about" className="section about-section">
       <div className="container">
         <div className="section-header animate">
-          <span className="section-tag">How It Works</span>
-          <h2 className="section-title">Four Steps to Start Earning</h2>
+          <span className="section-tag">About FlowBond</span>
+          <h2 className="section-title">Where Movement Meets Technology</h2>
+          <p className="section-description">
+            FlowBond is a movement tech company building the future of community-driven wellness.
+            <br />We reward authentic movement and meaningful connections.
+          </p>
         </div>
         <div className="process-grid">
-          {processSteps.map((step, index) => (
+          {companyPillars.map((pillar, index) => (
             <div key={index} className="process-card animate">
               <div className="card-glow"></div>
-              <div className="process-number">{step.number}</div>
               <div className="process-icon">
-                {step.icon}
+                {pillar.icon}
               </div>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+              <h3>{pillar.title}</h3>
+              <h4 className="pillar-subtitle">{pillar.subtitle}</h4>
+              <p>{pillar.description}</p>
             </div>
           ))}
         </div>

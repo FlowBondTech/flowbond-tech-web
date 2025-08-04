@@ -6,8 +6,9 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import About from './components/About'
 import Token from './components/Token'
-import Bracelet from './components/Bracelet'
-import Governance from './components/Governance'
+import Subscription from './components/Bracelet'
+import Partners from './components/Governance'
+import HowItWorks from './components/HowItWorks'
 import CTA from './components/CTA'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
@@ -22,8 +23,9 @@ function HomePage() {
       <Hero />
       <About />
       <Token />
-      <Bracelet />
-      <Governance />
+      <HowItWorks />
+      <Subscription />
+      <Partners />
       <CTA />
       <FAQ />
     </>

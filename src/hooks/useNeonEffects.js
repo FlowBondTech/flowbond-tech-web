@@ -171,7 +171,7 @@ export function useTypingEffect(titleRef) {
     if (!titleRef.current) return
 
     const heroTitle = titleRef.current
-    const text = 'Dance to Earn' // Fixed text instead of reading from DOM
+    const text = 'Move. Connect. Earn.' // Fixed text instead of reading from DOM
     heroTitle.textContent = ''
     heroTitle.style.minHeight = '1.2em'
     

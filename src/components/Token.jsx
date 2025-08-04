@@ -11,30 +11,30 @@ function Token() {
   
   const tokenFeatures = [
     {
-      title: 'Lightning Fast',
-      description: 'Powered by Solana blockchain',
+      title: 'Earn by Moving',
+      description: 'Every step, dance move, and yoga pose counts',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       )
     },
     {
-      title: 'Secure & Verified',
-      description: 'Audited smart contracts',
+      title: 'Event Rewards',
+      description: 'Bonus tokens for attending community events',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-          <path d="M12 2L2 7V12C2 16.5 4.5 20.5 12 22C19.5 20.5 22 16.5 22 12V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
+          <path d="M8 2V6M16 2V6M3 10H21M5 4H19C20.1 4 21 4.9 21 6V20C21 21.1 20.1 22 19 22H5C3.9 22 3 21.1 3 20V6C3 4.9 3.9 4 5 4Z" stroke="currentColor" strokeWidth="2"/>
         </svg>
       )
     },
     {
-      title: 'Global Network',
-      description: 'Dance anywhere, earn everywhere',
+      title: 'Fair Distribution',
+      description: '30% of event fees go to the token treasury',
       icon: (
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
           <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
-          <path d="M2 12H22M12 2C14.5 4.5 16 8 16 12C16 16 14.5 19.5 12 22C9.5 19.5 8 16 8 12C8 8 9.5 4.5 12 2Z" stroke="currentColor" strokeWidth="2"/>
+          <path d="M12 6V12L16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
       )
     }
@@ -45,10 +45,10 @@ function Token() {
       <div className="container">
         <div className="token-layout">
           <div className="token-info animate">
-            <span className="section-tag">Digital Currency</span>
-            <h2 className="section-title gradient-text">$DANZ Token</h2>
+            <span className="section-tag">Movement Rewards</span>
+            <h2 className="section-title gradient-text">Introducing $DANZ</h2>
             <p className="token-description">
-              The future of movement rewards. Built on Solana for lightning-fast transactions and minimal fees.
+              The world's first movement-based reward token. Turn your rhythm into real rewards – no crypto knowledge required.
             </p>
             
             <div className="token-features">
@@ -66,8 +66,8 @@ function Token() {
             </div>
             
             <div className="token-actions">
-              <a href="/tokenomics" onClick={(e) => { e.preventDefault(); navigate('/tokenomics'); }} className="btn btn-primary">View Tokenomics</a>
-              <a href="/danz" onClick={handleLearnMore} className="btn btn-ghost">Learn More</a>
+              <a href="/danz" onClick={handleLearnMore} className="btn btn-primary">Start Earning</a>
+              <a href="/tokenomics" onClick={(e) => { e.preventDefault(); navigate('/tokenomics'); }} className="btn btn-ghost">How It Works</a>
             </div>
           </div>
           
