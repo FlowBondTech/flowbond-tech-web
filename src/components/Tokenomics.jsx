@@ -8,11 +8,13 @@ function Tokenomics() {
   }, [])
 
   const tokenomicsData = [
-    { category: 'Community Rewards', percentage: 40, allocation: '400M', description: 'Movement incentives, event participation, and community building', color: 'from-primary to-primary/80' },
-    { category: 'Ecosystem Development', percentage: 25, allocation: '250M', description: 'Platform development, partnerships, and technical infrastructure', color: 'from-accent to-accent/80' },
-    { category: 'Team & Advisors', percentage: 15, allocation: '150M', description: 'Core team allocation with vesting schedule', color: 'from-blue-500 to-blue-400' },
-    { category: 'Marketing & Growth', percentage: 10, allocation: '100M', description: 'Community building, partnerships, and ecosystem expansion', color: 'from-purple-500 to-purple-400' },
-    { category: 'Reserve Fund', percentage: 10, allocation: '100M', description: 'Emergency fund and future opportunities', color: 'from-green-500 to-green-400' }
+    { category: 'Public Market Liquidity', percentage: 30, allocation: '300,000,000', description: 'Trade on DEX (Raydium/Jupiter)', status: '✅ Unlocked at launch', icon: '🛒' },
+    { category: 'Airdrops & Rewards', percentage: 30, allocation: '300,000,000', description: 'Dance challenges, meme contests, referrals', status: '✅ Phased unlock', icon: '🪂' },
+    { category: 'Team & Founders', percentage: 10, allocation: '100,000,000', description: 'Core contributors, builders', status: '🔒 3mo cliff + 12mo vesting', icon: '👨‍💻' },
+    { category: 'Creators & Ambassadors', percentage: 5, allocation: '50,000,000', description: 'DJs, influencers, community leads', status: '🔒 Vested', icon: '🎤' },
+    { category: 'Ecosystem Growth', percentage: 5, allocation: '50,000,000', description: 'Strategic partners, collabs', status: '🔒 6mo linear vesting', icon: '📈' },
+    { category: 'DAO Treasury Reserve', percentage: 5, allocation: '50,000,000', description: 'Governance, staking, safety fund', status: '🔒 12mo lockup', icon: '🏛️' },
+    { category: 'Future LP & CEX Listings', percentage: 15, allocation: '150,000,000', description: 'Future liquidity and listings', status: '🔒 Locked for 6–12mo', icon: '💧' }
   ]
 
   const utilityFeatures = [
@@ -67,20 +69,23 @@ function Tokenomics() {
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.div 
-              className="flex justify-center mb-12"
+            <motion.a
+              href="/danz"
+              className="flex justify-center mb-12 cursor-pointer group"
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
             >
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse" />
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse group-hover:blur-2xl transition-all duration-300" />
                 <img 
                   src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
                   alt="DANZ Token" 
-                  className="relative w-56 h-56 object-contain drop-shadow-2xl"
+                  className="relative w-56 h-56 object-contain drop-shadow-2xl group-hover:drop-shadow-xl transition-all duration-300"
                 />
               </div>
-            </motion.div>
+            </motion.a>
             <motion.h1 
               className="text-6xl md:text-8xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-8 tracking-tight"
               variants={fadeInUp}
@@ -170,42 +175,46 @@ function Tokenomics() {
               Token Distribution
             </motion.h2>
             <motion.div 
-              className="bg-gradient-to-br from-card via-card/90 to-card/80 backdrop-blur-lg border-2 border-primary/20 rounded-3xl overflow-hidden shadow-2xl"
+              className="bg-gray-900/95 backdrop-blur-lg border border-gray-800 rounded-2xl overflow-hidden shadow-2xl"
               variants={fadeInScale}
-              whileHover={{ boxShadow: "0 25px 50px rgba(255, 110, 199, 0.2)" }}
+              whileHover={{ boxShadow: "0 25px 50px rgba(255, 110, 199, 0.1)" }}
             >
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead className="bg-gradient-to-r from-primary/20 to-accent/20">
+                  <thead className="bg-gradient-to-r from-purple-900/80 to-purple-800/80">
                     <tr>
-                      <th className="px-8 py-6 text-left text-lg font-black text-foreground">Category</th>
-                      <th className="px-8 py-6 text-center text-lg font-black text-foreground">Percentage</th>
-                      <th className="px-8 py-6 text-center text-lg font-black text-foreground">Allocation</th>
-                      <th className="px-8 py-6 text-left text-lg font-black text-foreground">Description</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-300 uppercase tracking-wider">Category</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold text-gray-300 uppercase tracking-wider">% of Supply</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold text-gray-300 uppercase tracking-wider">Tokens</th>
+                      <th className="px-6 py-4 text-center text-sm font-bold text-gray-300 uppercase tracking-wider">Status</th>
+                      <th className="px-6 py-4 text-left text-sm font-bold text-gray-300 uppercase tracking-wider">Purpose</th>
                     </tr>
                   </thead>
-                  <tbody>
+                  <tbody className="bg-gray-900/50">
                     {tokenomicsData.map((item, index) => (
                       <motion.tr 
                         key={index}
-                        className="border-t border-border/30 hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300"
+                        className="border-t border-gray-800 hover:bg-gray-800/30 transition-all duration-300"
                         variants={fadeInUp}
-                        whileHover={{ scale: 1.01 }}
+                        whileHover={{ x: 4 }}
                       >
-                        <td className="px-8 py-6">
-                          <div className="flex items-center gap-4">
-                            <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${item.color}`} />
-                            <span className="text-lg font-bold text-foreground">{item.category}</span>
+                        <td className="px-6 py-4">
+                          <div className="flex items-center gap-3">
+                            <span className="text-xl">{item.icon}</span>
+                            <span className="text-gray-200 font-medium">{item.category}</span>
                           </div>
                         </td>
-                        <td className="px-8 py-6 text-center">
-                          <span className="text-2xl font-black text-primary">{item.percentage}%</span>
+                        <td className="px-6 py-4 text-center">
+                          <span className="text-xl font-bold text-white">{item.percentage}%</span>
                         </td>
-                        <td className="px-8 py-6 text-center">
-                          <span className="text-xl font-bold text-accent">{item.allocation}</span>
+                        <td className="px-6 py-4 text-center">
+                          <span className="text-lg font-semibold text-gray-300">{item.allocation}</span>
                         </td>
-                        <td className="px-8 py-6">
-                          <span className="text-muted-foreground leading-relaxed">{item.description}</span>
+                        <td className="px-6 py-4 text-center">
+                          <span className="text-sm text-gray-400">{item.status}</span>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className="text-gray-400 text-sm leading-relaxed">{item.description}</span>
                         </td>
                       </motion.tr>
                     ))}
