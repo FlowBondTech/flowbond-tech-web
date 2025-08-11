@@ -199,67 +199,159 @@ function Danz() {
         </div>
       </section>
 
-      {/* Token Stats Section */}
+      {/* Token Stats Section - Groovy Dancing */}
       <section className="section" style={{ 
         background: 'var(--navy-surface)', 
-        padding: 'var(--space-3xl) 0'
+        padding: 'var(--space-4xl) 0',
+        position: 'relative',
+        overflow: 'hidden'
       }}>
-        <div className="container">
+        {/* Dancing background particles */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-20 left-10 w-4 h-4 rounded-full animate-bounce" 
+               style={{ background: 'var(--turquoise-bright)', opacity: 0.3, animationDelay: '0s', animationDuration: '2s' }} />
+          <div className="absolute top-40 right-20 w-3 h-3 rounded-full animate-bounce" 
+               style={{ background: 'var(--pink-bright)', opacity: 0.4, animationDelay: '0.5s', animationDuration: '1.8s' }} />
+          <div className="absolute bottom-32 left-1/4 w-5 h-5 rounded-full animate-bounce" 
+               style={{ background: 'var(--turquoise-bright)', opacity: 0.2, animationDelay: '1s', animationDuration: '2.2s' }} />
+          <div className="absolute bottom-20 right-1/3 w-2 h-2 rounded-full animate-bounce" 
+               style={{ background: 'var(--pink-bright)', opacity: 0.5, animationDelay: '1.5s', animationDuration: '1.6s' }} />
+        </div>
+        
+        <div className="container relative z-10">
           <motion.div
             className="text-center"
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
-          >
+          >            
             <motion.div 
-              className="section-badge"
-              variants={fadeInUp}
-            >
-              Token Economics
-            </motion.div>
-            
-            <motion.h2 
-              className="text-large gradient-text mb-12"
-              variants={fadeInUp}
-            >
-              Built for Sustainability
-            </motion.h2>
-            
-            <motion.div 
-              className="card max-w-3xl mx-auto text-center"
+              className="relative mx-auto text-center"
               style={{ 
-                background: 'var(--deep-navy)', 
-                border: '2px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)',
-                boxShadow: '0 0 60px hsla(180, 85%, 65%, 0.15)'
+                maxWidth: '1200px',
+                background: 'linear-gradient(135deg, var(--deep-navy) 0%, var(--navy-surface) 50%, var(--deep-navy) 100%)', 
+                border: '3px solid transparent',
+                borderRadius: '32px',
+                padding: 'var(--space-4xl)',
+                boxShadow: '0 0 100px hsla(180, 85%, 65%, 0.25), 0 0 200px hsla(330, 90%, 70%, 0.15)',
+                position: 'relative'
               }}
               variants={fadeInScale}
-              whileHover={{ scale: 1.02, y: -5 }}
+              whileHover={{ scale: 1.02, y: -8 }}
+              animate={{
+                boxShadow: [
+                  '0 0 100px hsla(180, 85%, 65%, 0.25), 0 0 200px hsla(330, 90%, 70%, 0.15)',
+                  '0 0 120px hsla(180, 85%, 65%, 0.35), 0 0 220px hsla(330, 90%, 70%, 0.25)',
+                  '0 0 100px hsla(180, 85%, 65%, 0.25), 0 0 200px hsla(330, 90%, 70%, 0.15)'
+                ]
+              }}
+              transition={{ duration: 3, repeat: Infinity, repeatType: "reverse" }}
             >
+              {/* Animated border */}
+              <div className="absolute inset-0 rounded-[32px] p-[3px]" 
+                   style={{ background: 'linear-gradient(45deg, var(--turquoise-bright), var(--pink-bright), var(--turquoise-bright))' }}>
+                <div className="w-full h-full rounded-[29px]" 
+                     style={{ background: 'linear-gradient(135deg, var(--deep-navy) 0%, var(--navy-surface) 50%, var(--deep-navy) 100%)' }} />
+              </div>
+              
+              {/* Content */}
+              <div className="relative z-10">
+                <motion.div 
+                  className="text-2xl md:text-3xl font-bold mb-8 tracking-widest uppercase"
+                  style={{ 
+                    color: 'var(--text-secondary)',
+                    letterSpacing: '0.2em'
+                  }}
+                  variants={fadeInUp}
+                  animate={{ 
+                    scale: [1, 1.05, 1],
+                    opacity: [0.7, 1, 0.7]
+                  }}
+                  transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
+                >
+                  Total Supply
+                </motion.div>
+                
+                <motion.div 
+                  className="mb-8"
+                  style={{ 
+                    fontSize: 'clamp(8rem, 25vw, 20rem)',
+                    fontWeight: '900',
+                    lineHeight: '0.8',
+                    fontFamily: 'var(--font-accent)',
+                    background: 'linear-gradient(45deg, var(--turquoise-bright), var(--pink-bright), var(--turquoise-bright))',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    textShadow: '0 0 50px hsla(180, 85%, 65%, 0.5)',
+                    letterSpacing: '-0.02em'
+                  }}
+                  variants={fadeInUp}
+                  animate={{ 
+                    scale: [1, 1.1, 1],
+                    rotate: [0, 2, -2, 0]
+                  }}
+                  transition={{ duration: 4, repeat: Infinity, repeatType: "reverse" }}
+                  whileHover={{
+                    scale: 1.15,
+                    rotate: 5,
+                    transition: { duration: 0.3 }
+                  }}
+                >
+                  1B
+                </motion.div>
+                
+                <motion.div 
+                  style={{ 
+                    fontSize: 'clamp(4rem, 12vw, 8rem)',
+                    fontWeight: '900',
+                    fontFamily: 'var(--font-accent)',
+                    background: 'linear-gradient(135deg, var(--pink-bright), var(--turquoise-bright), var(--pink-bright))',
+                    WebkitBackgroundClip: 'text',
+                    WebkitTextFillColor: 'transparent',
+                    letterSpacing: '0.05em'
+                  }}
+                  variants={fadeInUp}
+                  animate={{ 
+                    y: [0, -10, 0],
+                    scale: [1, 1.02, 1]
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+                >
+                  $DANZ
+                </motion.div>
+              </div>
+              
+              {/* Dancing emoji decorations */}
               <motion.div 
-                className="text-small font-semibold mb-6 tracking-widest uppercase"
-                style={{ color: 'var(--text-secondary)' }}
-                variants={fadeInUp}
-              >
-                Total Supply
-              </motion.div>
-              <motion.div 
-                className="text-8xl md:text-9xl font-black mb-4 tracking-tight"
-                style={{ 
-                  color: 'var(--turquoise-bright)',
-                  fontFamily: 'var(--font-accent)',
-                  textShadow: '0 0 30px hsla(180, 85%, 65%, 0.3)'
+                className="absolute -top-8 -left-8 text-6xl"
+                animate={{ 
+                  rotate: [0, 10, -10, 0],
+                  scale: [1, 1.2, 1]
                 }}
-                variants={fadeInUp}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse" }}
               >
-                1B
+                💃
               </motion.div>
               <motion.div 
-                className="text-large gradient-text font-black"
-                variants={fadeInUp}
+                className="absolute -top-8 -right-8 text-6xl"
+                animate={{ 
+                  rotate: [0, -10, 10, 0],
+                  scale: [1, 1.2, 1]
+                }}
+                transition={{ duration: 2, repeat: Infinity, repeatType: "reverse", delay: 1 }}
               >
-                $DANZ
+                🕺
+              </motion.div>
+              <motion.div 
+                className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-5xl"
+                animate={{ 
+                  y: [0, -15, 0],
+                  scale: [1, 1.3, 1]
+                }}
+                transition={{ duration: 1.5, repeat: Infinity, repeatType: "reverse", delay: 0.5 }}
+              >
+                🎵
               </motion.div>
             </motion.div>
           </motion.div>
