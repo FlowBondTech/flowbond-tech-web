@@ -41,9 +41,9 @@ function DanzHighlightSection() {
             Ready to experience FlowBond through dance and music?
           </p>
           <div style={{ display: 'flex', gap: 'var(--space-lg)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button className="btn btn-primary btn-large">
+            <a href="/danz" className="btn btn-primary btn-large" style={{ textDecoration: 'none' }}>
               Explore DANZ
-            </button>
+            </a>
             <button className="btn btn-secondary btn-large">
               Join the Movement
             </button>
