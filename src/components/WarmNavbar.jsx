@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import FlowBondLogo from './FlowBondLogo.jsx'
 
 function WarmNavbar() {
   const [scrolled, setScrolled] = useState(false)
@@ -21,6 +22,7 @@ function WarmNavbar() {
       <div className="container">
         <div className="nav-container">
           <a href="#" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }) }}>
+            <FlowBondLogo className="w-8 h-8" />
             <div className="logo-text">FlowBond</div>
           </a>
           
