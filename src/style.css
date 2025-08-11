@@ -3,22 +3,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
 
 :root {
-  /* Warm, human-centered color palette */
-  --deep-charcoal: hsl(220, 15%, 8%);
-  --warm-charcoal: hsl(220, 12%, 12%);
-  --soft-charcoal: hsl(220, 10%, 18%);
+  /* FlowBond Global - Deep Navy Foundation */
+  --deep-navy: hsl(216, 50%, 8%);
+  --navy-surface: hsl(216, 45%, 12%);
+  --navy-border: hsl(216, 35%, 18%);
+  --navy-accent: hsl(216, 30%, 25%);
   
-  /* Warm accent colors */
-  --flow-orange: hsl(25, 95%, 65%);
-  --connection-blue: hsl(210, 85%, 70%);
-  --community-purple: hsl(270, 75%, 75%);
-  --growth-green: hsl(150, 60%, 65%);
+  /* Turquoise & Flow Colors */
+  --turquoise-bright: hsl(180, 85%, 65%);
+  --turquoise-soft: hsl(180, 70%, 75%);
+  --flow-pink: hsl(330, 90%, 70%);
+  --flow-purple: hsl(280, 85%, 75%);
+  --connection-blue: hsl(200, 85%, 70%);
   
-  /* Soft gradients */
-  --gradient-flow: linear-gradient(135deg, var(--flow-orange), var(--connection-blue));
-  --gradient-warm: linear-gradient(135deg, var(--flow-orange), var(--community-purple));
-  --gradient-connection: linear-gradient(135deg, var(--connection-blue), var(--community-purple));
-  --gradient-subtle: linear-gradient(180deg, var(--warm-charcoal), var(--deep-charcoal));
+  /* Global Gradients */
+  --gradient-turquoise: linear-gradient(135deg, var(--turquoise-bright), var(--turquoise-soft));
+  --gradient-flow: linear-gradient(135deg, var(--flow-pink), var(--flow-purple));
+  --gradient-connection: linear-gradient(90deg, var(--connection-blue), var(--turquoise-bright));
+  --gradient-subtle: linear-gradient(180deg, var(--navy-surface), var(--deep-navy));
+  --gradient-hero: linear-gradient(135deg, var(--deep-navy), var(--navy-surface));
   
   /* Typography */
   --font-primary: 'Inter', sans-serif;
@@ -28,7 +31,7 @@
   --text-primary: hsl(0, 0%, 95%);
   --text-secondary: hsl(0, 0%, 75%);
   --text-muted: hsl(0, 0%, 55%);
-  --text-accent: var(--flow-orange);
+  --text-accent: var(--turquoise-bright);
   
   /* Spacing scale */
   --space-xs: 0.5rem;
@@ -77,7 +80,7 @@ html {
 
 body {
   font-family: var(--font-primary);
-  background: var(--deep-charcoal);
+  background: var(--deep-navy);
   color: var(--text-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -175,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-primary {
-  background: var(--gradient-flow);
+  background: var(--gradient-turquoise);
   color: white;
   box-shadow: var(--shadow-soft);
 }
@@ -188,13 +191,13 @@ h1, h2, h3, h4, h5, h6 {
 .btn-secondary {
   background: transparent;
   color: var(--text-primary);
-  border: 2px solid var(--soft-charcoal);
+  border: 2px solid var(--navy-border);
 }
 
 .btn-secondary:hover {
-  background: var(--soft-charcoal);
-  border-color: var(--flow-orange);
-  color: var(--flow-orange);
+  background: var(--navy-border);
+  border-color: var(--turquoise-bright);
+  color: var(--turquoise-bright);
   transform: translateY(-2px);
 }
 
@@ -214,16 +217,16 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  background: hsla(220, 15%, 8%, 0.95);
+  background: hsla(216, 50%, 8%, 0.95);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--soft-charcoal);
+  border-bottom: 1px solid var(--navy-border);
   padding: var(--space-md) 0;
   z-index: var(--z-nav);
   transition: all var(--transition-smooth);
 }
 
 .navbar.scrolled {
-  background: hsla(220, 15%, 8%, 0.98);
+  background: hsla(216, 50%, 8%, 0.98);
   box-shadow: var(--shadow-soft);
 }
 
@@ -250,7 +253,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo:hover .logo-text {
-  color: var(--flow-orange);
+  color: var(--turquoise-bright);
 }
 
 .nav-links {
@@ -269,7 +272,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .nav-links a:hover {
-  color: var(--flow-orange);
+  color: var(--turquoise-bright);
 }
 
 .nav-links a::after {
@@ -297,9 +300,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 80px;
   overflow: hidden;
   background: 
-    radial-gradient(circle at 20% 80%, hsla(25, 95%, 65%, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsla(210, 85%, 70%, 0.08) 0%, transparent 50%),
-    var(--deep-charcoal);
+    radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%),
+    var(--deep-navy);
 }
 
 .hero-content {
@@ -315,8 +318,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: var(--space-xs);
   padding: var(--space-sm) var(--space-lg);
-  background: var(--warm-charcoal);
-  border: 1px solid var(--soft-charcoal);
+  background: var(--navy-surface);
+  border: 1px solid var(--navy-border);
   border-radius: var(--radius-full);
   color: var(--text-secondary);
   font-size: 0.875rem;
@@ -372,9 +375,9 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   width: 8px;
   height: 8px;
-  background: var(--flow-orange);
+  background: var(--turquoise-bright);
   border-radius: 50%;
-  box-shadow: 0 0 10px var(--flow-orange);
+  box-shadow: 0 0 10px var(--turquoise-bright);
   animation: pulse-node 3s ease-in-out infinite;
 }
 
@@ -400,10 +403,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-badge {
   display: inline-block;
   padding: var(--space-xs) var(--space-md);
-  background: var(--warm-charcoal);
-  border: 1px solid var(--soft-charcoal);
+  background: var(--navy-surface);
+  border: 1px solid var(--navy-border);
   border-radius: var(--radius-full);
-  color: var(--flow-orange);
+  color: var(--turquoise-bright);
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
@@ -421,11 +424,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Card system */
 .card {
-  background: var(--warm-charcoal);
+  background: var(--navy-surface);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   transition: all var(--transition-smooth);
-  border: 1px solid var(--soft-charcoal);
+  border: 1px solid var(--navy-border);
   position: relative;
   overflow: hidden;
 }
@@ -433,7 +436,7 @@ h1, h2, h3, h4, h5, h6 {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
-  border-color: var(--flow-orange);
+  border-color: var(--turquoise-bright);
 }
 
 .card-icon {
@@ -528,15 +531,15 @@ h1, h2, h3, h4, h5, h6 {
 .stat {
   text-align: center;
   padding: var(--space-lg);
-  background: var(--warm-charcoal);
+  background: var(--navy-surface);
   border-radius: var(--radius-md);
-  border: 1px solid var(--soft-charcoal);
+  border: 1px solid var(--navy-border);
 }
 
 .stat-number {
   font-size: 2rem;
   font-weight: 700;
-  color: var(--flow-orange);
+  color: var(--turquoise-bright);
   display: block;
   margin-bottom: var(--space-xs);
 }
@@ -548,8 +551,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-  background: var(--warm-charcoal);
-  border-top: 1px solid var(--soft-charcoal);
+  background: var(--navy-surface);
+  border-top: 1px solid var(--navy-border);
   padding: var(--space-3xl) 0 var(--space-lg);
   margin-top: var(--space-3xl);
 }
@@ -576,11 +579,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-section a:hover {
-  color: var(--flow-orange);
+  color: var(--turquoise-bright);
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--soft-charcoal);
+  border-top: 1px solid var(--navy-border);
   padding-top: var(--space-lg);
   text-align: center;
   color: var(--text-muted);

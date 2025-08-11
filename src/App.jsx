@@ -2,13 +2,14 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
-// Import new warm components
+// Import FlowBond Global components
 import WarmNavbar from './components/WarmNavbar.jsx'
 import WarmHero from './components/WarmHero.jsx'
+import WhyFlowBondSection from './components/WhyFlowBondSection.jsx'
 import VisionSection from './components/VisionSection.jsx'
 import HowItWorksSection from './components/HowItWorksSection.jsx'
-import WhyItMattersSection from './components/WhyItMattersSection.jsx'
-import StatsSection from './components/StatsSection.jsx'
+import DanzHighlightSection from './components/DanzHighlightSection.jsx'
+import JoinFlowSection from './components/JoinFlowSection.jsx'
 import WarmFooter from './components/WarmFooter.jsx'
 
 // Import existing components for other pages
@@ -25,10 +26,11 @@ function HomePage() {
     <>
       <WarmNavbar />
       <WarmHero />
+      <WhyFlowBondSection />
       <VisionSection />
       <HowItWorksSection />
-      <WhyItMattersSection />
-      <StatsSection />
+      <DanzHighlightSection />
+      <JoinFlowSection />
       <WarmFooter />
     </>
   )

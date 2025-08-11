@@ -60,12 +60,11 @@ function WarmHero() {
   }, [])
 
   const handleJoinFlow = () => {
-    // For now, scroll to next section
-    document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('join-flow')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   const handleLearnMore = () => {
-    document.getElementById('vision')?.scrollIntoView({ behavior: 'smooth' })
+    document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })
   }
 
   return (
@@ -80,11 +79,11 @@ function WarmHero() {
           </div>
           
           <h1 className="text-hero">
-            Where <span className="gradient-text">people</span> come together to <span className="gradient-connection">create change</span>
+            FlowBond — <span className="gradient-text">Belong, Connect, Thrive</span>
           </h1>
           
           <p className="text-body-large hero-subtitle">
-            FlowBond is a living network that connects communities, ideas, and resources into one shared flow — where everyone can belong, contribute, and benefit.
+            One unified platform where you join, contribute, and see your impact, no matter who you are.
           </p>
           
           <div className="hero-actions">
@@ -92,7 +91,7 @@ function WarmHero() {
               Join the Flow
             </button>
             <button onClick={handleLearnMore} className="btn btn-secondary btn-large">
-              Discover How It Works
+              Learn More
             </button>
           </div>
         </div>

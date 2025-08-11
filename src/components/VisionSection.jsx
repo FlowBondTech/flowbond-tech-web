@@ -5,12 +5,12 @@ function VisionSection() {
     <section id="vision" className="section">
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">Our Vision</div>
+          <div className="section-badge">Global Vision</div>
           <h2 className="text-large section-title">
-            Making it easy for people everywhere to <span className="gradient-text">come together</span>
+            FlowBond brings the world together as <span className="gradient-text">one shared flow</span>
           </h2>
           <p className="text-body-large section-subtitle">
-            Today, many communities and good ideas work in isolation. People want to connect, but the systems to do so are complicated, scattered, and often controlled by a few.
+            From neighborhoods to global causes, we connect communities, honor their unique values, and amplify their collective impact.
           </p>
         </div>
 
@@ -37,7 +37,7 @@ function VisionSection() {
             This is more than a platform. It's a <span className="gradient-connection">backbone for the future</span>.
           </h3>
           <p className="text-body-large" style={{ maxWidth: '700px', margin: '0 auto', color: 'var(--text-secondary)' }}>
-            By 2030, FlowBond aims to connect over a thousand communities and redistribute billions in shared value — ensuring that people, not just platforms, hold the power and the benefits.
+            By 2030, FlowBond will unite 1,000+ communities and redistribute billions in shared value, empowering people everywhere to shape the future they deserve.
           </p>
         </div>
       </div>

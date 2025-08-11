@@ -4,27 +4,27 @@ function HowItWorksSection() {
   const steps = [
     {
       number: 1,
-      title: "You Join",
-      description: "Create your profile in minutes",
+      title: "Join",
+      description: "Create your profile in minutes.",
       icon: "👋"
     },
     {
       number: 2,
-      title: "You Connect", 
-      description: "Discover events, groups, and opportunities that matter to you",
-      icon: "🤝"
+      title: "Explore", 
+      description: "Find communities, events, and causes that matter.",
+      icon: "🔍"
     },
     {
       number: 3,
-      title: "You Contribute",
-      description: "Share skills, ideas, and resources",
-      icon: "💝"
+      title: "Engage",
+      description: "Share, vote, and grow together.",
+      icon: "🤝"
     },
     {
       number: 4,
-      title: "You Benefit",
-      description: "Earn rewards, take part in decisions, and see real-world results",
-      icon: "🌱"
+      title: "Impact",
+      description: "See your contributions ripple across communities.",
+      icon: "🌊"
     }
   ]
 
@@ -34,10 +34,10 @@ function HowItWorksSection() {
         <div className="section-header">
           <div className="section-badge">How It Works</div>
           <h2 className="text-large section-title">
-            Simple steps to <span className="gradient-text">join the flow</span>
+            From You to Impact—<span className="gradient-text">Made Simple</span>
           </h2>
           <p className="text-body-large section-subtitle">
-            FlowBond makes participation effortless. Here's how you become part of the global network.
+            Four simple steps connect you to a world of possibilities, communities, and shared impact.
           </p>
         </div>
 
