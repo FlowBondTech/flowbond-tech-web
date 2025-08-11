@@ -48,72 +48,71 @@ function Tokenomics() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--gradient-subtle)' }}>
+    <div className="min-h-screen" style={{ 
+      background: 'radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%), var(--deep-navy)'
+    }}>
       {/* Hero Section */}
-      <section className="section hero-section" style={{ 
-        background: 'var(--navy-deep)', 
-        paddingTop: 'var(--space-4xl)',
-        paddingBottom: 'var(--space-4xl)'
+      <section className="section hero" style={{ 
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '80px'
       }}>
         <div className="container">
           <motion.div 
-            className="text-center"
+            className="hero-content"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
           >
             <motion.a
               href="/danz"
-              className="flex justify-center mb-12 cursor-pointer group"
+              className="flex justify-center mb-16 cursor-pointer group"
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
-              whileHover={{ scale: 1.1 }}
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
               <div className="relative">
-                <div className="absolute inset-0 rounded-full blur-3xl animate-pulse group-hover:blur-2xl transition-all duration-300" 
-                     style={{ background: 'var(--gradient-flow)' }} />
+                <div className="absolute inset-0 rounded-full opacity-30 group-hover:opacity-40 transition-all duration-500" 
+                     style={{ 
+                       background: 'var(--gradient-flow)',
+                       filter: 'blur(40px)',
+                       transform: 'scale(1.2)'
+                     }} />
                 <img 
                   src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
                   alt="DANZ Token" 
-                  className="relative w-56 h-56 object-contain drop-shadow-2xl group-hover:drop-shadow-xl transition-all duration-300"
+                  className="relative w-80 h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
                 />
               </div>
             </motion.a>
             
             <motion.h1 
-              className="text-6xl md:text-8xl font-black mb-8 tracking-tight"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+              className="text-hero gradient-text mb-8 text-center font-black tracking-tight"
+              style={{ fontFamily: 'var(--font-accent)' }}
               variants={fadeInUp}
             >
               $DANZ Tokenomics
             </motion.h1>
             
-            <motion.div 
-              className="card max-w-5xl mx-auto mb-12"
-              style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
-              }}
-              variants={fadeInScale}
+            <motion.p 
+              className="text-body-large text-center mb-12 max-w-4xl mx-auto leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}
+              variants={fadeInUp}
             >
-              <p className="text-2xl md:text-3xl font-bold mb-4" style={{ color: 'var(--text-primary)' }}>
-                Understanding the economic model behind the movement revolution
-              </p>
-              <p className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                Transparent, community-focused tokenomics designed to reward movement and foster growth
-              </p>
-            </motion.div>
+              Understanding the economic model behind the movement revolution. 
+              Transparent, community-focused tokenomics designed to reward movement and foster sustainable growth.
+            </motion.p>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              className="hero-actions"
               variants={fadeInUp}
             >
               <motion.a 
                 href="/danz" 
                 className="btn btn-primary btn-large"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore $DANZ
@@ -124,7 +123,10 @@ function Tokenomics() {
       </section>
 
       {/* Total Supply Section */}
-      <section className="section" style={{ background: 'var(--gradient-subtle)', padding: 'var(--space-4xl) 0' }}>
+      <section className="section" style={{ 
+        background: 'var(--navy-surface)', 
+        padding: 'var(--space-3xl) 0'
+      }}>
         <div className="container">
           <motion.div
             className="text-center"
@@ -133,36 +135,58 @@ function Tokenomics() {
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
+            <motion.div 
+              className="section-badge"
+              variants={fadeInUp}
+            >
+              Token Economics
+            </motion.div>
+            
             <motion.h2 
-              className="text-5xl md:text-6xl font-black mb-16"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+              className="text-large gradient-text mb-16"
               variants={fadeInUp}
             >
               Total Supply
             </motion.h2>
+            
             <motion.div 
-              className="card max-w-2xl mx-auto text-center"
+              className="card max-w-3xl mx-auto text-center"
               style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
+                background: 'var(--deep-navy)', 
+                border: '2px solid var(--turquoise-bright)',
+                padding: 'var(--space-3xl)',
+                boxShadow: '0 0 60px hsla(180, 85%, 65%, 0.15)'
               }}
               variants={fadeInScale}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="text-6xl md:text-8xl font-black mb-4" style={{ color: 'var(--turquoise-bright)' }}>
-                1,000,000,000
-              </div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <motion.div 
+                className="text-8xl md:text-9xl font-black mb-4 tracking-tight"
+                style={{ 
+                  color: 'var(--turquoise-bright)',
+                  fontFamily: 'var(--font-accent)',
+                  textShadow: '0 0 30px hsla(180, 85%, 65%, 0.3)'
+                }}
+                variants={fadeInUp}
+              >
+                1B
+              </motion.div>
+              <motion.div 
+                className="text-large gradient-text font-black"
+                variants={fadeInUp}
+              >
                 $DANZ
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
       {/* Token Distribution Table */}
-      <section className="section" style={{ background: 'var(--navy-deep)', padding: 'var(--space-4xl) 0' }}>
+      <section className="section" style={{ 
+        background: 'var(--deep-navy)', 
+        padding: 'var(--space-3xl) 0'
+      }}>
         <div className="container">
           <motion.div
             initial="hidden"
@@ -170,58 +194,91 @@ function Tokenomics() {
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-            <motion.h2 
-              className="text-5xl md:text-6xl font-black text-center mb-16"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            <motion.div 
+              className="section-badge text-center"
               variants={fadeInUp}
             >
-              Token Distribution
+              Distribution
+            </motion.div>
+            
+            <motion.h2 
+              className="text-large gradient-text text-center mb-16"
+              variants={fadeInUp}
+            >
+              Token Allocation
             </motion.h2>
+            
             <motion.div 
               className="card overflow-hidden"
               style={{ 
                 background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)'
+                border: '2px solid var(--turquoise-bright)',
+                boxShadow: '0 0 40px hsla(180, 85%, 65%, 0.1)'
               }}
               variants={fadeInScale}
             >
               <div className="overflow-x-auto">
                 <table className="w-full">
-                  <thead style={{ background: 'linear-gradient(135deg, #4A148C 0%, #7B1FA2 100%)' }}>
+                  <thead style={{ 
+                    background: 'var(--gradient-flow)',
+                    borderBottom: '2px solid var(--turquoise-bright)'
+                  }}>
                     <tr>
-                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Category</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>% of Supply</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Tokens</th>
-                      <th className="px-6 py-4 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Status</th>
-                      <th className="px-6 py-4 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--text-secondary)' }}>Purpose</th>
+                      <th className="px-8 py-6 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Category</th>
+                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>% of Supply</th>
+                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Tokens</th>
+                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Status</th>
+                      <th className="px-8 py-6 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Purpose</th>
                     </tr>
                   </thead>
                   <tbody>
                     {tokenomicsData.map((item, index) => (
                       <motion.tr 
                         key={index}
-                        className="border-t transition-all duration-300"
-                        style={{ borderColor: 'var(--border-color)' }}
+                        className="border-t transition-all duration-300 hover:bg-opacity-10"
+                        style={{ 
+                          borderColor: 'var(--navy-border)',
+                          backgroundColor: 'transparent'
+                        }}
                         variants={fadeInUp}
-                        whileHover={{ x: 4, backgroundColor: 'rgba(255, 255, 255, 0.05)' }}
+                        whileHover={{ 
+                          x: 6, 
+                          backgroundColor: 'hsla(180, 85%, 65%, 0.05)',
+                          scale: 1.01
+                        }}
                       >
-                        <td className="px-6 py-4">
-                          <div className="flex items-center gap-3">
-                            <span className="text-xl">{item.icon}</span>
-                            <span className="font-medium" style={{ color: 'var(--text-primary)' }}>{item.category}</span>
+                        <td className="px-8 py-6">
+                          <div className="flex items-center gap-4">
+                            <span className="text-2xl">{item.icon}</span>
+                            <span className="font-semibold text-lg" style={{ color: 'var(--text-primary)' }}>
+                              {item.category}
+                            </span>
                           </div>
                         </td>
-                        <td className="px-6 py-4 text-center">
-                          <span className="text-xl font-bold" style={{ color: 'var(--text-primary)' }}>{item.percentage}%</span>
+                        <td className="px-8 py-6 text-center">
+                          <span className="text-2xl font-black" style={{ color: 'var(--turquoise-bright)' }}>
+                            {item.percentage}%
+                          </span>
                         </td>
-                        <td className="px-6 py-4 text-center">
-                          <span className="text-lg font-semibold" style={{ color: 'var(--text-secondary)' }}>{item.allocation}</span>
+                        <td className="px-8 py-6 text-center">
+                          <span className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                            {item.allocation}
+                          </span>
                         </td>
-                        <td className="px-6 py-4 text-center">
-                          <span className="text-sm" style={{ color: 'var(--text-secondary)' }}>{item.status}</span>
+                        <td className="px-8 py-6 text-center">
+                          <span className="text-sm font-medium px-3 py-1 rounded-full" 
+                                style={{ 
+                                  color: 'var(--text-secondary)',
+                                  background: 'var(--deep-navy)',
+                                  border: '1px solid var(--navy-border)'
+                                }}>
+                            {item.status}
+                          </span>
                         </td>
-                        <td className="px-6 py-4">
-                          <span className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>{item.description}</span>
+                        <td className="px-8 py-6">
+                          <span className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                            {item.description}
+                          </span>
                         </td>
                       </motion.tr>
                     ))}
@@ -234,7 +291,10 @@ function Tokenomics() {
       </section>
 
       {/* Utility & Features */}
-      <section className="section" style={{ background: 'var(--gradient-subtle)', padding: 'var(--space-4xl) 0' }}>
+      <section className="section" style={{ 
+        background: 'var(--navy-surface)', 
+        padding: 'var(--space-3xl) 0'
+      }}>
         <div className="container">
           <motion.div
             initial="hidden"
@@ -242,36 +302,54 @@ function Tokenomics() {
             viewport={{ once: true, amount: 0.2 }}
             variants={staggerContainer}
           >
-            <motion.h2 
-              className="text-5xl md:text-6xl font-black text-center mb-20"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            <motion.div 
+              className="section-badge text-center"
               variants={fadeInUp}
             >
-              Token Utility
+              Utility
+            </motion.div>
+            
+            <motion.h2 
+              className="text-large gradient-text text-center mb-20"
+              variants={fadeInUp}
+            >
+              Token Use Cases
             </motion.h2>
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {utilityFeatures.map((feature, index) => (
                 <motion.div 
                   key={index} 
                   className="card group transition-all duration-500"
                   style={{ 
-                    background: 'var(--navy-surface)', 
-                    border: '1px solid var(--turquoise-bright)',
-                    padding: 'var(--space-xl)'
+                    background: 'var(--deep-navy)', 
+                    border: '2px solid var(--turquoise-bright)',
+                    padding: 'var(--space-xl)',
+                    boxShadow: '0 0 20px hsla(180, 85%, 65%, 0.1)'
                   }}
                   variants={fadeInScale}
                   whileHover={{ 
-                    scale: 1.03,
-                    y: -5
+                    scale: 1.05,
+                    y: -8,
+                    boxShadow: '0 20px 40px hsla(180, 85%, 65%, 0.2)'
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-                  <div className="w-12 h-1 rounded-full mb-6 group-hover:w-16 transition-all duration-300" 
+                  <div className="text-5xl mb-8 group-hover:scale-125 transition-transform duration-500">
+                    {feature.icon}
+                  </div>
+                  <div className="w-16 h-1 rounded-full mb-8 group-hover:w-20 transition-all duration-300" 
                        style={{ background: 'var(--gradient-flow)' }} />
-                  <h3 className="text-2xl font-bold mb-6 group-hover:text-turquoise-bright transition-colors duration-300" 
-                      style={{ color: 'var(--turquoise-bright)' }}>{feature.title}</h3>
-                  <p className="leading-relaxed text-lg" style={{ color: 'var(--text-secondary)' }}>{feature.description}</p>
+                  <h3 className="text-xl font-bold mb-6 transition-colors duration-300" 
+                      style={{ 
+                        color: 'var(--turquoise-bright)',
+                        fontFamily: 'var(--font-accent)'
+                      }}>
+                    {feature.title}
+                  </h3>
+                  <p className="leading-relaxed text-base" style={{ color: 'var(--text-secondary)' }}>
+                    {feature.description}
+                  </p>
                 </motion.div>
               ))}
             </div>
@@ -282,7 +360,7 @@ function Tokenomics() {
       {/* Call to Action */}
       <section className="section" style={{ 
         background: 'var(--gradient-flow)', 
-        padding: 'var(--space-4xl) 0',
+        padding: 'var(--space-3xl) 0',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -294,45 +372,66 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-5xl md:text-7xl font-black mb-12 leading-tight"
-              style={{ color: 'var(--navy-deep)' }}
+              className="text-hero font-black mb-8 leading-tight"
+              style={{ 
+                color: 'var(--deep-navy)',
+                fontFamily: 'var(--font-accent)'
+              }}
               variants={fadeInUp}
             >
               Join the Movement<br />Economy
             </motion.h2>
             <motion.p 
-              className="text-2xl mb-12 leading-relaxed max-w-4xl mx-auto"
-              style={{ color: 'var(--navy-deep)' }}
+              className="text-body-large mb-8 max-w-4xl mx-auto leading-relaxed"
+              style={{ color: 'var(--deep-navy)' }}
               variants={fadeInUp}
             >
-              Be part of the first token economy that rewards authentic human connection and movement.
+              Be part of the first token economy that rewards authentic human connection and movement. 
+              Together, we're building a future where every step counts.
             </motion.p>
+            <motion.div 
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-12"
+              style={{ 
+                background: 'rgba(15, 35, 68, 0.15)',
+                border: '1px solid var(--deep-navy)'
+              }}
+              variants={fadeInUp}
+            >
+              <span className="text-2xl">🚀</span>
+              <span 
+                className="text-lg font-bold"
+                style={{ color: 'var(--deep-navy)' }}
+              >
+                App Coming Soon
+              </span>
+            </motion.div>
             <motion.div 
               className="flex flex-col sm:flex-row gap-8 justify-center items-center"
               variants={fadeInUp}
             >
               <motion.a 
                 href="/danz" 
-                className="btn btn-secondary btn-large group relative overflow-hidden"
+                className="btn btn-large"
                 style={{ 
-                  background: 'var(--navy-deep)', 
+                  background: 'var(--deep-navy)', 
                   color: 'var(--turquoise-bright)',
-                  border: '2px solid var(--navy-deep)'
+                  border: '2px solid var(--deep-navy)',
+                  boxShadow: '0 8px 32px rgba(15, 35, 68, 0.3)'
                 }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Explore $DANZ</span>
+                Explore $DANZ
               </motion.a>
-              <div className="text-2xl font-bold" style={{ color: 'var(--navy-deep)' }}>or</div>
+              <div className="text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
               <motion.button 
-                className="btn btn-outline btn-large"
+                className="btn btn-large"
                 style={{ 
                   background: 'transparent',
-                  color: 'var(--navy-deep)',
-                  border: '2px solid var(--navy-deep)'
+                  color: 'var(--deep-navy)',
+                  border: '2px solid var(--deep-navy)'
                 }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Join Community

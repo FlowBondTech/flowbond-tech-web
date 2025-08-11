@@ -65,78 +65,83 @@ function Danz() {
   }
 
   return (
-    <div className="min-h-screen" style={{ background: 'var(--gradient-subtle)' }}>
+    <div className="min-h-screen" style={{ 
+      background: 'radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%), var(--deep-navy)'
+    }}>
       {/* Hero Section */}
-      <section className="section hero-section" style={{ 
-        background: 'var(--navy-deep)', 
-        paddingTop: 'var(--space-4xl)',
-        paddingBottom: 'var(--space-4xl)'
+      <section className="section hero" style={{ 
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        paddingTop: '80px'
       }}>
         <div className="container">
           <motion.div 
-            className="text-center"
+            className="hero-content"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
           >
-            <motion.div 
-              className="flex justify-center mb-12"
+            <motion.a
+              href="/danz/tokenomics"
+              className="flex justify-center mb-16 cursor-pointer group"
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
-              <motion.a
-                href="/danz/tokenomics"
-                className="cursor-pointer group"
-                whileHover={{ scale: 1.1 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-full blur-3xl animate-pulse group-hover:blur-2xl transition-all duration-300" 
-                       style={{ background: 'var(--gradient-flow)' }} />
-                  <img 
-                    src="/lovable-uploads/5833ac74-4147-48b2-839a-e5f72beb4030.png" 
-                    alt="DANZ Logo" 
-                    className="relative w-48 h-48 object-contain drop-shadow-2xl group-hover:drop-shadow-xl transition-all duration-300"
-                  />
-                </div>
-              </motion.a>
-            </motion.div>
+              <div className="relative">
+                <div className="absolute inset-0 rounded-full opacity-30 group-hover:opacity-40 transition-all duration-500" 
+                     style={{ 
+                       background: 'var(--gradient-flow)',
+                       filter: 'blur(40px)',
+                       transform: 'scale(1.2)'
+                     }} />
+                <img 
+                  src="/lovable-uploads/5833ac74-4147-48b2-839a-e5f72beb4030.png" 
+                  alt="DANZ Logo" 
+                  className="relative w-80 h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
+                />
+              </div>
+            </motion.a>
             
             <motion.h1 
-              className="text-7xl md:text-9xl font-black mb-8 tracking-tight"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+              className="text-hero gradient-text mb-8 text-center font-black tracking-tight"
+              style={{ fontFamily: 'var(--font-accent)' }}
               variants={fadeInUp}
             >
               $DANZ
             </motion.h1>
             
-            <motion.div 
-              className="card max-w-5xl mx-auto mb-12"
+            <motion.p 
+              className="text-body-large text-center mb-4 max-w-5xl mx-auto leading-relaxed font-semibold"
               style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
+                background: 'var(--gradient-flow)', 
+                WebkitBackgroundClip: 'text', 
+                WebkitTextFillColor: 'transparent'
               }}
-              variants={fadeInScale}
+              variants={fadeInUp}
             >
-              <p className="text-3xl md:text-4xl font-bold mb-6" style={{ color: 'var(--text-primary)' }}>
-                Where movement becomes currency,<br />
-                connection becomes value,<br />
-                and every beat counts.
-              </p>
-              <p className="text-xl" style={{ color: 'var(--text-secondary)' }}>
-                $DANZ is the official movement token of the FlowBond ecosystem — a decentralized token that rewards dancers, movers, and flow-activators for doing what they love: showing up, moving their bodies, and generating high-vibe energy with others.
-              </p>
-            </motion.div>
+              Where movement becomes currency, connection becomes value, and every beat counts.
+            </motion.p>
+            
+            <motion.p 
+              className="text-body text-center mb-12 max-w-4xl mx-auto leading-relaxed"
+              style={{ color: 'var(--text-secondary)' }}
+              variants={fadeInUp}
+            >
+              $DANZ is the official movement token of the FlowBond ecosystem — a decentralized token that rewards dancers, 
+              movers, and flow-activators for doing what they love: showing up, moving their bodies, and generating high-vibe energy with others.
+            </motion.p>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-6 justify-center"
+              className="hero-actions"
               variants={fadeInUp}
             >
               <motion.button 
                 className="btn btn-primary btn-large"
                 onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Start Earning $DANZ
@@ -144,7 +149,7 @@ function Danz() {
               <motion.a 
                 href="/danz/tokenomics" 
                 className="btn btn-secondary btn-large"
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 View Tokenomics
@@ -194,8 +199,11 @@ function Danz() {
         </div>
       </section>
 
-      {/* Total Supply Section */}
-      <section className="section" style={{ background: 'var(--navy-deep)', padding: 'var(--space-4xl) 0' }}>
+      {/* Token Stats Section */}
+      <section className="section" style={{ 
+        background: 'var(--navy-surface)', 
+        padding: 'var(--space-3xl) 0'
+      }}>
         <div className="container">
           <motion.div
             className="text-center"
@@ -204,29 +212,55 @@ function Danz() {
             viewport={{ once: true, amount: 0.3 }}
             variants={staggerContainer}
           >
-            <motion.h2 
-              className="text-5xl md:text-6xl font-black mb-16"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+            <motion.div 
+              className="section-badge"
               variants={fadeInUp}
             >
-              Total Supply
+              Token Economics
+            </motion.div>
+            
+            <motion.h2 
+              className="text-large gradient-text mb-12"
+              variants={fadeInUp}
+            >
+              Built for Sustainability
             </motion.h2>
+            
             <motion.div 
-              className="card max-w-2xl mx-auto text-center"
+              className="card max-w-3xl mx-auto text-center"
               style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
+                background: 'var(--deep-navy)', 
+                border: '2px solid var(--turquoise-bright)',
+                padding: 'var(--space-3xl)',
+                boxShadow: '0 0 60px hsla(180, 85%, 65%, 0.15)'
               }}
               variants={fadeInScale}
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.02, y: -5 }}
             >
-              <div className="text-6xl md:text-8xl font-black mb-4" style={{ color: 'var(--turquoise-bright)' }}>
-                1,000,000,000
-              </div>
-              <div className="text-3xl font-bold" style={{ color: 'var(--text-primary)' }}>
+              <motion.div 
+                className="text-small font-semibold mb-6 tracking-widest uppercase"
+                style={{ color: 'var(--text-secondary)' }}
+                variants={fadeInUp}
+              >
+                Total Supply
+              </motion.div>
+              <motion.div 
+                className="text-8xl md:text-9xl font-black mb-4 tracking-tight"
+                style={{ 
+                  color: 'var(--turquoise-bright)',
+                  fontFamily: 'var(--font-accent)',
+                  textShadow: '0 0 30px hsla(180, 85%, 65%, 0.3)'
+                }}
+                variants={fadeInUp}
+              >
+                1B
+              </motion.div>
+              <motion.div 
+                className="text-large gradient-text font-black"
+                variants={fadeInUp}
+              >
                 $DANZ
-              </div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
@@ -327,7 +361,7 @@ function Danz() {
       {/* CTA Section */}
       <section className="section" style={{ 
         background: 'var(--gradient-flow)', 
-        padding: 'var(--space-4xl) 0',
+        padding: 'var(--space-3xl) 0',
         position: 'relative',
         overflow: 'hidden'
       }}>
@@ -339,39 +373,59 @@ function Danz() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-5xl md:text-7xl font-black mb-12 leading-tight"
-              style={{ color: 'var(--navy-deep)' }}
+              className="text-hero font-black mb-8 leading-tight"
+              style={{ 
+                color: 'var(--deep-navy)',
+                fontFamily: 'var(--font-accent)'
+              }}
               variants={fadeInUp}
             >
               Ready to start earning<br />through movement?
             </motion.h2>
             <motion.div 
+              className="inline-flex items-center gap-3 px-6 py-3 rounded-full mb-12"
+              style={{ 
+                background: 'rgba(15, 35, 68, 0.15)',
+                border: '1px solid var(--deep-navy)'
+              }}
+              variants={fadeInUp}
+            >
+              <span className="text-2xl">🚀</span>
+              <span 
+                className="text-lg font-bold"
+                style={{ color: 'var(--deep-navy)' }}
+              >
+                App Coming Soon
+              </span>
+            </motion.div>
+            <motion.div 
               className="flex flex-col sm:flex-row gap-8 justify-center items-center"
               variants={fadeInUp}
             >
               <motion.button 
-                className="btn btn-secondary btn-large group relative overflow-hidden"
+                className="btn btn-large"
                 style={{ 
-                  background: 'var(--navy-deep)', 
+                  background: 'var(--deep-navy)', 
                   color: 'var(--turquoise-bright)',
-                  border: '2px solid var(--navy-deep)'
+                  border: '2px solid var(--deep-navy)',
+                  boxShadow: '0 8px 32px rgba(15, 35, 68, 0.3)'
                 }}
                 onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Join the $DANZ Movement</span>
+                Join the $DANZ Movement
               </motion.button>
-              <div className="text-2xl font-bold" style={{ color: 'var(--navy-deep)' }}>or</div>
+              <div className="text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
               <motion.a 
                 href="/danz/tokenomics" 
-                className="btn btn-outline btn-large"
+                className="btn btn-large"
                 style={{ 
                   background: 'transparent',
-                  color: 'var(--navy-deep)',
-                  border: '2px solid var(--navy-deep)'
+                  color: 'var(--deep-navy)',
+                  border: '2px solid var(--deep-navy)'
                 }}
-                whileHover={{ scale: 1.05, y: -2 }}
+                whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Explore Tokenomics
