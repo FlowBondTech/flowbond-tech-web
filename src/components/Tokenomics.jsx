@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
+import DanzToken from './DanzToken'
 
 function Tokenomics() {
   useEffect(() => {
@@ -43,37 +44,42 @@ function Tokenomics() {
   }
 
   return (
-    <div className="tokenomics-page">
+    <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-accent/5">
       {/* Tokenomics Hero */}
-      <section className="tokenomics-hero">
-        <div className="hero-bg-gradient"></div>
-        <div className="container">
+      <section className="relative py-20 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
+        <div className="relative max-w-6xl mx-auto">
           <motion.div 
-            className="section-header"
+            className="text-center"
             initial="hidden"
             animate="visible"
             variants={staggerContainer}
           >
             <motion.div 
-              className="tokenomics-title-wrapper"
+              className="flex justify-center mb-8"
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              <h1 className="tokenomics-title gradient-text">
-                $DANZ Tokenomics
-              </h1>
+              <DanzToken className="w-48 h-48" />
             </motion.div>
-            <motion.p 
-              className="tokenomics-subtitle"
+            <motion.h1 
+              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-6"
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              $DANZ Tokenomics
+            </motion.h1>
+            <motion.p 
+              className="text-2xl md:text-3xl text-muted-foreground mb-8 leading-relaxed"
+              variants={fadeInUp}
+              transition={{ duration: 0.6, delay: 0.3 }}
             >
               The Token That Moves With You — Online & On the Dancefloor
             </motion.p>
             <motion.p 
-              className="tokenomics-description"
+              className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed"
               variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
               $DANZ is the official token of the FlowBond ecosystem — a Solana-based meme coin that rewards real-world dance, 
               viral memes, and human connection. It bridges TikTok culture and crypto virality with in-person dance events, 
