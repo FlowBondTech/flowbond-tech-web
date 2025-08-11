@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import DanzToken from './DanzToken'
 
 function Tokenomics() {
   useEffect(() => {
@@ -60,7 +59,11 @@ function Tokenomics() {
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              <DanzToken className="w-48 h-48" />
+              <img 
+                src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
+                alt="DANZ Token" 
+                className="w-48 h-48 object-contain"
+              />
             </motion.div>
             <motion.h1 
               className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-6"

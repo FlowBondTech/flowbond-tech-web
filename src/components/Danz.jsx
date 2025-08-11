@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import SubscriptionModal from './SubscriptionModal'
-import DanzLogo from './DanzLogo'
-import DanzToken from './DanzToken'
 
 function Danz() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -77,7 +75,11 @@ function Danz() {
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              <DanzLogo className="w-40 h-40" />
+              <img 
+                src="/lovable-uploads/5833ac74-4147-48b2-839a-e5f72beb4030.png" 
+                alt="DANZ Logo" 
+                className="w-40 h-40 object-contain"
+              />
             </motion.div>
             <motion.h1 
               className="text-6xl md:text-8xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-6"
@@ -192,7 +194,11 @@ function Danz() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="flex justify-center mb-8">
-                <DanzToken className="w-32 h-32" />
+                <img 
+                  src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
+                  alt="DANZ Token" 
+                  className="w-32 h-32 object-contain"
+                />
               </div>
               <p className="text-lg md:text-xl text-muted-foreground leading-relaxed mb-6">
                 $DANZ is more than a token — it's a cultural catalyst for regenerative joy and embodied connection. As the FlowBond network grows, $DANZ will become the energetic fuel for a new kind of decentralized movement economy — one where those who move the most, feel the most, and connect the most are the ones who thrive.
