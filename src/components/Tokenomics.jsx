@@ -7,7 +7,32 @@ function Tokenomics() {
     window.scrollTo(0, 0)
   }, [])
 
-  // Animation variants
+  const tokenomicsData = [
+    { category: 'Community Rewards', percentage: 40, allocation: '400M', description: 'Movement incentives, event participation, and community building', color: 'from-primary to-primary/80' },
+    { category: 'Ecosystem Development', percentage: 25, allocation: '250M', description: 'Platform development, partnerships, and technical infrastructure', color: 'from-accent to-accent/80' },
+    { category: 'Team & Advisors', percentage: 15, allocation: '150M', description: 'Core team allocation with vesting schedule', color: 'from-blue-500 to-blue-400' },
+    { category: 'Marketing & Growth', percentage: 10, allocation: '100M', description: 'Community building, partnerships, and ecosystem expansion', color: 'from-purple-500 to-purple-400' },
+    { category: 'Reserve Fund', percentage: 10, allocation: '100M', description: 'Emergency fund and future opportunities', color: 'from-green-500 to-green-400' }
+  ]
+
+  const utilityFeatures = [
+    { title: 'Event Access', description: 'Use $DANZ to unlock exclusive workshops, retreats, and dance experiences', icon: '🎟️' },
+    { title: 'Movement Rewards', description: 'Earn tokens through verified dance sessions and flow activations', icon: '💃' },
+    { title: 'Community Governance', description: 'Vote on ecosystem decisions and future developments', icon: '🗳️' },
+    { title: 'Staking Benefits', description: 'Stake tokens for enhanced rewards and exclusive perks', icon: '🔒' },
+    { title: 'Social Flow Bonuses', description: 'Receive bonus rewards for synchronized group activities', icon: '🤝' },
+    { title: 'Marketplace Access', description: 'Trade, buy, and sell within the FlowBond ecosystem', icon: '🛒' }
+  ]
+
+  const tokenMetrics = [
+    { label: 'Total Supply', value: '1,000,000,000', unit: 'DANZ' },
+    { label: 'Initial Circulating Supply', value: '100,000,000', unit: 'DANZ' },
+    { label: 'Token Standard', value: 'ERC-20', unit: '' },
+    { label: 'Blockchain', value: 'Ethereum', unit: '' },
+    { label: 'Decimal Places', value: '18', unit: '' },
+    { label: 'Vesting Period', value: '4 Years', unit: '' }
+  ]
+
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: { opacity: 1, y: 0 }
@@ -29,25 +54,13 @@ function Tokenomics() {
     }
   }
 
-  const tableRowVariant = {
-    hidden: { opacity: 0, x: -20 },
-    visible: { 
-      opacity: 1, 
-      x: 0,
-      transition: {
-        type: "spring",
-        damping: 20,
-        stiffness: 100
-      }
-    }
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-background via-background/95 to-accent/5">
-      {/* Tokenomics Hero */}
-      <section className="relative py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-accent/20" />
-        <div className="relative max-w-6xl mx-auto">
+      {/* Hero Section */}
+      <section className="relative py-32 px-4 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/80" />
+        <div className="relative max-w-7xl mx-auto">
           <motion.div 
             className="text-center"
             initial="hidden"
@@ -55,46 +68,56 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.div 
-              className="flex justify-center mb-8"
+              className="flex justify-center mb-12"
               variants={fadeInScale}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              <img 
-                src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
-                alt="DANZ Token" 
-                className="w-48 h-48 object-contain"
-              />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-full blur-3xl animate-pulse" />
+                <img 
+                  src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
+                  alt="DANZ Token" 
+                  className="relative w-56 h-56 object-contain drop-shadow-2xl"
+                />
+              </div>
             </motion.div>
             <motion.h1 
-              className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-6"
+              className="text-6xl md:text-8xl font-black bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent mb-8 tracking-tight"
               variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.2 }}
             >
               $DANZ Tokenomics
             </motion.h1>
-            <motion.p 
-              className="text-2xl md:text-3xl text-muted-foreground mb-8 leading-relaxed"
-              variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.3 }}
+            <motion.div 
+              className="bg-gradient-to-r from-card/80 to-card/60 backdrop-blur-sm border border-border/30 rounded-3xl p-8 md:p-12 max-w-5xl mx-auto"
+              variants={fadeInScale}
             >
-              The Token That Moves With You — Online & On the Dancefloor
-            </motion.p>
-            <motion.p 
-              className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+              <p className="text-2xl md:text-3xl font-bold text-foreground mb-4">
+                Understanding the economic model behind the movement revolution
+              </p>
+              <p className="text-lg text-muted-foreground">
+                Transparent, community-focused tokenomics designed to reward movement and foster growth
+              </p>
+            </motion.div>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-6 justify-center mt-12"
               variants={fadeInUp}
-              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              $DANZ is the official token of the FlowBond ecosystem — a Solana-based meme coin that rewards real-world dance, 
-              viral memes, and human connection. It bridges TikTok culture and crypto virality with in-person dance events, 
-              conscious festivals, and underground parties.
-            </motion.p>
+              <motion.a 
+                href="/danz" 
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-primary-foreground px-10 py-4 rounded-2xl font-bold text-xl transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Explore $DANZ
+              </motion.a>
+            </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Total Supply */}
-      <section className="section supply-section">
-        <div className="container">
+      {/* Token Metrics */}
+      <section className="py-24 px-4 bg-gradient-to-b from-muted/30 to-transparent">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -102,51 +125,101 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="section-title"
+              className="text-5xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
               variants={fadeInUp}
             >
-              🔢 Total Supply
+              Token Metrics
             </motion.h2>
             <motion.div 
-              className="supply-box"
+              className="bg-gradient-to-br from-card via-card/90 to-card/80 backdrop-blur-lg border-2 border-primary/20 rounded-3xl p-8 md:p-12 shadow-2xl overflow-x-auto"
               variants={fadeInScale}
-              whileHover={{ scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileHover={{ scale: 1.01, boxShadow: "0 25px 50px rgba(255, 110, 199, 0.2)" }}
             >
-              <motion.div 
-                className="supply-number gradient-text"
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ 
-                  type: "spring",
-                  damping: 10,
-                  stiffness: 100,
-                  delay: 0.2
-                }}
-              >
-                1,000,000,000 $DANZ
-              </motion.div>
-              <motion.div 
-                className="supply-label"
-                variants={fadeInUp}
-              >
-                (1 Billion Tokens)
-              </motion.div>
-              <motion.p 
-                className="supply-tagline"
-                variants={fadeInUp}
-              >
-                Big enough to go viral. Finite enough to grow value.
-              </motion.p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                {tokenMetrics.map((metric, index) => (
+                  <motion.div 
+                    key={index}
+                    className="text-center p-4 bg-gradient-to-br from-background/50 to-background/30 rounded-2xl border border-border/30"
+                    variants={fadeInScale}
+                    whileHover={{ scale: 1.05, y: -2 }}
+                  >
+                    <div className="text-2xl md:text-3xl font-black text-primary mb-2">{metric.value}</div>
+                    <div className="text-sm font-semibold text-accent mb-1">{metric.unit}</div>
+                    <div className="text-sm text-muted-foreground font-medium">{metric.label}</div>
+                  </motion.div>
+                ))}
+              </div>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Allocation Breakdown */}
-      <section className="section allocation-section">
-        <div className="container">
+      {/* Token Distribution Table */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={staggerContainer}
+          >
+            <motion.h2 
+              className="text-5xl md:text-6xl font-black text-center mb-16 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+              variants={fadeInUp}
+            >
+              Token Distribution
+            </motion.h2>
+            <motion.div 
+              className="bg-gradient-to-br from-card via-card/90 to-card/80 backdrop-blur-lg border-2 border-primary/20 rounded-3xl overflow-hidden shadow-2xl"
+              variants={fadeInScale}
+              whileHover={{ boxShadow: "0 25px 50px rgba(255, 110, 199, 0.2)" }}
+            >
+              <div className="overflow-x-auto">
+                <table className="w-full">
+                  <thead className="bg-gradient-to-r from-primary/20 to-accent/20">
+                    <tr>
+                      <th className="px-8 py-6 text-left text-lg font-black text-foreground">Category</th>
+                      <th className="px-8 py-6 text-center text-lg font-black text-foreground">Percentage</th>
+                      <th className="px-8 py-6 text-center text-lg font-black text-foreground">Allocation</th>
+                      <th className="px-8 py-6 text-left text-lg font-black text-foreground">Description</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {tokenomicsData.map((item, index) => (
+                      <motion.tr 
+                        key={index}
+                        className="border-t border-border/30 hover:bg-gradient-to-r hover:from-primary/5 hover:to-accent/5 transition-all duration-300"
+                        variants={fadeInUp}
+                        whileHover={{ scale: 1.01 }}
+                      >
+                        <td className="px-8 py-6">
+                          <div className="flex items-center gap-4">
+                            <div className={`w-4 h-4 rounded-full bg-gradient-to-r ${item.color}`} />
+                            <span className="text-lg font-bold text-foreground">{item.category}</span>
+                          </div>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <span className="text-2xl font-black text-primary">{item.percentage}%</span>
+                        </td>
+                        <td className="px-8 py-6 text-center">
+                          <span className="text-xl font-bold text-accent">{item.allocation}</span>
+                        </td>
+                        <td className="px-8 py-6">
+                          <span className="text-muted-foreground leading-relaxed">{item.description}</span>
+                        </td>
+                      </motion.tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Utility & Features */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -154,129 +227,39 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="section-title"
+              className="text-5xl md:text-6xl font-black text-center mb-20 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
               variants={fadeInUp}
             >
-              📊 Allocation Breakdown
+              Token Utility
             </motion.h2>
-            <motion.div 
-              className="allocation-table"
-              variants={staggerContainer}
-            >
-              <motion.div 
-                className="allocation-row header"
-                variants={tableRowVariant}
-              >
-                <div className="allocation-col">Category</div>
-                <div className="allocation-col">% of Supply</div>
-                <div className="allocation-col">Tokens</div>
-                <div className="allocation-col">Status</div>
-                <div className="allocation-col">Purpose</div>
-              </motion.div>
-              {[
-                { icon: '🛒', name: 'Public Market Liquidity', percent: '30%', tokens: '300,000,000', status: '✅ Unlocked at launch', purpose: 'Trade on DEX (Raydium/Jupiter)' },
-                { icon: '🪂', name: 'Airdrops & Rewards', percent: '30%', tokens: '300,000,000', status: '✅ Phased unlock', purpose: 'Dance challenges, meme contests, referrals' },
-                { icon: '👨‍💻', name: 'Team & Founders', percent: '10%', tokens: '100,000,000', status: '🔒 3mo cliff + 12mo vesting', purpose: 'Core contributors, builders' },
-                { icon: '🎤', name: 'Creators & Ambassadors', percent: '5%', tokens: '50,000,000', status: '🔒 Vested', purpose: 'DJs, influencers, community leads' },
-                { icon: '📈', name: 'Ecosystem Growth', percent: '5%', tokens: '50,000,000', status: '🔒 6mo linear vesting', purpose: 'Strategic partners, collabs' },
-                { icon: '🏛️', name: 'DAO Treasury Reserve', percent: '5%', tokens: '50,000,000', status: '🔒 12mo lockup', purpose: 'Governance, staking, safety fund' },
-                { icon: '💧', name: 'Future LP & CEX Listings', percent: '15%', tokens: '150,000,000', status: '🔒 Locked for 6–12mo', purpose: 'Future liquidity and listings' }
-              ].map((item, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {utilityFeatures.map((feature, index) => (
                 <motion.div 
                   key={index} 
-                  className="allocation-row"
-                  variants={tableRowVariant}
-                  whileHover={{ 
-                    backgroundColor: "rgba(255, 110, 199, 0.05)",
-                    x: 10,
-                    transition: { duration: 0.2 }
-                  }}
-                >
-                  <div className="allocation-col category" data-label="">
-                    <motion.span 
-                      className="category-icon"
-                      whileHover={{ scale: 1.2, rotate: 10 }}
-                    >
-                      {item.icon}
-                    </motion.span>
-                    <span>{item.name}</span>
-                  </div>
-                  <div className="allocation-col percent" data-label="Supply:">{item.percent}</div>
-                  <div className="allocation-col tokens" data-label="Tokens:">{item.tokens}</div>
-                  <div className="allocation-col status" data-label="Status:">{item.status}</div>
-                  <div className="allocation-col purpose" data-label="Purpose:">{item.purpose}</div>
-                </motion.div>
-              ))}
-            </motion.div>
-            <motion.div 
-              className="allocation-notes"
-              variants={fadeInUp}
-              transition={{ delay: 0.5 }}
-            >
-              <motion.div 
-                className="note"
-                whileHover={{ scale: 1.05 }}
-              >
-                ✅ No VC allocation
-              </motion.div>
-              <motion.div 
-                className="note"
-                whileHover={{ scale: 1.05 }}
-              >
-                ✅ No private sales
-              </motion.div>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Vesting Schedule */}
-      <section className="section vesting-section">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-          >
-            <motion.h2 
-              className="section-title"
-              variants={fadeInUp}
-            >
-              🔐 Vesting Schedule
-            </motion.h2>
-            <motion.div 
-              className="vesting-grid"
-              variants={staggerContainer}
-            >
-              {[
-                { title: 'Team & Founders', desc: '3-month cliff, then 12-month linear vesting' },
-                { title: 'Creators & Ambassadors', desc: 'Same structure' },
-                { title: 'Growth Partners', desc: '6-month linear unlock' },
-                { title: 'DAO Treasury', desc: '12-month lock, DAO-controlled multisig' }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="vesting-card"
+                  className="group bg-gradient-to-br from-card/90 to-card/70 backdrop-blur-lg border-2 border-border/30 hover:border-primary/30 rounded-2xl p-8 transition-all duration-500"
                   variants={fadeInScale}
                   whileHover={{ 
-                    scale: 1.05,
-                    boxShadow: "0 20px 40px rgba(255, 110, 199, 0.2)"
+                    scale: 1.03,
+                    y: -5,
+                    boxShadow: "0 25px 50px rgba(255, 110, 199, 0.15)"
                   }}
                   transition={{ type: "spring", stiffness: 300 }}
                 >
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
+                  <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+                  <div className="w-12 h-1 bg-gradient-to-r from-primary to-accent rounded-full mb-6 group-hover:w-16 transition-all duration-300" />
+                  <h3 className="text-2xl font-bold mb-6 text-primary group-hover:text-accent transition-colors duration-300">{feature.title}</h3>
+                  <p className="text-muted-foreground leading-relaxed text-lg">{feature.description}</p>
                 </motion.div>
               ))}
-            </motion.div>
+            </div>
           </motion.div>
         </div>
       </section>
 
-      {/* Real-World Utility */}
-      <section className="section utility-section">
-        <div className="container">
+      {/* Call to Action */}
+      <section className="py-32 px-4 bg-gradient-to-br from-primary/5 via-accent/10 to-primary/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-t from-background/90 via-transparent to-background/90" />
+        <div className="relative max-w-6xl mx-auto text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -284,165 +267,41 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="section-title"
+              className="text-5xl md:text-7xl font-black mb-12 bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent leading-tight"
               variants={fadeInUp}
             >
-              🎟️ Real-World Utility
+              Join the Movement<br />Economy
             </motion.h2>
-            <motion.div 
-              className="utility-grid"
-              variants={staggerContainer}
-            >
-              {[
-                { title: 'Dance-to-Earn', desc: 'Join in-person events and challenges' },
-                { title: 'Meme-to-Earn', desc: 'Submit viral content, memes, remix battles' },
-                { title: 'Buy Event Tickets', desc: 'Use $DANZ to access real-life dances and festivals' },
-                { title: 'Exclusive Drops', desc: 'NFTs, merch, and VIP passes purchasable with $DANZ' }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="utility-card"
-                  variants={fadeInScale}
-                  whileHover={{ 
-                    scale: 1.05,
-                    rotate: 2,
-                    boxShadow: "0 20px 40px rgba(255, 110, 199, 0.2)"
-                  }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <h3>{item.title}</h3>
-                  <p>{item.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-            <motion.div 
-              className="utility-features"
+            <motion.p 
+              className="text-2xl text-muted-foreground mb-12 leading-relaxed max-w-4xl mx-auto"
               variants={fadeInUp}
-              transition={{ delay: 0.4 }}
             >
-              {[
-                { icon: '🗳️', title: 'Governance:', desc: 'Vote on collabs, event themes, and feature releases' },
-                { icon: '🔥', title: 'Burn-to-Flex:', desc: 'Burn $DANZ for limited edition mints and elite access' },
-                { icon: '💫', title: 'OG Holder Perks:', desc: 'Stake or hold $DANZ to unlock status and rewards' }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="feature-item"
-                  variants={fadeInUp}
-                  whileHover={{ x: 10 }}
-                >
-                  <motion.span 
-                    className="feature-icon"
-                    whileHover={{ scale: 1.3, rotate: 15 }}
-                  >
-                    {item.icon}
-                  </motion.span>
-                  <div>
-                    <strong>{item.title}</strong> {item.desc}
-                  </div>
-                </motion.div>
-              ))}
+              Be part of the first token economy that rewards authentic human connection and movement.
+            </motion.p>
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+              variants={fadeInUp}
+            >
+              <motion.a 
+                href="/danz" 
+                className="group bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 text-white px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-300 shadow-2xl relative overflow-hidden"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Explore $DANZ</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.a>
+              <div className="text-2xl font-bold text-muted-foreground">or</div>
+              <motion.button 
+                className="group bg-card/80 hover:bg-card text-card-foreground border-2 border-primary/30 hover:border-primary px-12 py-6 rounded-2xl font-bold text-xl transition-all duration-300 backdrop-blur-sm relative overflow-hidden"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Join Community</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </motion.button>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* Launch Plan */}
-      <section className="section launch-section">
-        <div className="container">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={staggerContainer}
-          >
-            <motion.h2 
-              className="section-title"
-              variants={fadeInUp}
-            >
-              🚀 Launch Plan
-            </motion.h2>
-            <motion.div 
-              className="launch-steps"
-              variants={staggerContainer}
-            >
-              {[
-                { icon: '🪂', desc: 'Viral airdrops for dance videos, memes, and referrals' },
-                { icon: '🚀', desc: 'DEX launch on Solana via Raydium or Jupiter aggregator' },
-                { icon: '🌍', desc: 'Real-life activations in cities like Bali, NYC, Berlin, Tulum' },
-                { icon: '🔒', desc: 'Fully locked liquidity + transparent public vesting' },
-                { icon: '🎉', desc: 'Partner DJs and crews powering events around the world' }
-              ].map((item, index) => (
-                <motion.div 
-                  key={index}
-                  className="launch-step"
-                  variants={tableRowVariant}
-                  whileHover={{ 
-                    x: 20,
-                    backgroundColor: "rgba(255, 110, 199, 0.05)"
-                  }}
-                >
-                  <motion.span 
-                    className="step-icon"
-                    animate={{ 
-                      y: [0, -5, 0],
-                    }}
-                    transition={{ 
-                      duration: 2,
-                      repeat: Infinity,
-                      delay: index * 0.2
-                    }}
-                  >
-                    {item.icon}
-                  </motion.span>
-                  <p>{item.desc}</p>
-                </motion.div>
-              ))}
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* TL;DR */}
-      <section className="section tldr-section">
-        <div className="container">
-          <div className="animate">
-            <h2 className="section-title">TL;DR</h2>
-            <div className="tldr-grid">
-              <div className="tldr-item">
-                <span>🔗</span>
-                <p>Solana-based $DANZ token with 1B supply</p>
-              </div>
-              <div className="tldr-item">
-                <span>🛒</span>
-                <p>30% tradable at launch, 30% for community rewards</p>
-              </div>
-              <div className="tldr-item">
-                <span>🕺</span>
-                <p>IRL + digital utility: events, memes, challenges, and access</p>
-              </div>
-              <div className="tldr-item">
-                <span>🔐</span>
-                <p>No VCs, no rugs — just vibes, music, and on-chain rhythm</p>
-              </div>
-            </div>
-            <div className="tldr-quote">
-              <p>"$DANZ is the tokenized frequency of joy. A meme coin with soul — rooted in real-world rhythm, community, and movement."</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="section danz-cta">
-        <div className="container">
-          <div className="cta-content animate">
-            <h2>Ready to join the movement?</h2>
-            <div className="cta-actions">
-              <a href="#" className="btn btn-primary">Get $DANZ</a>
-              <a href="/danz" className="btn btn-ghost">Learn About $DANZ</a>
-            </div>
-          </div>
         </div>
       </section>
     </div>
