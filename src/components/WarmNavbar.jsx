@@ -3,6 +3,7 @@ import FlowBondLogo from './FlowBondLogo.jsx'
 
 function WarmNavbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -43,6 +44,47 @@ function WarmNavbar() {
               </button>
             </li>
           </ul>
+
+          {/* Mobile menu button */}
+          <button 
+            className="mobile-menu-btn"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+            <span className={`hamburger-line ${mobileMenuOpen ? 'open' : ''}`}></span>
+          </button>
+        </div>
+
+        {/* Mobile menu */}
+        <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+          <ul>
+            <li>
+              <a href="#vision" onClick={(e) => { 
+                e.preventDefault(); 
+                scrollToSection('vision'); 
+                setMobileMenuOpen(false);
+              }}>
+                Vision
+              </a>
+            </li>
+            <li>
+              <a href="#how-it-works" onClick={(e) => { 
+                e.preventDefault(); 
+                scrollToSection('how-it-works'); 
+                setMobileMenuOpen(false);
+              }}>
+                How It Works
+              </a>
+            </li>
+            <li>
+              <button className="btn btn-primary btn-small" style={{ width: '100%' }}>
+                Join the Flow
+              </button>
+            </li>
+          </ul>
+        </div>
         </div>
       </div>
     </nav>
