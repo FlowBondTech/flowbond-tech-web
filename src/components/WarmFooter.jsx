@@ -14,9 +14,9 @@ function WarmFooter() {
           
           <div className="footer-section">
             <h3>Connect</h3>
-            <a href="#" aria-label="Instagram">Instagram</a>
-            <a href="#" aria-label="Twitter">Twitter</a>
-            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="https://www.instagram.com/flowbondapp" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+            <a href="https://x.com/flowbondap" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+            <a href="https://www.tiktok.com/@flowbondapp" target="_blank" rel="noopener noreferrer" aria-label="TikTok">TikTok</a>
             <a href="#" aria-label="Discord">Discord</a>
           </div>
           
@@ -30,7 +30,7 @@ function WarmFooter() {
           
           <div className="footer-section">
             <h3>Support</h3>
-            <a href="mailto:hello@flowbond.app">hello@flowbond.app</a>
+            <a href="mailto:info@flowbond.app">info@flowbond.app</a>
             <a href="#">Community Guidelines</a>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms of Service</a>
