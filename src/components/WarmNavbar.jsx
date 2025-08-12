@@ -85,7 +85,6 @@ function WarmNavbar() {
             </li>
           </ul>
         </div>
-        </div>
       </div>
     </nav>
   )
