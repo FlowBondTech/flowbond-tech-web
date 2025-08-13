@@ -83,13 +83,13 @@ function Tokenomics() {
                 <img 
                   src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
                   alt="DANZ Token" 
-                  className="relative w-80 h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
+                  className="relative w-48 h-48 sm:w-56 sm:h-56 md:w-64 md:h-64 lg:w-80 lg:h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
                 />
               </div>
             </motion.a>
             
             <motion.h1 
-              className="text-hero gradient-text mb-8 text-center font-black tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-hero gradient-text mb-8 text-center font-black tracking-tight px-4"
               style={{ fontFamily: 'var(--font-accent)' }}
               variants={fadeInUp}
             >
@@ -97,7 +97,7 @@ function Tokenomics() {
             </motion.h1>
             
             <motion.p 
-              className="text-body-large text-center mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-body-large text-center mb-12 max-w-4xl mx-auto leading-relaxed px-4"
               style={{ color: 'var(--text-secondary)' }}
               variants={fadeInUp}
             >
@@ -106,12 +106,12 @@ function Tokenomics() {
             </motion.p>
             
             <motion.div 
-              className="hero-actions"
+              className="hero-actions flex justify-center px-4"
               variants={fadeInUp}
             >
               <motion.a 
                 href="/danz" 
-                className="btn btn-primary btn-large"
+                className="btn btn-primary btn-large w-full sm:w-auto"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -161,7 +161,7 @@ function Tokenomics() {
               whileHover={{ scale: 1.02, y: -5 }}
             >
               <motion.div 
-                className="text-8xl md:text-9xl font-black mb-4 tracking-tight"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4 tracking-tight"
                 style={{ 
                   color: 'var(--turquoise-bright)',
                   fontFamily: 'var(--font-accent)',
@@ -172,7 +172,7 @@ function Tokenomics() {
                 1B
               </motion.div>
               <motion.div 
-                className="text-large gradient-text font-black"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-large gradient-text font-black"
                 variants={fadeInUp}
               >
                 $DANZ
@@ -217,18 +217,18 @@ function Tokenomics() {
               }}
               variants={fadeInScale}
             >
-              <div className="overflow-x-auto">
-                <table className="w-full">
+              <div className="overflow-x-auto -mx-4 sm:mx-0">
+                <table className="w-full min-w-[800px]">
                   <thead style={{ 
                     background: 'var(--gradient-flow)',
                     borderBottom: '2px solid var(--turquoise-bright)'
                   }}>
                     <tr>
-                      <th className="px-8 py-6 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Category</th>
-                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>% of Supply</th>
-                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Tokens</th>
-                      <th className="px-8 py-6 text-center text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Status</th>
-                      <th className="px-8 py-6 text-left text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Purpose</th>
+                      <th className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-left text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Category</th>
+                      <th className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>% of Supply</th>
+                      <th className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Tokens</th>
+                      <th className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Status</th>
+                      <th className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-left text-xs sm:text-sm font-bold uppercase tracking-wider" style={{ color: 'var(--deep-navy)' }}>Purpose</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -247,26 +247,26 @@ function Tokenomics() {
                           scale: 1.01
                         }}
                       >
-                        <td className="px-8 py-6">
-                          <div className="flex items-center gap-4">
-                            <span className="text-2xl">{item.icon}</span>
-                            <span className="font-semibold text-lg" style={{ color: 'var(--text-primary)' }}>
+                        <td className="px-3 sm:px-6 md:px-8 py-4 sm:py-6">
+                          <div className="flex items-center gap-2 sm:gap-4">
+                            <span className="text-xl sm:text-2xl">{item.icon}</span>
+                            <span className="font-semibold text-sm sm:text-base md:text-lg" style={{ color: 'var(--text-primary)' }}>
                               {item.category}
                             </span>
                           </div>
                         </td>
-                        <td className="px-8 py-6 text-center">
-                          <span className="text-2xl font-black" style={{ color: 'var(--turquoise-bright)' }}>
+                        <td className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center">
+                          <span className="text-lg sm:text-xl md:text-2xl font-black" style={{ color: 'var(--turquoise-bright)' }}>
                             {item.percentage}%
                           </span>
                         </td>
-                        <td className="px-8 py-6 text-center">
-                          <span className="text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
+                        <td className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center">
+                          <span className="text-sm sm:text-base md:text-lg font-bold" style={{ color: 'var(--text-primary)' }}>
                             {item.allocation}
                           </span>
                         </td>
-                        <td className="px-8 py-6 text-center">
-                          <span className="text-sm font-medium px-3 py-1 rounded-full" 
+                        <td className="px-3 sm:px-6 md:px-8 py-4 sm:py-6 text-center">
+                          <span className="text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full" 
                                 style={{ 
                                   color: 'var(--text-secondary)',
                                   background: 'var(--deep-navy)',
@@ -275,8 +275,8 @@ function Tokenomics() {
                             {item.status}
                           </span>
                         </td>
-                        <td className="px-8 py-6">
-                          <span className="text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                        <td className="px-3 sm:px-6 md:px-8 py-4 sm:py-6">
+                          <span className="text-xs sm:text-sm md:text-base leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                             {item.description}
                           </span>
                         </td>
@@ -316,7 +316,7 @@ function Tokenomics() {
               Token Use Cases
             </motion.h2>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
               {utilityFeatures.map((feature, index) => (
                 <motion.div 
                   key={index} 
@@ -340,14 +340,14 @@ function Tokenomics() {
                   </div>
                   <div className="w-16 h-1 rounded-full mb-8 group-hover:w-20 transition-all duration-300" 
                        style={{ background: 'var(--gradient-flow)' }} />
-                  <h3 className="text-xl font-bold mb-6 transition-colors duration-300" 
+                  <h3 className="text-lg sm:text-xl font-bold mb-6 transition-colors duration-300" 
                       style={{ 
                         color: 'var(--turquoise-bright)',
                         fontFamily: 'var(--font-accent)'
                       }}>
                     {feature.title}
                   </h3>
-                  <p className="leading-relaxed text-base" style={{ color: 'var(--text-secondary)' }}>
+                  <p className="leading-relaxed text-sm sm:text-base" style={{ color: 'var(--text-secondary)' }}>
                     {feature.description}
                   </p>
                 </motion.div>
@@ -372,7 +372,7 @@ function Tokenomics() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-hero font-black mb-8 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-hero font-black mb-8 leading-tight px-4"
               style={{ 
                 color: 'var(--deep-navy)',
                 fontFamily: 'var(--font-accent)'
@@ -382,7 +382,7 @@ function Tokenomics() {
               Join the Movement<br />Economy
             </motion.h2>
             <motion.p 
-              className="text-body-large mb-8 max-w-4xl mx-auto leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-body-large mb-8 max-w-4xl mx-auto leading-relaxed px-4"
               style={{ color: 'var(--deep-navy)' }}
               variants={fadeInUp}
             >
@@ -406,12 +406,12 @@ function Tokenomics() {
               </span>
             </motion.div>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center px-4"
               variants={fadeInUp}
             >
               <motion.a 
                 href="/danz" 
-                className="btn btn-large"
+                className="btn btn-large w-full sm:w-auto"
                 style={{ 
                   background: 'var(--deep-navy)', 
                   color: 'var(--turquoise-bright)',
@@ -423,9 +423,9 @@ function Tokenomics() {
               >
                 Explore $DANZ
               </motion.a>
-              <div className="text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
+              <div className="text-lg sm:text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
               <motion.button 
-                className="btn btn-large"
+                className="btn btn-large w-full sm:w-auto"
                 style={{ 
                   background: 'transparent',
                   color: 'var(--deep-navy)',

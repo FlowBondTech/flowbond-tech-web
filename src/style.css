@@ -681,6 +681,8 @@ h1, h2, h3, h4, h5, h6 {
   .btn {
     width: 100%;
     max-width: 300px;
+    min-height: 48px;
+    font-size: 14px;
   }
   
   .section {
@@ -697,6 +699,32 @@ h1, h2, h3, h4, h5, h6 {
   
   .card {
     padding: var(--space-lg);
+  }
+
+  /* Better mobile image sizing */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* Table responsive behavior */
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Better mobile typography scaling */
+  .text-hero {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+
+  .text-large {
+    font-size: clamp(1.5rem, 6vw, 2.5rem);
+  }
+
+  /* Mobile container padding */
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 
   .footer-content {

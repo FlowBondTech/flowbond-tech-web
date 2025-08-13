@@ -100,13 +100,13 @@ function Danz() {
                 <img 
                   src="/lovable-uploads/5833ac74-4147-48b2-839a-e5f72beb4030.png" 
                   alt="DANZ Logo" 
-                  className="relative w-80 h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
+                  className="relative w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 object-contain drop-shadow-2xl group-hover:drop-shadow-[0_35px_35px_rgba(64,224,208,0.25)] transition-all duration-500"
                 />
               </div>
             </motion.a>
             
             <motion.h1 
-              className="text-hero gradient-text mb-8 text-center font-black tracking-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-hero gradient-text mb-8 text-center font-black tracking-tight"
               style={{ fontFamily: 'var(--font-accent)' }}
               variants={fadeInUp}
             >
@@ -114,7 +114,7 @@ function Danz() {
             </motion.h1>
             
             <motion.p 
-              className="text-body-large text-center mb-4 max-w-5xl mx-auto leading-relaxed font-semibold"
+              className="text-lg sm:text-xl md:text-2xl lg:text-body-large text-center mb-4 max-w-5xl mx-auto leading-relaxed font-semibold px-4"
               style={{ 
                 background: 'var(--gradient-flow)', 
                 WebkitBackgroundClip: 'text', 
@@ -126,7 +126,7 @@ function Danz() {
             </motion.p>
             
             <motion.p 
-              className="text-body text-center mb-12 max-w-4xl mx-auto leading-relaxed"
+              className="text-sm sm:text-base md:text-lg lg:text-body text-center mb-12 max-w-4xl mx-auto leading-relaxed px-4"
               style={{ color: 'var(--text-secondary)' }}
               variants={fadeInUp}
             >
@@ -135,11 +135,11 @@ function Danz() {
             </motion.p>
             
             <motion.div 
-              className="hero-actions"
+              className="hero-actions flex flex-col sm:flex-row gap-4 justify-center items-center px-4"
               variants={fadeInUp}
             >
               <motion.button 
-                className="btn btn-primary btn-large"
+                className="btn btn-primary btn-large w-full sm:w-auto"
                 onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
@@ -148,7 +148,7 @@ function Danz() {
               </motion.button>
               <motion.a 
                 href="/danz/tokenomics" 
-                className="btn btn-secondary btn-large"
+                className="btn btn-secondary btn-large w-full sm:w-auto"
                 whileHover={{ scale: 1.05, y: -3 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -170,7 +170,7 @@ function Danz() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-5xl md:text-6xl font-black mb-12"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-12 px-4"
               style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               variants={fadeInUp}
             >
@@ -188,10 +188,10 @@ function Danz() {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <div className="w-20 h-1 mx-auto mb-8 rounded-full" style={{ background: 'var(--gradient-flow)' }} />
-              <p className="text-2xl md:text-3xl font-semibold mb-6" style={{ color: 'var(--text-primary)' }}>
+              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 px-4" style={{ color: 'var(--text-primary)' }}>
                 $DANZ is a utility and rewards token designed to power a movement-based economy.
               </p>
-              <p className="text-lg md:text-xl" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-base sm:text-lg md:text-xl px-4" style={{ color: 'var(--text-secondary)' }}>
                 It lives at the intersection of dance culture, Web3 technology, and biometric flow states. Through the FlowBond wearable and ecosystem, every dance session, group sync, and flow activation generates real, measurable value — and $DANZ is how that value is distributed.
               </p>
             </motion.div>
@@ -229,7 +229,7 @@ function Danz() {
               </motion.h3>
               
               <motion.div 
-                className="text-8xl md:text-9xl font-black mb-4"
+                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4"
                 style={{ 
                   fontFamily: 'var(--font-accent)',
                   background: 'var(--gradient-flow)',
@@ -242,7 +242,7 @@ function Danz() {
               </motion.div>
               
               <motion.div 
-                className="text-4xl md:text-5xl font-bold"
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
                 style={{ 
                   fontFamily: 'var(--font-accent)',
                   color: 'var(--turquoise-bright)'
@@ -266,13 +266,13 @@ function Danz() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-5xl md:text-6xl font-black text-center mb-20"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-20 px-4"
               style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               variants={fadeInUp}
             >
               Why $DANZ?
             </motion.h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 px-4">
               {features.map((feature, index) => (
                 <motion.div 
                   key={index} 
@@ -292,9 +292,9 @@ function Danz() {
                   <div className="text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
                   <div className="w-12 h-1 rounded-full mb-6 group-hover:w-16 transition-all duration-300" 
                        style={{ background: 'var(--gradient-flow)' }} />
-                  <h3 className="text-2xl font-bold mb-6 group-hover:text-turquoise-bright transition-colors duration-300" 
+                  <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-6 group-hover:text-turquoise-bright transition-colors duration-300" 
                       style={{ color: 'var(--turquoise-bright)' }}>{feature.title}</h3>
-                  <p className="leading-relaxed text-lg" style={{ color: 'var(--text-secondary)' }}>{feature.description}</p>
+                  <p className="leading-relaxed text-sm sm:text-base md:text-lg" style={{ color: 'var(--text-secondary)' }}>{feature.description}</p>
                 </motion.div>
               ))}
             </div>
@@ -334,13 +334,13 @@ function Danz() {
                 <img 
                   src="/lovable-uploads/16dd3b9c-4e7f-4219-93a8-ed789d9d32f4.png" 
                   alt="DANZ Token" 
-                  className="w-32 h-32 object-contain"
+                  className="w-20 h-20 sm:w-24 sm:h-24 md:w-32 md:h-32 object-contain"
                 />
               </div>
-              <p className="text-lg md:text-xl mb-6" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-6 px-4" style={{ color: 'var(--text-secondary)' }}>
                 $DANZ is more than a token — it's a cultural catalyst for regenerative joy and embodied connection. As the FlowBond network grows, $DANZ will become the energetic fuel for a new kind of decentralized movement economy — one where those who move the most, feel the most, and connect the most are the ones who thrive.
               </p>
-              <p className="text-xl md:text-2xl font-semibold" style={{ color: 'var(--text-primary)' }}>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-semibold px-4" style={{ color: 'var(--text-primary)' }}>
                 In a world where attention is monetized, $DANZ offers a new paradigm: <span style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>presence as value</span>.
               </p>
             </motion.div>
@@ -363,7 +363,7 @@ function Danz() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-hero font-black mb-8 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-hero font-black mb-8 leading-tight px-4"
               style={{ 
                 color: 'var(--deep-navy)',
                 fontFamily: 'var(--font-accent)'
@@ -389,11 +389,11 @@ function Danz() {
               </span>
             </motion.div>
             <motion.div 
-              className="flex flex-col sm:flex-row gap-8 justify-center items-center"
+              className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center items-center px-4"
               variants={fadeInUp}
             >
               <motion.button 
-                className="btn btn-large"
+                className="btn btn-large w-full sm:w-auto"
                 style={{ 
                   background: 'var(--deep-navy)', 
                   color: 'var(--turquoise-bright)',
@@ -406,10 +406,10 @@ function Danz() {
               >
                 Join the $DANZ Movement
               </motion.button>
-              <div className="text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
+              <div className="text-lg sm:text-xl font-bold" style={{ color: 'var(--deep-navy)' }}>or</div>
               <motion.a 
                 href="/danz/tokenomics" 
-                className="btn btn-large"
+                className="btn btn-large w-full sm:w-auto"
                 style={{ 
                   background: 'transparent',
                   color: 'var(--deep-navy)',
