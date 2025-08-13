@@ -5,12 +5,29 @@ function DanzHighlightSection() {
     <section className="section" style={{ background: 'var(--gradient-subtle)' }}>
       <div className="container">
         <div className="section-header">
-          <div className="section-badge">Meet DANZ</div>
+          <div className="section-badge" style={{ 
+            background: 'var(--gradient-danz)', 
+            color: 'var(--danz-black)',
+            fontSize: '1.1rem',
+            fontWeight: '700',
+            padding: 'var(--space-sm) var(--space-lg)',
+            textTransform: 'uppercase',
+            letterSpacing: '0.05em'
+          }}>
+            🎵 Meet $DANZ Token
+          </div>
           <h2 className="text-large section-title">
-            <span className="gradient-text">Our First Branch</span> — First to Dance on the Flow
+            <span style={{ 
+              background: 'var(--gradient-danz)', 
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              fontSize: 'clamp(2rem, 5vw, 4rem)',
+              fontWeight: '900'
+            }}>Earn While You Dance</span> — Movement Becomes Currency
           </h2>
           <p className="text-body-large section-subtitle">
-            DANZ is the first vibrant branch of FlowBond—where music, movement, and mindful connection shine. It exemplifies creativity, community, and shared momentum. By joining DANZ, you join the first step in a growing journey.
+            $DANZ is the world's first movement-to-earn token. Every dance session, every beat, every moment of flow is rewarded. 
+            Join thousands earning tokens through authentic human connection and movement.
           </p>
         </div>
 
@@ -38,15 +55,37 @@ function DanzHighlightSection() {
 
         <div className="text-center" style={{ marginTop: 'var(--space-3xl)' }}>
           <p className="text-body-large" style={{ color: 'var(--text-secondary)', marginBottom: 'var(--space-lg)' }}>
-            Ready to experience FlowBond through dance and music?
+            Start earning $DANZ tokens today — app launching soon!
           </p>
+          <div className="flex items-center justify-center gap-4 sm:gap-6 mb-8">
+            <div className="flex items-center gap-2 px-4 py-2 rounded-full" 
+                 style={{ background: 'var(--gradient-danz)', color: 'var(--danz-black)' }}>
+              <span className="text-xl">🚀</span>
+              <span className="font-bold">$DANZ Token</span>
+            </div>
+            <div className="text-2xl font-black" style={{ color: 'var(--danz-pink)' }}>
+              1B Supply
+            </div>
+          </div>
           <div style={{ display: 'flex', gap: 'var(--space-lg)', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <a href="/danz" className="btn btn-primary btn-large" style={{ textDecoration: 'none' }}>
-              Explore DANZ
+            <a href="/danz" className="btn btn-large" 
+               style={{ 
+                 background: 'var(--gradient-danz)', 
+                 color: 'var(--danz-black)',
+                 textDecoration: 'none',
+                 fontWeight: '700',
+                 padding: '1rem 2rem',
+                 fontSize: '1.1rem'
+               }}>
+              🎵 Explore $DANZ
             </a>
-            <button className="btn btn-secondary btn-large">
-              Join the Movement
-            </button>
+            <a href="/danz/tokenomics" className="btn btn-secondary btn-large" 
+               style={{ 
+                 border: '2px solid var(--danz-pink)',
+                 color: 'var(--danz-pink)'
+               }}>
+              View Tokenomics
+            </a>
           </div>
         </div>
       </div>

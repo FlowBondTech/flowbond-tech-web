@@ -66,7 +66,7 @@ function Danz() {
 
   return (
     <div className="min-h-screen" style={{ 
-      background: 'radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%), var(--deep-navy)'
+      background: 'radial-gradient(circle at 20% 80%, hsla(330, 95%, 65%, 0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(300, 90%, 70%, 0.08) 0%, transparent 50%), var(--danz-black)'
     }}>
       {/* Hero Section */}
       <section className="section hero" style={{ 
@@ -114,9 +114,9 @@ function Danz() {
             </motion.h1>
             
             <motion.p 
-              className="text-lg sm:text-xl md:text-2xl lg:text-body-large text-center mb-4 max-w-5xl mx-auto leading-relaxed font-semibold px-4"
+              className="text-lg sm:text-xl md:text-2xl text-center mb-4 max-w-4xl mx-auto leading-relaxed font-semibold px-6"
               style={{ 
-                background: 'var(--gradient-flow)', 
+                background: 'var(--gradient-danz)', 
                 WebkitBackgroundClip: 'text', 
                 WebkitTextFillColor: 'transparent'
               }}
@@ -126,8 +126,8 @@ function Danz() {
             </motion.p>
             
             <motion.p 
-              className="text-sm sm:text-base md:text-lg lg:text-body text-center mb-12 max-w-4xl mx-auto leading-relaxed px-4"
-              style={{ color: 'var(--text-secondary)' }}
+              className="text-sm sm:text-base md:text-lg text-center mb-12 max-w-3xl mx-auto leading-relaxed px-6"
+              style={{ color: 'var(--text-secondary)', textAlign: 'left' }}
               variants={fadeInUp}
             >
               $DANZ is the official movement token of the FlowBond ecosystem — a decentralized token that rewards dancers, 
@@ -160,7 +160,7 @@ function Danz() {
       </section>
 
       {/* What is $DANZ Section */}
-      <section className="section" style={{ background: 'var(--gradient-subtle)', padding: 'var(--space-4xl) 0' }}>
+      <section className="section" style={{ background: 'var(--gradient-danz-subtle)', padding: 'var(--space-4xl) 0' }}>
         <div className="container">
           <motion.div 
             className="text-center"
@@ -170,28 +170,29 @@ function Danz() {
             variants={staggerContainer}
           >
             <motion.h2 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-12 px-4"
-              style={{ background: 'var(--gradient-flow)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black mb-12 px-4"
+              style={{ background: 'var(--gradient-danz)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}
               variants={fadeInUp}
             >
               What is $DANZ?
             </motion.h2>
             <motion.div 
-              className="card max-w-6xl mx-auto"
+              className="card max-w-5xl mx-auto"
               style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
+                background: 'var(--danz-surface)', 
+                border: '2px solid var(--danz-pink)',
+                padding: 'var(--space-2xl)',
+                borderRadius: 'var(--radius-lg)'
               }}
               variants={fadeInScale}
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <div className="w-20 h-1 mx-auto mb-8 rounded-full" style={{ background: 'var(--gradient-flow)' }} />
-              <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold mb-6 px-4" style={{ color: 'var(--text-primary)' }}>
+              <div className="w-20 h-1 mx-auto mb-8 rounded-full" style={{ background: 'var(--gradient-danz)' }} />
+              <p className="text-lg sm:text-xl md:text-2xl font-semibold mb-6 px-4 text-left" style={{ color: 'var(--text-primary)' }}>
                 $DANZ is a utility and rewards token designed to power a movement-based economy.
               </p>
-              <p className="text-base sm:text-lg md:text-xl px-4" style={{ color: 'var(--text-secondary)' }}>
+              <p className="text-sm sm:text-base md:text-lg px-4 text-left leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
                 It lives at the intersection of dance culture, Web3 technology, and biometric flow states. Through the FlowBond wearable and ecosystem, every dance session, group sync, and flow activation generates real, measurable value — and $DANZ is how that value is distributed.
               </p>
             </motion.div>
@@ -200,7 +201,7 @@ function Danz() {
       </section>
 
       {/* Token Stats Section */}
-      <section className="section" style={{ background: 'var(--navy-surface)', padding: 'var(--space-4xl) 0' }}>
+      <section className="section" style={{ background: 'var(--danz-surface)', padding: 'var(--space-4xl) 0' }}>
         <div className="container">
           <motion.div
             className="text-center"
@@ -212,9 +213,10 @@ function Danz() {
             <motion.div 
               className="card max-w-4xl mx-auto"
               style={{ 
-                background: 'var(--navy-surface)', 
-                border: '1px solid var(--turquoise-bright)',
-                padding: 'var(--space-3xl)'
+                background: 'var(--danz-dark)', 
+                border: '2px solid var(--danz-pink)',
+                padding: 'var(--space-3xl)',
+                borderRadius: 'var(--radius-lg)'
               }}
               variants={fadeInScale}
               whileHover={{ scale: 1.02 }}
@@ -229,10 +231,10 @@ function Danz() {
               </motion.h3>
               
               <motion.div 
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-4"
+                className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-4"
                 style={{ 
                   fontFamily: 'var(--font-accent)',
-                  background: 'var(--gradient-flow)',
+                  background: 'var(--gradient-danz)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent'
                 }}
@@ -242,10 +244,10 @@ function Danz() {
               </motion.div>
               
               <motion.div 
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold"
                 style={{ 
                   fontFamily: 'var(--font-accent)',
-                  color: 'var(--turquoise-bright)'
+                  color: 'var(--danz-pink)'
                 }}
                 variants={fadeInUp}
               >

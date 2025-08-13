@@ -16,12 +16,26 @@
   --flow-purple: hsl(280, 85%, 75%);
   --connection-blue: hsl(200, 85%, 70%);
   
+  /* DANZ Brand Colors - Black & Pink Palette */
+  --danz-black: hsl(0, 0%, 8%);
+  --danz-dark: hsl(0, 0%, 12%);
+  --danz-surface: hsl(0, 0%, 15%);
+  --danz-pink: hsl(330, 95%, 65%);
+  --danz-pink-soft: hsl(330, 85%, 75%);
+  --danz-pink-dark: hsl(330, 100%, 45%);
+  --danz-accent: hsl(300, 90%, 70%);
+  
   /* Global Gradients */
   --gradient-turquoise: linear-gradient(135deg, var(--turquoise-bright), var(--turquoise-soft));
   --gradient-flow: linear-gradient(135deg, var(--flow-pink), var(--flow-purple));
   --gradient-connection: linear-gradient(90deg, var(--connection-blue), var(--turquoise-bright));
   --gradient-subtle: linear-gradient(180deg, var(--navy-surface), var(--deep-navy));
   --gradient-hero: linear-gradient(135deg, var(--deep-navy), var(--navy-surface));
+  
+  /* DANZ Gradients */
+  --gradient-danz: linear-gradient(135deg, var(--danz-pink), var(--danz-accent));
+  --gradient-danz-subtle: linear-gradient(180deg, var(--danz-surface), var(--danz-black));
+  --gradient-danz-hero: linear-gradient(135deg, var(--danz-black), var(--danz-dark));
   
   /* Typography */
   --font-primary: 'Inter', sans-serif;

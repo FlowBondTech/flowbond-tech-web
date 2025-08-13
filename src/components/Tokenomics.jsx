@@ -49,7 +49,7 @@ function Tokenomics() {
 
   return (
     <div className="min-h-screen" style={{ 
-      background: 'radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%), var(--deep-navy)'
+      background: 'radial-gradient(circle at 20% 80%, hsla(330, 95%, 65%, 0.12) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsla(300, 90%, 70%, 0.08) 0%, transparent 50%), var(--danz-black)'
     }}>
       {/* Hero Section */}
       <section className="section hero" style={{ 
@@ -97,8 +97,8 @@ function Tokenomics() {
             </motion.h1>
             
             <motion.p 
-              className="text-sm sm:text-base md:text-lg lg:text-body-large text-center mb-12 max-w-4xl mx-auto leading-relaxed px-4"
-              style={{ color: 'var(--text-secondary)' }}
+              className="text-sm sm:text-base md:text-lg text-center mb-12 max-w-3xl mx-auto leading-relaxed px-6"
+              style={{ color: 'var(--text-secondary)', textAlign: 'left' }}
               variants={fadeInUp}
             >
               Understanding the economic model behind the movement revolution. 
