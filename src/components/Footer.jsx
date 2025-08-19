@@ -5,7 +5,7 @@ function Footer() {
     Product: ['How It Works', 'Pricing', '$DANZ Token'],
     Community: ['Apply to Host', 'Find Events', 'Join Movement'],
     Resources: ['Support', 'Privacy Policy', 'Terms of Service'],
-    Contact: ['info@flowbond.app', 'Press Kit', 'Partnerships']
+    Contact: ['info@danznow.app', 'Press Kit', 'Partnerships']
   }
   
   const socialLinks = [
@@ -52,10 +52,10 @@ function Footer() {
       <div className="container">
         <div className="footer-top">
           <div className="footer-brand">
-            <span className="logo-text">FlowBond<span className="logo-accent">.</span></span>
+            <span className="logo-text">DANZ NOW<span className="logo-accent">.</span></span>
             <p className="brand-tagline">Move. Connect. Earn.</p>
             <p className="brand-description">
-              The movement tech company rewarding authentic connection and conscious community.
+              The movement tech company rewarding authentic connection and conscious community. Powered by FlowBond.
             </p>
             <div className="social-links">
               {socialLinks.map((social) => (
@@ -78,8 +78,8 @@ function Footer() {
         </div>
         <div className="footer-bottom">
           <div className="footer-bottom-left">
-            <p>&copy; 2024 FlowBond. All rights reserved.</p>
-            <p className="footer-contact">Contact: info@flowbond.app</p>
+            <p>&copy; 2024 DANZ NOW. All rights reserved.</p>
+            <p className="footer-contact">Contact: info@danznow.app</p>
           </div>
           <div className="footer-legal">
             <a href="#" className="footer-legal-link">Privacy Policy</a>

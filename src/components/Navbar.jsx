@@ -39,7 +39,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="container nav-container">
         <Link to="/" className="logo">
-          <span className="logo-text">FlowBond</span>
+          <span className="logo-text">DANZ NOW</span>
           <span className="logo-accent">.</span>
         </Link>
         

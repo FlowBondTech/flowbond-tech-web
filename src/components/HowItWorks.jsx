@@ -5,7 +5,7 @@ function HowItWorks() {
     {
       number: '01',
       title: 'Download & Connect',
-      description: 'Get the FlowBond app and sync your wearable (or start with app-only mode)',
+      description: 'Get the DANZ NOW app and sync your FlowBond wearable (or start with app-only mode)',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
           <rect x="12" y="8" width="24" height="32" rx="4" stroke="currentColor" strokeWidth="2"/>
@@ -60,7 +60,7 @@ function HowItWorks() {
       <div className="container">
         <div className="section-header animate">
           <span className="section-tag">Simple Process</span>
-          <h2 className="section-title">How FlowBond Works</h2>
+          <h2 className="section-title">How DANZ NOW Works</h2>
           <p className="section-description">
             Get started in minutes and begin earning rewards for the movement you're already doing.
           </p>

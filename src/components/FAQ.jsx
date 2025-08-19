@@ -3,16 +3,16 @@ import React from 'react'
 function FAQ() {
   const faqs = [
     {
-      question: 'What is FlowBond?',
-      answer: 'FlowBond is a revolutionary platform that combines wearable technology with blockchain to reward users for physical movement and dance.'
+      question: 'What is DANZ NOW?',
+      answer: 'DANZ NOW is a revolutionary platform that combines wearable technology with blockchain to reward users for physical movement and dance. Powered by FlowBond technology.'
     },
     {
       question: 'How do I earn $DANZ?',
-      answer: 'Simply wear the FlowBond device while dancing or moving. The device tracks your activity and automatically converts it to $DANZ tokens.'
+      answer: 'Simply wear the FlowBond wearable while dancing or moving. The device tracks your activity and automatically converts it to $DANZ tokens.'
     },
     {
       question: 'Is it available worldwide?',
-      answer: 'Yes! FlowBond is a global platform. You can dance and earn anywhere in the world with an internet connection.'
+      answer: 'Yes! DANZ NOW is a global platform. You can dance and earn anywhere in the world with an internet connection.'
     },
     {
       question: 'When does it launch?',

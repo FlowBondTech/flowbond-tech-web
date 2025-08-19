@@ -18,7 +18,7 @@ function About() {
     {
       title: 'The Wearable',
       subtitle: 'Track Every Beat',
-      description: 'Our FlowBond bracelet captures your movement data and automatically rewards your activity.',
+      description: 'Our FlowBond wearable captures your movement data and automatically rewards your activity.',
       icon: (
         <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
           <ellipse cx="24" cy="24" rx="12" ry="8" stroke="currentColor" strokeWidth="2"/>
@@ -45,11 +45,11 @@ function About() {
     <section id="about" className="section about-section">
       <div className="container">
         <div className="section-header animate">
-          <span className="section-tag">About FlowBond</span>
+          <span className="section-tag">About DANZ NOW</span>
           <h2 className="section-title">Where Movement Meets Technology</h2>
           <p className="section-description">
-            FlowBond is a movement tech company building the future of community-driven wellness.
-            <br />We reward authentic movement and meaningful connections.
+            DANZ NOW is a movement tech company building the future of community-driven wellness.
+            <br />We reward authentic movement and meaningful connections. Powered by FlowBond technology.
           </p>
         </div>
         <div className="process-grid">

@@ -50,7 +50,7 @@ function Danz() {
               and every beat counts.
             </p>
             <p className="danz-intro">
-              $DANZ is the official movement token of the FlowBond ecosystem — a decentralized token that rewards dancers, movers, and flow-activators for doing what they love: showing up, moving their bodies, and generating high-vibe energy with others.
+              $DANZ is the official movement token of the DANZ NOW ecosystem — a decentralized token that rewards dancers, movers, and flow-activators for doing what they love: showing up, moving their bodies, and generating high-vibe energy with others. Powered by FlowBond technology.
             </p>
           </div>
         </div>
@@ -66,7 +66,7 @@ function Danz() {
             </h2>
             <div className="content-box">
               <p>
-                $DANZ is a utility and rewards token designed to power a movement-based economy. It lives at the intersection of dance culture, Web3 technology, and biometric flow states. Through the FlowBond wearable and ecosystem, every dance session, group sync, and flow activation generates real, measurable value — and $DANZ is how that value is distributed.
+                $DANZ is a utility and rewards token designed to power a movement-based economy. It lives at the intersection of dance culture, Web3 technology, and biometric flow states. Through the DANZ NOW platform and FlowBond technology, every dance session, group sync, and flow activation generates real, measurable value — and $DANZ is how that value is distributed.
               </p>
             </div>
           </div>
@@ -101,7 +101,7 @@ function Danz() {
             </h2>
             <div className="vision-box">
               <p>
-                $DANZ is more than a token — it's a cultural catalyst for regenerative joy and embodied connection. As the FlowBond network grows, $DANZ will become the energetic fuel for a new kind of decentralized movement economy — one where those who move the most, feel the most, and connect the most are the ones who thrive.
+                $DANZ is more than a token — it's a cultural catalyst for regenerative joy and embodied connection. As the DANZ NOW network grows, $DANZ will become the energetic fuel for a new kind of decentralized movement economy — one where those who move the most, feel the most, and connect the most are the ones who thrive.
               </p>
               <p className="vision-highlight">
                 In a world where attention is monetized, $DANZ offers a new paradigm: <span className="gradient-text">presence as value</span>.

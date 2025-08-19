@@ -37,13 +37,14 @@ function Hero() {
       <div className="container hero-content">
         <div className="hero-badge animate">
           <span className="badge-dot"></span>
-          FlowBond App
+          DANZ NOW App
         </div>
         <h1 className="hero-title animate">
           <span className="gradient-text" ref={titleRef}></span>
         </h1>
         <p className="hero-description animate">
           The app that rewards you for dancing, hosting events, and finding your vibe. Transform your passion for movement into meaningful connections and real rewards.
+          <br /><span style={{fontSize: '0.9em', opacity: 0.8, marginTop: '0.5rem', display: 'inline-block'}}>Powered by FlowBond</span>
         </p>
         <div className="hero-cta animate">
           <a href="#" className="btn btn-primary" onClick={handleJoinMovement}>
