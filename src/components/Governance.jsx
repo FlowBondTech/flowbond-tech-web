@@ -49,7 +49,7 @@ function Partners() {
       <div className="container">
         <div className="section-header animate">
           <span className="section-tag">Community Partners</span>
-          <h2 className="section-title">Become a FlowHost</h2>
+          <h2 className="section-title">Become a DANZ Host</h2>
           <p className="section-description">
             Are you a facilitator, DJ, or venue? Join our network of movement leaders and help build the future of conscious community.
           </p>
@@ -69,9 +69,9 @@ function Partners() {
         
         <div className="partners-cta animate">
           <button onClick={handleApplyClick} className="btn btn-primary btn-large">
-            Apply to be a FlowHost
+            Apply to be a DANZ Host
           </button>
-          <p className="cta-note">Join hundreds of facilitators already building with FlowBond</p>
+          <p className="cta-note">Join hundreds of facilitators already building with DANZ NOW</p>
         </div>
       </div>
     </section>

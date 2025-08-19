@@ -75,7 +75,7 @@ function Tokenomics() {
               variants={fadeInUp}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              $DANZ is the official token of the FlowBond ecosystem — a Solana-based meme coin that rewards real-world dance, 
+              $DANZ is the official token of the DANZ NOW ecosystem — a Solana-based meme coin that rewards real-world dance, 
               viral memes, and human connection. It bridges TikTok culture and crypto virality with in-person dance events, 
               conscious festivals, and underground parties.
             </motion.p>

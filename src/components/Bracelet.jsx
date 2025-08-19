@@ -79,7 +79,7 @@ function Subscription() {
         </div>
         
         <div className="subscription-note animate">
-          <p>Start with a free account to explore basic features, then upgrade when you're ready to unlock the full FlowBond experience.</p>
+          <p>Start with a free account to explore basic features, then upgrade when you're ready to unlock the full DANZ NOW experience.</p>
         </div>
       </div>
       <SubscriptionModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
