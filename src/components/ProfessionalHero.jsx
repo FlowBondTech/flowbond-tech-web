@@ -44,8 +44,7 @@ function ProfessionalHero() {
       <div className="container">
         <div className="hero-content-professional">
           <div className="company-badge">
-            <div className="badge-icon">⚡</div>
-            <span>Texas-Based Innovation Company</span>
+            <span>Next-Generation Connection Technology</span>
           </div>
           
           <div className="hero-logo-section">
@@ -54,7 +53,7 @@ function ProfessionalHero() {
               <img 
                 src="/lovable-uploads/5bd3bfb5-374c-4978-aca8-abe572613168.png" 
                 alt="FlowBond - Belong Connect Thrive" 
-                className="hero-logo"
+                className="hero-logo-integrated"
               />
             </div>
             <div className="tagline">BELONG • CONNECT • THRIVE</div>
@@ -76,19 +75,15 @@ function ProfessionalHero() {
           <div className="business-model">
             <div className="revenue-streams">
               <div className="stream-item">
-                <div className="stream-icon">📱</div>
                 <span>Connection Tracking Devices</span>
               </div>
               <div className="stream-item">
-                <div className="stream-icon">🤝</div>
                 <span>AI Matchmaking Platform</span>
               </div>
               <div className="stream-item">
-                <div className="stream-icon">🎫</div>
                 <span>Premium Memberships</span>
               </div>
               <div className="stream-item">
-                <div className="stream-icon">🏢</div>
                 <span>White Label Development</span>
               </div>
             </div>
@@ -99,7 +94,6 @@ function ProfessionalHero() {
               <h3>Experience Our First Innovation</h3>
               <p>Dance-to-Earn System — Movement Becomes Currency</p>
               <button onClick={handleExploreDANZ} className="btn-tech-primary">
-                <span className="btn-icon">🚀</span>
                 Explore DANZ Platform
                 <span className="btn-arrow">→</span>
               </button>
@@ -120,8 +114,8 @@ function ProfessionalHero() {
               <div className="stat-label">Native Technology</div>
             </div>
             <div className="stat-item">
-              <div className="stat-number">Texas</div>
-              <div className="stat-label">Innovation Hub</div>
+              <div className="stat-number">AI</div>
+              <div className="stat-label">Powered Matching</div>
             </div>
           </div>
         </div>

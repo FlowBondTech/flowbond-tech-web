@@ -1,0 +1,276 @@
+/* Cosmic Logo Styles */
+.cosmic-logo-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cosmic-logo-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cosmic-particle {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: linear-gradient(45deg, hsl(280, 100%, 80%), hsl(320, 100%, 75%));
+  border-radius: 50%;
+  animation: cosmic-float 8s infinite ease-in-out;
+  pointer-events: none;
+}
+
+@keyframes cosmic-float {
+  0%, 100% {
+    transform: translate(0, 0) scale(0.8);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translate(20px, -30px) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-15px, -20px) scale(1.2);
+    opacity: 1;
+  }
+  75% {
+    transform: translate(-25px, 10px) scale(0.9);
+    opacity: 0.6;
+  }
+}
+
+/* Cosmic Join Section */
+.cosmic-join-section {
+  padding: 120px 0;
+  background: linear-gradient(135deg, 
+    hsl(220, 25%, 8%) 0%, 
+    hsl(250, 30%, 12%) 25%,
+    hsl(280, 35%, 15%) 50%,
+    hsl(250, 30%, 12%) 75%,
+    hsl(220, 25%, 8%) 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-particles-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(2px 2px at 20% 30%, hsl(280, 100%, 80%), transparent),
+    radial-gradient(2px 2px at 40% 70%, hsl(320, 100%, 75%), transparent),
+    radial-gradient(1px 1px at 90% 40%, hsl(260, 100%, 85%), transparent),
+    radial-gradient(1px 1px at 60% 10%, hsl(300, 100%, 80%), transparent);
+  background-size: 300px 300px, 400px 400px, 200px 200px, 350px 350px;
+  animation: cosmic-drift 20s infinite linear;
+  opacity: 0.6;
+}
+
+@keyframes cosmic-drift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-100px, -100px);
+  }
+}
+
+.cosmic-join-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.cosmic-text-center {
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+
+.cosmic-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: hsl(0, 0%, 95%);
+}
+
+.gradient-cosmic {
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80%), 
+    hsl(320, 100%, 75%), 
+    hsl(260, 100%, 85%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.cosmic-subtitle {
+  font-size: 1.3rem;
+  line-height: 1.6;
+  color: hsl(0, 0%, 75%);
+  margin-bottom: 0;
+}
+
+.cosmic-cta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 800px;
+  margin-bottom: 80px;
+}
+
+.cosmic-card {
+  padding: 40px 30px;
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(280, 100%, 80% / 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80% / 0.1), 
+    hsl(320, 100%, 75% / 0.1));
+  z-index: -1;
+}
+
+.cosmic-card.primary {
+  border-color: hsl(280, 100%, 80% / 0.4);
+}
+
+.cosmic-card.primary::before {
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80% / 0.15), 
+    hsl(320, 100%, 75% / 0.15));
+}
+
+.cosmic-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 60px hsl(280, 100%, 80% / 0.3);
+  border-color: hsl(280, 100%, 80% / 0.6);
+}
+
+.cosmic-card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.cosmic-card h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: hsl(0, 0%, 95%);
+}
+
+.cosmic-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: hsl(0, 0%, 75%);
+  margin-bottom: 25px;
+}
+
+.btn-cosmic-primary {
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80%), 
+    hsl(320, 100%, 75%));
+  color: hsl(220, 25%, 8%);
+  border: none;
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.btn-cosmic-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px hsl(280, 100%, 80% / 0.4);
+  filter: brightness(1.1);
+}
+
+.btn-cosmic-secondary {
+  background: transparent;
+  color: hsl(280, 100%, 80%);
+  border: 2px solid hsl(280, 100%, 80%);
+  padding: 15px 30px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.btn-cosmic-secondary:hover {
+  background: hsl(280, 100%, 80%);
+  color: hsl(220, 25%, 8%);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px hsl(280, 100%, 80% / 0.3);
+}
+
+.cosmic-vision-text {
+  max-width: 700px;
+  text-align: center;
+}
+
+.cosmic-vision-text h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: hsl(0, 0%, 95%);
+}
+
+.cosmic-vision-text p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: hsl(0, 0%, 75%);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .cosmic-title {
+    font-size: 2.5rem;
+  }
+  
+  .cosmic-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .cosmic-cta-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .cosmic-card {
+    padding: 30px 20px;
+  }
+  
+  .cosmic-vision-text h3 {
+    font-size: 1.5rem;
+  }
+  
+  .cosmic-vision-text p {
+    font-size: 1rem;
+  }
+}

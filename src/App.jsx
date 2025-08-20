@@ -7,7 +7,7 @@ import WarmNavbar from './components/WarmNavbar.jsx'
 import ProfessionalHero from './components/ProfessionalHero.jsx'
 import ProfessionalAbout from './components/ProfessionalAbout.jsx'
 import DanzHighlightSection from './components/DanzHighlightSection.jsx'
-import JoinFlowSection from './components/JoinFlowSection.jsx'
+import CosmicJoinSection from './components/CosmicJoinSection.jsx'
 import WarmFooter from './components/WarmFooter.jsx'
 
 // Import existing components for other pages
@@ -27,7 +27,7 @@ function HomePage() {
       <ProfessionalHero />
       <ProfessionalAbout />
       <DanzHighlightSection />
-      <JoinFlowSection />
+      <CosmicJoinSection />
       <WarmFooter />
     </>
   )

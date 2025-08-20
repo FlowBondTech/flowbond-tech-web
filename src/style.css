@@ -1,6 +1,7 @@
 /* FlowBond - One Backbone. Infinite Communities */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
+@import './components/CosmicStyles.css';
 
 :root {
   /* Professional Brand Colors - FlowBond Identity */
@@ -339,10 +340,12 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding-top: 80px;
   overflow: hidden;
-  background: 
-    radial-gradient(circle at 20% 80%, hsla(var(--brand-primary), 0.12) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsla(var(--brand-electric), 0.08) 0%, transparent 50%),
-    hsl(var(--brand-deep));
+  background: linear-gradient(135deg, 
+    hsl(220, 25%, 8%) 0%, 
+    hsl(250, 30%, 12%) 25%,
+    hsl(280, 35%, 15%) 50%,
+    hsl(250, 30%, 12%) 75%,
+    hsl(220, 25%, 8%) 100%);
 }
 
 .tech-particles {
@@ -437,12 +440,20 @@ h1, h2, h3, h4, h5, h6 {
   50% { opacity: 0.8; transform: scale(1.1); }
 }
 
-.hero-logo {
+.hero-logo-integrated {
   width: 200px;
   height: 200px;
   object-fit: contain;
   position: relative;
   z-index: 2;
+  filter: drop-shadow(0 0 30px hsl(280, 100%, 80% / 0.8));
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80% / 0.1), 
+    hsl(320, 100%, 75% / 0.1));
+  padding: 20px;
+  backdrop-filter: blur(10px);
 }
 
 .tagline {
@@ -496,12 +507,24 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 12px;
   padding: 16px 20px;
-  background: hsla(var(--brand-secondary), 0.6);
-  border: 1px solid hsl(var(--brand-accent));
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80% / 0.1), 
+    hsl(320, 100%, 75% / 0.1));
+  border: 1px solid hsl(280, 100%, 80% / 0.2);
   border-radius: 12px;
   font-weight: 600;
   color: white;
   backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stream-item:hover {
+  background: linear-gradient(135deg, 
+    hsl(280, 100%, 80% / 0.2), 
+    hsl(320, 100%, 75% / 0.2));
+  border-color: hsl(280, 100%, 80% / 0.4);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px hsl(280, 100%, 80% / 0.3);
 }
 
 .stream-icon {

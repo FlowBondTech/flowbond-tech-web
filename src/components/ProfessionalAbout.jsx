@@ -10,7 +10,6 @@ function ProfessionalAbout() {
         <div className="professional-about-grid">
           <div className="about-content">
             <div className="section-badge">
-              <span>🏢</span>
               <span>About FlowBond</span>
             </div>
             
@@ -20,10 +19,9 @@ function ProfessionalAbout() {
             
             <div className="about-text">
               <p>
-                FlowBond is a Texas-based innovation company pioneering the next generation 
-                of human connection analytics. We combine cutting-edge biometric tracking, 
-                AI-powered matchmaking, and blockchain tokenization to create unprecedented 
-                value from authentic human interactions.
+                FlowBond pioneers the next generation of human connection analytics. We combine 
+                cutting-edge biometric tracking, AI-powered matchmaking, and blockchain tokenization 
+                to create unprecedented value from authentic human interactions.
               </p>
               
               <p>
@@ -40,21 +38,18 @@ function ProfessionalAbout() {
 
             <div className="tech-features">
               <div className="feature-item">
-                <div className="feature-icon">🧬</div>
                 <div className="feature-content">
                   <h4>Biometric Connection Tracking</h4>
                   <p>Advanced sensors monitor physiological responses during social interactions</p>
                 </div>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">🤖</div>
                 <div className="feature-content">
                   <h4>AI-Powered Matchmaking</h4>
                   <p>Machine learning algorithms optimize compatibility based on behavioral data</p>
                 </div>
               </div>
               <div className="feature-item">
-                <div className="feature-icon">⚡</div>
                 <div className="feature-content">
                   <h4>Real-Time Analytics</h4>
                   <p>Instant feedback and insights on connection quality and potential</p>
@@ -66,7 +61,6 @@ function ProfessionalAbout() {
           <div className="tokenomics-preview">
             <div className="token-card">
               <div className="token-header">
-                <div className="token-logo">🔗</div>
                 <div className="token-info">
                   <h3>$FlowBond Token</h3>
                   <p>Tokenized Company Ownership</p>
