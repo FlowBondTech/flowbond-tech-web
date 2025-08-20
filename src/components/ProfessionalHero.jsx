@@ -48,12 +48,12 @@ function ProfessionalHero() {
           </div>
           
           <div className="hero-logo-section">
-            <div className="logo-container">
-              <div className="logo-glow"></div>
+            <div className="logo-container-dynamic">
+              <div className="logo-glow-dynamic"></div>
               <img 
-                src="/lovable-uploads/5bd3bfb5-374c-4978-aca8-abe572613168.png" 
+                src="/lovable-uploads/6e554e3e-ddc6-491b-908b-9076eadc7955.png" 
                 alt="FlowBond - Belong Connect Thrive" 
-                className="hero-logo-integrated"
+                className="hero-logo-flowing"
               />
             </div>
             <div className="tagline">BELONG • CONNECT • THRIVE</div>
