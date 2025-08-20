@@ -2,12 +2,10 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './components/ScrollToTop'
 
-// Import FlowBond Global components
+// Import FlowBond Professional components
 import WarmNavbar from './components/WarmNavbar.jsx'
-import WarmHero from './components/WarmHero.jsx'
-import WhyFlowBondSection from './components/WhyFlowBondSection.jsx'
-import VisionSection from './components/VisionSection.jsx'
-import HowItWorksSection from './components/HowItWorksSection.jsx'
+import ProfessionalHero from './components/ProfessionalHero.jsx'
+import ProfessionalAbout from './components/ProfessionalAbout.jsx'
 import DanzHighlightSection from './components/DanzHighlightSection.jsx'
 import JoinFlowSection from './components/JoinFlowSection.jsx'
 import WarmFooter from './components/WarmFooter.jsx'
@@ -21,15 +19,13 @@ import Profile from './components/Profile'
 import CreateEvent from './components/CreateEvent'
 import { AuthProvider } from './hooks/useAuth.jsx'
 
-// HomePage component that renders the new warm, people-first landing page
+// HomePage component that renders the professional tech-focused landing page
 function HomePage() {
   return (
     <>
       <WarmNavbar />
-      <WarmHero />
-      <WhyFlowBondSection />
-      <VisionSection />
-      <HowItWorksSection />
+      <ProfessionalHero />
+      <ProfessionalAbout />
       <DanzHighlightSection />
       <JoinFlowSection />
       <WarmFooter />

@@ -3,18 +3,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
 
 :root {
-  /* FlowBond Global - Deep Navy Foundation */
-  --deep-navy: hsl(216, 50%, 8%);
-  --navy-surface: hsl(216, 45%, 12%);
-  --navy-border: hsl(216, 35%, 18%);
-  --navy-accent: hsl(216, 30%, 25%);
+  /* Professional Brand Colors - FlowBond Identity */
+  --brand-deep: 240 100% 3%; /* #00000E */
+  --brand-primary: 271 100% 42%; /* #7600D6 */
+  --brand-secondary: 248 100% 19%; /* #0F003E */
+  --brand-accent: 259 100% 21%; /* #360069 */
+  --brand-electric: 240 100% 34%; /* #0000AF */
+  --brand-highlight: 276 100% 44%; /* #8D00E2 */
   
-  /* Turquoise & Flow Colors */
-  --turquoise-bright: hsl(180, 85%, 65%);
-  --turquoise-soft: hsl(180, 70%, 75%);
-  --flow-pink: hsl(330, 90%, 70%);
-  --flow-purple: hsl(280, 85%, 75%);
-  --connection-blue: hsl(200, 85%, 70%);
+  /* Legacy Support */
+  --deep-navy: hsl(var(--brand-deep));
+  --navy-surface: hsl(var(--brand-secondary));
+  --navy-border: hsl(var(--brand-accent));
+  --turquoise-bright: hsl(var(--brand-primary));
+  --flow-purple: hsl(var(--brand-highlight));
+  --connection-blue: hsl(var(--brand-electric));
   
   /* DANZ Brand Colors - Black & Pink Palette */
   --danz-black: hsl(0, 0%, 8%);
@@ -113,6 +116,29 @@ body {
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
+  }
+  
+  .hero-logo {
+    width: 150px !important;
+    height: 150px !important;
+  }
+  
+  .professional-title {
+    font-size: clamp(2rem, 8vw, 3.5rem) !important;
+  }
+  
+  .revenue-streams {
+    grid-template-columns: 1fr !important;
+    gap: 15px !important;
+  }
+  
+  .tech-stats {
+    gap: 30px !important;
+  }
+  
+  .professional-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
   }
 }
 
@@ -305,7 +331,271 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
 }
 
-/* Hero section */
+/* Professional Hero Section */
+.professional-hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding-top: 80px;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle at 20% 80%, hsla(var(--brand-primary), 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsla(var(--brand-electric), 0.08) 0%, transparent 50%),
+    hsl(var(--brand-deep));
+}
+
+.tech-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.tech-particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: hsl(var(--brand-primary));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float-particle 15s linear infinite;
+}
+
+@keyframes float-particle {
+  0% { transform: translateY(100vh) translateX(0px); opacity: 0; }
+  10% { opacity: 0.6; }
+  90% { opacity: 0.6; }
+  100% { transform: translateY(-10px) translateX(50px); opacity: 0; }
+}
+
+.hero-grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(hsla(var(--brand-accent), 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, hsla(var(--brand-accent), 0.1) 1px, transparent 1px);
+  background-size: 100px 100px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-content-professional {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.company-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  background: hsla(var(--brand-secondary), 0.8);
+  border: 1px solid hsl(var(--brand-accent));
+  border-radius: 50px;
+  color: hsl(var(--brand-primary));
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  backdrop-filter: blur(20px);
+}
+
+.badge-icon {
+  font-size: 16px;
+}
+
+.hero-logo-section {
+  margin-bottom: 60px;
+}
+
+.logo-container {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.logo-glow {
+  position: absolute;
+  inset: -20px;
+  background: radial-gradient(circle, hsla(var(--brand-primary), 0.3), transparent 70%);
+  border-radius: 50%;
+  filter: blur(30px);
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+.hero-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  position: relative;
+  z-index: 2;
+}
+
+.tagline {
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: hsl(var(--brand-primary));
+  text-transform: uppercase;
+}
+
+.professional-title {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 30px;
+  color: white;
+  letter-spacing: -0.02em;
+}
+
+.gradient-tech {
+  background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-highlight)));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.professional-subtitle {
+  font-size: 20px;
+  line-height: 1.6;
+  color: hsl(0 0% 80%);
+  margin-bottom: 50px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.business-model {
+  margin-bottom: 60px;
+}
+
+.revenue-streams {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.stream-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  background: hsla(var(--brand-secondary), 0.6);
+  border: 1px solid hsl(var(--brand-accent));
+  border-radius: 12px;
+  font-weight: 600;
+  color: white;
+  backdrop-filter: blur(10px);
+}
+
+.stream-icon {
+  font-size: 20px;
+}
+
+.cta-section {
+  margin-bottom: 80px;
+}
+
+.primary-cta {
+  margin-bottom: 30px;
+}
+
+.primary-cta h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.primary-cta p {
+  font-size: 16px;
+  color: hsl(0 0% 70%);
+  margin-bottom: 20px;
+}
+
+.btn-tech-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-highlight)));
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.btn-tech-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px hsla(var(--brand-primary), 0.3);
+}
+
+.btn-tech-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 14px 28px;
+  background: transparent;
+  color: hsl(var(--brand-primary));
+  border: 2px solid hsl(var(--brand-primary));
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-tech-secondary:hover {
+  background: hsl(var(--brand-primary));
+  color: white;
+  transform: translateY(-2px);
+}
+
+.tech-stats {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: hsl(var(--brand-primary));
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 14px;
+  color: hsl(0 0% 70%);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Legacy Hero Support */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -314,9 +604,9 @@ h1, h2, h3, h4, h5, h6 {
   padding-top: 80px;
   overflow: hidden;
   background: 
-    radial-gradient(circle at 20% 80%, hsla(180, 85%, 65%, 0.08) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, hsla(330, 90%, 70%, 0.06) 0%, transparent 50%),
-    var(--deep-navy);
+    radial-gradient(circle at 20% 80%, hsla(var(--brand-primary), 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, hsla(var(--brand-electric), 0.06) 0%, transparent 50%),
+    hsl(var(--brand-deep));
 }
 
 .hero-content {
@@ -475,6 +765,153 @@ h1, h2, h3, h4, h5, h6 {
 .card-description {
   color: var(--text-secondary);
   line-height: 1.6;
+}
+
+/* Professional About Section */
+.professional-about-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+.about-text p {
+  font-size: 18px;
+  line-height: 1.7;
+  color: hsl(0 0% 85%);
+  margin-bottom: 25px;
+}
+
+.tech-features {
+  margin-top: 50px;
+}
+
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 25px 0;
+  border-bottom: 1px solid hsl(var(--brand-accent));
+}
+
+.feature-item:last-child {
+  border-bottom: none;
+}
+
+.feature-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.feature-content h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 8px;
+}
+
+.feature-content p {
+  font-size: 16px;
+  color: hsl(0 0% 75%);
+  margin: 0;
+}
+
+.token-card {
+  background: hsl(var(--brand-deep));
+  border: 2px solid hsl(var(--brand-primary));
+  border-radius: 20px;
+  padding: 30px;
+  position: sticky;
+  top: 100px;
+}
+
+.token-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.token-logo {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, hsl(var(--brand-primary)), hsl(var(--brand-highlight)));
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.token-info h3 {
+  font-size: 22px;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.token-info p {
+  font-size: 14px;
+  color: hsl(0 0% 70%);
+  margin: 4px 0 0 0;
+}
+
+.ownership-benefits {
+  margin-bottom: 30px;
+}
+
+.ownership-benefits h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(var(--brand-primary));
+  margin-bottom: 15px;
+}
+
+.ownership-benefits ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ownership-benefits li {
+  font-size: 14px;
+  color: hsl(0 0% 85%);
+  padding: 8px 0;
+  position: relative;
+  padding-left: 20px;
+}
+
+.ownership-benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: hsl(var(--brand-primary));
+  font-weight: bold;
+}
+
+.revenue-breakdown h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: hsl(var(--brand-primary));
+  margin-bottom: 15px;
+}
+
+.revenue-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  font-size: 14px;
+  color: hsl(0 0% 85%);
+  border-bottom: 1px solid hsl(var(--brand-accent));
+}
+
+.revenue-item:last-child {
+  border-bottom: none;
+}
+
+.revenue-item span:last-child {
+  font-weight: 700;
+  color: hsl(var(--brand-primary));
 }
 
 /* Grid system */
