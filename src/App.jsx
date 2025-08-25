@@ -17,6 +17,7 @@ import Tokenomics from './components/Tokenomics'
 import Auth from './components/Auth'
 import Profile from './components/Profile'
 import CreateEvent from './components/CreateEvent'
+import Manifesto from './components/Manifesto'
 import { AuthProvider } from './hooks/useAuth.jsx'
 
 // HomePage component that renders the professional tech-focused landing page
@@ -56,6 +57,7 @@ function App() {
           <Route path="/events" element={<SimpleLayout><EventsMarketplace /></SimpleLayout>} />
           <Route path="/danz" element={<SimpleLayout><Danz /></SimpleLayout>} />
           <Route path="/danz/tokenomics" element={<SimpleLayout><Tokenomics /></SimpleLayout>} />
+          <Route path="/manifesto" element={<SimpleLayout><Manifesto /></SimpleLayout>} />
           <Route path="/auth" element={<SimpleLayout><Auth /></SimpleLayout>} />
           <Route path="/profile" element={<SimpleLayout><Profile /></SimpleLayout>} />
           <Route path="/create-event" element={<SimpleLayout><CreateEvent /></SimpleLayout>} />
