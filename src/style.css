@@ -1,70 +1,87 @@
-/* FlowBond - Professional Tech Platform */
+/* FlowBond - One Backbone. Infinite Communities */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
+@import './components/CosmicStyles.css';
 
 :root {
-  /* Modern Design System Colors - HSL Values */
-  --background: 220 26% 8%;
-  --foreground: 220 13% 95%;
-  --card: 220 26% 10%;
-  --card-foreground: 220 13% 95%;
-  --popover: 220 26% 10%;
-  --popover-foreground: 220 13% 95%;
-  --primary: 271 100% 62%;
-  --primary-foreground: 220 13% 5%;
-  --secondary: 220 13% 15%;
-  --secondary-foreground: 220 13% 95%;
-  --muted: 220 13% 20%;
-  --muted-foreground: 220 13% 65%;
-  --accent: 276 100% 70%;
-  --accent-foreground: 220 13% 5%;
-  --destructive: 0 84% 60%;
-  --destructive-foreground: 0 0% 98%;
-  --border: 220 13% 20%;
-  --input: 220 13% 20%;
-  --ring: 271 100% 62%;
-  --radius: 0.5rem;
-
-  /* Professional Brand Colors */
-  --brand-deep: 220 26% 8%;
-  --brand-primary: 271 100% 62%;
-  --brand-secondary: 220 26% 10%;
-  --brand-accent: 276 100% 70%;
-  --brand-electric: 240 100% 60%;
-  --brand-highlight: 290 100% 75%;
+  /* Professional Brand Colors - FlowBond Identity */
+  --brand-deep: 240 100% 3%; /* #00000E */
+  --brand-primary: 271 100% 42%; /* #7600D6 */
+  --brand-secondary: 248 100% 19%; /* #0F003E */
+  --brand-accent: 259 100% 21%; /* #360069 */
+  --brand-electric: 240 100% 34%; /* #0000AF */
+  --brand-highlight: 276 100% 44%; /* #8D00E2 */
   
   /* Legacy Support */
-  --deep-navy: hsl(var(--background));
-  --navy-surface: hsl(var(--card));
-  --navy-border: hsl(var(--border));
-  --turquoise-bright: hsl(var(--primary));
-  --flow-purple: hsl(var(--accent));
+  --deep-navy: hsl(var(--brand-deep));
+  --navy-surface: hsl(var(--brand-secondary));
+  --navy-border: hsl(var(--brand-accent));
+  --turquoise-bright: hsl(var(--brand-primary));
+  --flow-purple: hsl(var(--brand-highlight));
   --connection-blue: hsl(var(--brand-electric));
   
+  /* DANZ Brand Colors - Black & Pink Palette */
+  --danz-black: hsl(0, 0%, 8%);
+  --danz-dark: hsl(0, 0%, 12%);
+  --danz-surface: hsl(0, 0%, 15%);
+  --danz-pink: hsl(330, 95%, 65%);
+  --danz-pink-soft: hsl(330, 85%, 75%);
+  --danz-pink-dark: hsl(330, 100%, 45%);
+  --danz-accent: hsl(300, 90%, 70%);
+  
   /* Global Gradients */
-  --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-  --gradient-flow: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-  --gradient-connection: linear-gradient(90deg, hsl(var(--brand-electric)), hsl(var(--primary)));
-  --gradient-subtle: linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)));
-  --gradient-hero: linear-gradient(135deg, hsl(var(--background)), hsl(var(--card)));
+  --gradient-turquoise: linear-gradient(135deg, var(--turquoise-bright), var(--turquoise-soft));
+  --gradient-flow: linear-gradient(135deg, var(--flow-pink), var(--flow-purple));
+  --gradient-connection: linear-gradient(90deg, var(--connection-blue), var(--turquoise-bright));
+  --gradient-subtle: linear-gradient(180deg, var(--navy-surface), var(--deep-navy));
+  --gradient-hero: linear-gradient(135deg, var(--deep-navy), var(--navy-surface));
+  
+  /* DANZ Gradients */
+  --gradient-danz: linear-gradient(135deg, var(--danz-pink), var(--danz-accent));
+  --gradient-danz-subtle: linear-gradient(180deg, var(--danz-surface), var(--danz-black));
+  --gradient-danz-hero: linear-gradient(135deg, var(--danz-black), var(--danz-dark));
   
   /* Typography */
   --font-primary: 'Inter', sans-serif;
-  --font-accent: 'Space Grotesk', sans-serif;
+  --font-accent: 'Crimson Text', serif;
+  
+  /* Text colors */
+  --text-primary: hsl(0, 0%, 95%);
+  --text-secondary: hsl(0, 0%, 75%);
+  --text-muted: hsl(0, 0%, 55%);
+  --text-accent: var(--turquoise-bright);
+  
+  /* Spacing scale */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 50px;
   
   /* Shadows */
   --shadow-soft: 0 4px 20px hsla(220, 15%, 5%, 0.3);
   --shadow-medium: 0 8px 40px hsla(220, 15%, 5%, 0.4);
   --shadow-large: 0 16px 60px hsla(220, 15%, 5%, 0.5);
-  --shadow-glow: 0 0 30px hsla(271, 100%, 62%, 0.3);
+  --shadow-glow: 0 0 30px hsla(25, 95%, 65%, 0.3);
   
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.3s ease-out;
   --transition-slow: 0.6s ease-out;
+  
+  /* Z-index scale */
+  --z-modal: 1000;
+  --z-overlay: 999;
+  --z-nav: 100;
+  --z-elevated: 10;
 }
 
 /* Reset and base styles */
