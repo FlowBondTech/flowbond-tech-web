@@ -1,47 +1,16 @@
-import React, { useEffect } from 'react'
-import { useLocation } from 'react-router-dom'
-import { useParticles, useScrollIndicator, useMagneticButtons, useGlowEffects, useRevealAnimations } from '../hooks/useNeonEffects'
+import React from 'react'
+import Navbar from './Navbar'
+import Footer from './Footer'
 
-function Layout({ children }) {
-  const location = useLocation()
-  
-  // Initialize effects
-  useParticles()
-  useScrollIndicator()
-  useMagneticButtons()
-  useGlowEffects()
-  useRevealAnimations()
-  
-  // Re-run animations on route change
-  useEffect(() => {
-    // Reset opacity first
-    document.body.style.opacity = '0'
-    
-    // Small delay to ensure DOM is ready
-    const timer = setTimeout(() => {
-      document.body.style.opacity = '1'
-      
-      // Re-trigger animations for elements
-      const animatedElements = document.querySelectorAll('.animate')
-      animatedElements.forEach(el => {
-        el.classList.remove('fade-in')
-        // Force reflow
-        void el.offsetWidth
-        // Re-add the class
-        setTimeout(() => {
-          el.classList.add('fade-in')
-        }, 50)
-      })
-    }, 100)
-    
-    return () => clearTimeout(timer)
-  }, [location.pathname])
-  
+const Layout = ({ children }) => {
   return (
-    <>
-      <div className="particles"></div>
-      {children}
-    </>
+    <div className="min-h-screen bg-background">
+      <Navbar />
+      <main className="pt-16">
+        {children}
+      </main>
+      <Footer />
+    </div>
   )
 }
 
