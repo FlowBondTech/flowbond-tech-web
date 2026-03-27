@@ -38,7 +38,7 @@ function WarmFooter() {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; 2024 FlowBond. Building the backbone for infinite communities.</p>
+          <p>&copy; {new Date().getFullYear()} FlowBond. Building the backbone for infinite communities.</p>
         </div>
       </div>
     </footer>

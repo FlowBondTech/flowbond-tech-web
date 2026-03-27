@@ -1,6 +1,6 @@
 /* FlowBond - One Backbone. Infinite Communities */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 @import './components/CosmicStyles.css';
 
 :root {
@@ -43,7 +43,7 @@
   
   /* Typography */
   --font-primary: 'Inter', sans-serif;
-  --font-accent: 'Crimson Text', serif;
+  --font-accent: 'Space Grotesk', sans-serif;
   
   /* Text colors */
   --text-primary: hsl(0, 0%, 95%);
@@ -107,32 +107,38 @@ body {
   width: 100%;
 }
 
+@media (max-width: 1024px) {
+  .professional-about-grid {
+    grid-template-columns: 1fr !important;
+    gap: 40px !important;
+  }
+
+  .token-card {
+    position: static !important;
+  }
+}
+
 @media (max-width: 768px) {
   .container {
     padding: 0 var(--space-md);
   }
-  
+
   .hero-logo {
     width: 150px !important;
     height: 150px !important;
   }
-  
+
   .professional-title {
     font-size: clamp(2rem, 8vw, 3.5rem) !important;
   }
-  
+
   .revenue-streams {
     grid-template-columns: 1fr !important;
     gap: 15px !important;
   }
-  
+
   .tech-stats {
     gap: 30px !important;
-  }
-  
-  .professional-about-grid {
-    grid-template-columns: 1fr !important;
-    gap: 40px !important;
   }
 }
 
@@ -506,6 +512,14 @@ h1, h2, h3, h4, h5, h6 {
   margin-right: auto;
 }
 
+.hero-cta-group {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
 .business-model {
   margin-bottom: 60px;
 }
@@ -545,6 +559,162 @@ h1, h2, h3, h4, h5, h6 {
 
 .stream-icon {
   font-size: 20px;
+}
+
+/* DANZ Highlight Section */
+.danz-highlight-section {
+  background: var(--gradient-subtle);
+}
+
+.danz-badge {
+  display: inline-block;
+  padding: 8px 24px;
+  background: var(--gradient-danz);
+  color: var(--danz-black);
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--space-lg);
+}
+
+.danz-headline {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-lg);
+  color: var(--text-primary);
+}
+
+.gradient-danz-text {
+  background: var(--gradient-danz);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.danz-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-xl);
+  margin-bottom: var(--space-3xl);
+}
+
+.danz-feature-card {
+  background: var(--navy-surface);
+  border: 1px solid var(--danz-pink);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  transition: all var(--transition-smooth);
+  cursor: default;
+}
+
+.danz-feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px hsla(330, 95%, 65%, 0.15);
+  border-color: var(--danz-pink-soft);
+}
+
+.danz-card-icon {
+  width: 56px;
+  height: 56px;
+  background: var(--gradient-danz);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--danz-black);
+  margin-bottom: var(--space-lg);
+}
+
+.danz-feature-card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: var(--space-sm);
+  color: var(--text-primary);
+}
+
+.danz-feature-card p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.danz-cta-area {
+  text-align: center;
+}
+
+.danz-token-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: var(--space-xl);
+}
+
+.danz-token-label {
+  padding: 8px 20px;
+  background: var(--gradient-danz);
+  color: var(--danz-black);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.danz-token-supply {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--danz-pink);
+}
+
+.danz-cta-buttons {
+  display: flex;
+  gap: var(--space-lg);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-danz-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 32px;
+  background: var(--gradient-danz);
+  color: var(--danz-black);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.1rem;
+  border-radius: var(--radius-full);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.btn-danz-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px hsla(330, 95%, 65%, 0.3);
+  filter: brightness(1.05);
+}
+
+.btn-danz-secondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 16px 32px;
+  background: transparent;
+  color: var(--danz-pink);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--danz-pink);
+  cursor: pointer;
+  transition: all var(--transition-smooth);
+}
+
+.btn-danz-secondary:hover {
+  background: var(--danz-pink);
+  color: var(--danz-black);
+  transform: translateY(-2px);
 }
 
 /* Manifesto Page Styles */
@@ -1485,4 +1655,74 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes pulse {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.8; }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .hero-logo-flowing {
+    animation: none;
+  }
+
+  .logo-glow-dynamic {
+    animation: none;
+  }
+
+  .cosmic-particles-bg {
+    animation: none;
+  }
+
+  .tech-particle {
+    display: none;
+  }
+}
+
+/* Navbar responsive - stack at tablet */
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: flex;
+  }
+}
+
+/* Hero CTA responsive */
+@media (max-width: 480px) {
+  .hero-cta-group {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cta-group .btn-tech-primary,
+  .hero-cta-group .btn-tech-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
+
+  .danz-token-badge {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .danz-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-danz-primary,
+  .btn-danz-secondary {
+    width: 100%;
+    max-width: 300px;
+    justify-content: center;
+  }
 }
