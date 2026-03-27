@@ -42,13 +42,11 @@
 
 /* Cosmic Join Section */
 .cosmic-join-section {
-  padding: 120px 0;
-  background: linear-gradient(135deg, 
-    hsl(220, 25%, 8%) 0%, 
-    hsl(250, 30%, 12%) 25%,
-    hsl(280, 35%, 15%) 50%,
-    hsl(250, 30%, 12%) 75%,
-    hsl(220, 25%, 8%) 100%);
+  padding: 100px 0;
+  background: linear-gradient(180deg,
+    hsl(240, 100%, 3%) 0%,
+    hsl(260, 30%, 10%) 50%,
+    hsl(240, 100%, 3%) 100%);
   position: relative;
   overflow: hidden;
 }
@@ -130,7 +128,7 @@
   padding: 40px 30px;
   border-radius: 20px;
   backdrop-filter: blur(10px);
-  border: 1px solid hsl(280, 100%, 80% / 0.2);
+  border: 1px solid hsl(280, 100%, 80% / 0.15);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -143,26 +141,26 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: linear-gradient(135deg, 
-    hsl(280, 100%, 80% / 0.1), 
-    hsl(320, 100%, 75% / 0.1));
+  background: linear-gradient(135deg,
+    hsl(280, 100%, 80% / 0.06),
+    hsl(320, 100%, 75% / 0.06));
   z-index: -1;
 }
 
 .cosmic-card.primary {
-  border-color: hsl(280, 100%, 80% / 0.4);
+  border-color: hsl(280, 100%, 80% / 0.25);
 }
 
 .cosmic-card.primary::before {
-  background: linear-gradient(135deg, 
-    hsl(280, 100%, 80% / 0.15), 
-    hsl(320, 100%, 75% / 0.15));
+  background: linear-gradient(135deg,
+    hsl(280, 100%, 80% / 0.1),
+    hsl(320, 100%, 75% / 0.1));
 }
 
 .cosmic-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 60px hsl(280, 100%, 80% / 0.3);
-  border-color: hsl(280, 100%, 80% / 0.6);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px hsl(280, 100%, 80% / 0.15);
+  border-color: hsl(280, 100%, 80% / 0.4);
 }
 
 .cosmic-card-content {

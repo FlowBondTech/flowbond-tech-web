@@ -86,12 +86,14 @@
 
 /* Reset and base styles */
 * {
-  border-color: hsl(var(--border));
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-color: hsl(var(--background));
-  color: hsl(var(--foreground));
+  background-color: hsl(var(--brand-deep));
+  color: var(--text-primary);
   font-family: var(--font-primary);
   line-height: 1.6;
   overflow-x: hidden;
@@ -257,17 +259,17 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   right: 0;
-  background: hsla(216, 50%, 8%, 0.95);
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--navy-border);
+  background: transparent;
+  backdrop-filter: blur(12px);
   padding: var(--space-md) 0;
   z-index: var(--z-nav);
   transition: all var(--transition-smooth);
 }
 
 .navbar.scrolled {
-  background: hsla(216, 50%, 8%, 0.98);
-  box-shadow: var(--shadow-soft);
+  background: hsla(240, 100%, 3%, 0.85);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 1px 0 hsla(var(--brand-accent), 0.15);
 }
 
 .nav-container {
@@ -374,19 +376,7 @@ h1, h2, h3, h4, h5, h6 {
   100% { transform: translateY(-10px) translateX(50px); opacity: 0; }
 }
 
-.hero-grid-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    linear-gradient(hsla(var(--brand-accent), 0.1) 1px, transparent 1px),
-    linear-gradient(90deg, hsla(var(--brand-accent), 0.1) 1px, transparent 1px);
-  background-size: 100px 100px;
-  pointer-events: none;
-  z-index: 1;
-}
+/* Grid overlay removed — was creating visible lines */
 
 .hero-content-professional {
   position: relative;
@@ -401,8 +391,8 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   gap: 12px;
   padding: 12px 24px;
-  background: hsla(var(--brand-secondary), 0.8);
-  border: 1px solid hsl(var(--brand-accent));
+  background: hsla(248, 100%, 19%, 0.3);
+  border: 1px solid hsla(259, 100%, 21%, 0.3);
   border-radius: 50px;
   color: hsl(var(--brand-primary));
   font-size: 14px;
@@ -436,17 +426,14 @@ h1, h2, h3, h4, h5, h6 {
 .logo-glow-dynamic {
   position: absolute;
   inset: -20px;
-  background: conic-gradient(
-    from 0deg,
-    hsl(var(--brand-primary)) 0deg,
-    hsl(var(--brand-accent)) 120deg,
-    hsl(var(--brand-primary)) 240deg,
-    hsl(var(--brand-accent)) 360deg
+  background: radial-gradient(
+    ellipse at center,
+    hsla(var(--brand-primary), 0.4) 0%,
+    hsla(var(--brand-accent), 0.15) 50%,
+    transparent 70%
   );
   border-radius: 20px;
-  filter: blur(30px);
-  opacity: 0.6;
-  animation: rotate 8s linear infinite;
+  filter: blur(40px);
 }
 
 .hero-logo-flowing {
@@ -563,7 +550,10 @@ h1, h2, h3, h4, h5, h6 {
 
 /* DANZ Highlight Section */
 .danz-highlight-section {
-  background: var(--gradient-subtle);
+  background: linear-gradient(180deg,
+    hsl(240, 100%, 3%) 0%,
+    hsl(250, 30%, 10%) 50%,
+    hsl(240, 100%, 3%) 100%);
 }
 
 .danz-badge {
@@ -602,18 +592,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .danz-feature-card {
-  background: var(--navy-surface);
-  border: 1px solid var(--danz-pink);
+  background: hsla(0, 0%, 12%, 0.5);
+  border: 1px solid hsla(330, 95%, 65%, 0.2);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   transition: all var(--transition-smooth);
   cursor: default;
+  backdrop-filter: blur(8px);
 }
 
 .danz-feature-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 40px hsla(330, 95%, 65%, 0.15);
-  border-color: var(--danz-pink-soft);
+  box-shadow: 0 12px 40px hsla(330, 95%, 65%, 0.1);
+  border-color: hsla(330, 95%, 65%, 0.4);
 }
 
 .danz-card-icon {
@@ -1079,10 +1070,10 @@ h1, h2, h3, h4, h5, h6 {
 .section-badge {
   display: inline-block;
   padding: var(--space-xs) var(--space-md);
-  background: var(--navy-surface);
-  border: 1px solid var(--navy-border);
+  background: hsla(248, 100%, 19%, 0.4);
+  border: 1px solid hsla(259, 100%, 21%, 0.3);
   border-radius: var(--radius-full);
-  color: var(--turquoise-bright);
+  color: hsl(var(--brand-primary));
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: var(--space-md);
@@ -1100,11 +1091,11 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Card system */
 .card {
-  background: var(--navy-surface);
+  background: hsla(248, 100%, 19%, 0.3);
   border-radius: var(--radius-lg);
   padding: var(--space-xl);
   transition: all var(--transition-smooth);
-  border: 1px solid var(--navy-border);
+  border: 1px solid hsla(259, 100%, 21%, 0.2);
   position: relative;
   overflow: hidden;
 }
@@ -1112,7 +1103,7 @@ h1, h2, h3, h4, h5, h6 {
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-medium);
-  border-color: var(--turquoise-bright);
+  border-color: hsla(271, 100%, 42%, 0.4);
 }
 
 .card-icon {
@@ -1140,6 +1131,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Professional About Section */
+.about-section {
+  background: linear-gradient(180deg,
+    hsl(250, 30%, 12%) 0%,
+    hsl(240, 100%, 3%) 100%);
+  padding: 100px 0;
+}
+
+.about-section .text-large {
+  margin-bottom: 30px;
+}
+
 .professional-about-grid {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -1163,7 +1165,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: flex-start;
   gap: 20px;
   padding: 25px 0;
-  border-bottom: 1px solid hsl(var(--brand-accent));
+  border-bottom: 1px solid hsla(259, 100%, 21%, 0.25);
 }
 
 .feature-item:last-child {
@@ -1189,12 +1191,13 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .token-card {
-  background: hsl(var(--brand-deep));
-  border: 2px solid hsl(var(--brand-primary));
+  background: hsla(240, 100%, 5%, 0.8);
+  border: 1px solid hsla(271, 100%, 42%, 0.3);
   border-radius: 20px;
   padding: 30px;
   position: sticky;
   top: 100px;
+  backdrop-filter: blur(10px);
 }
 
 .token-header {
@@ -1274,7 +1277,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 0;
   font-size: 14px;
   color: hsl(0 0% 85%);
-  border-bottom: 1px solid hsl(var(--brand-accent));
+  border-bottom: 1px solid hsla(259, 100%, 21%, 0.2);
 }
 
 .revenue-item:last-child {
@@ -1374,10 +1377,8 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Footer */
 .footer {
-  background: var(--navy-surface);
-  border-top: 1px solid var(--navy-border);
+  background: hsl(240, 100%, 3%);
   padding: var(--space-3xl) 0 var(--space-lg);
-  margin-top: var(--space-3xl);
 }
 
 .footer-content {
@@ -1406,7 +1407,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .footer-bottom {
-  border-top: 1px solid var(--navy-border);
+  border-top: 1px solid hsla(259, 100%, 21%, 0.3);
   padding-top: var(--space-lg);
   text-align: center;
   color: var(--text-muted);

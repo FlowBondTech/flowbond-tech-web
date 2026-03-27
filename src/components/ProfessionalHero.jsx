@@ -30,7 +30,6 @@ function ProfessionalHero() {
   return (
     <section className="professional-hero">
       <div className="tech-particles" ref={particlesRef}></div>
-      <div className="hero-grid-overlay"></div>
 
       <div className="container">
         <div className="hero-content-professional">

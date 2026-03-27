@@ -2,10 +2,7 @@ import React from 'react'
 
 function ProfessionalAbout() {
   return (
-    <section id="about-flowbond" className="section" style={{ 
-      background: 'hsl(var(--brand-secondary))',
-      padding: '120px 0'
-    }}>
+    <section id="about-flowbond" className="section about-section">
       <div className="container">
         <div className="professional-about-grid">
           <div className="about-content">
@@ -13,7 +10,7 @@ function ProfessionalAbout() {
               <span>About FlowBond</span>
             </div>
             
-            <h2 className="text-large gradient-tech" style={{ marginBottom: '30px' }}>
+            <h2 className="text-large gradient-tech">
               The Future of Human Connection Technology
             </h2>
             
