@@ -18,7 +18,7 @@ function ProfessionalHero() {
     }
 
     particles.innerHTML = ''
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 50; i++) {
       particles.appendChild(createParticle())
     }
   }, [])
@@ -30,6 +30,7 @@ function ProfessionalHero() {
   return (
     <section className="professional-hero">
       <div className="tech-particles" ref={particlesRef}></div>
+      <div className="hero-grid-overlay"></div>
 
       <div className="container">
         <div className="hero-content-professional">
